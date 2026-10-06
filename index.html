@@ -823,6 +823,10 @@ function productNameFacts(n){
 function detectStoryContext(n,t,points,intel){
  const blob=(String(n||'')+' '+String(t||'')+' '+(points||[]).join(' ')+' '+(intel?.ocrText||'')+' '+(intel?.verifiedFacts||[]).join(' ')).toLowerCase();
  if(/safety\s*helmet|helmet\s*keselamatan|hard\s*hat|construction|tapak\s*bina|site/.test(blob)) return {type:'safety_helmet',topic:'keselamatan kepala ketika bekerja',problem:'perlukan perlindungan kepala yang sesuai untuk situasi kerja',uses:['tapak bina','construction','bengkel','kerja lapangan'],facts:['safety helmet','perlindungan kepala'],openers:['Kalau kerja di tapak bina, keselamatan kepala memang bukan benda yang boleh ambil ringan.','Dekat site, safety helmet bukan sekadar aksesori — ia sebahagian daripada kelengkapan keselamatan kerja.','Bila pilih kelengkapan kerja, saya akan fikir dulu tentang risiko dan situasi kerja sebenar.']};
+ if(/songket|kain songket|tenun songket/.test(blob)) return {type:'songket',topic:'pemilihan songket untuk Raya dan majlis',problem:'nak cari songket yang sesuai untuk Raya atau majlis',uses:['Hari Raya','kenduri','majlis kahwin','open house','bergambar'],facts:['songket','pakaian tradisional','majlis'],openers:['Bila ada majlis atau Raya, songket memang antara pakaian yang mula kita fikir.','Songket ada suasana dia sendiri — bila dipakai untuk majlis, terus nampak lain.','Kalau nak cari songket, saya biasanya fikir dulu nak pakai untuk majlis apa.']};
+ if(/tudung|shawl|hijab/.test(blob)) return {type:'tudung',topic:'pemilihan tudung untuk rutin dan majlis',problem:'nak cari tudung yang sesuai dengan rutin dan pakaian',uses:['kerja','keluar','majlis','Raya','harian'],facts:['tudung','pemakaian wanita'],openers:['Kalau beli tudung, saya biasanya fikir dulu nak pakai untuk ke mana.','Tudung nampak simple, tapi bahan dan cara pakai memang buat beza.']};
+ if(/telekung|mukena/.test(blob)) return {type:'telekung',topic:'pemilihan telekung untuk solat',problem:'nak cari telekung yang selesa dan praktikal',uses:['solat di rumah','surau','masjid','musafir','Ramadan'],facts:['telekung','kegunaan solat'],openers:['Kalau telekung, saya lebih pentingkan keselesaan sebab ia digunakan untuk ibadah.','Telekung bukan sekadar tengok cantik — kita nak rasa selesa bila memakainya.']};
+ if(/beg tangan|handbag|tote bag|shoulder bag|crossbody/.test(blob)) return {type:'bag',topic:'pemilihan beg untuk kegunaan harian',problem:'nak cari beg yang sesuai dengan barang yang selalu dibawa',uses:['kerja','keluar','travel','shopping','harian'],facts:['beg','kegunaan harian'],openers:['Beg paling senang dinilai bila kita fikir apa yang selalu kita bawa setiap hari.','Beg cantik memang menarik, tapi akhirnya kita nak tahu barang kita muat atau tidak.']};
  if(/baju\s*melayu|baju\s*melayu\s*moden|samping|songkok/.test(blob)) return {
    type:'baju_melayu', topic:'persiapan Hari Raya dan pemilihan Baju Melayu',
    problem:'nak cari Baju Melayu yang nampak kemas dan selesa untuk dipakai masa Hari Raya',
@@ -900,9 +904,47 @@ function humanStory(n,t,points,angle,idx){
    `Satu perkara yang saya suka bila survey baju online ialah kita boleh bandingkan beberapa pilihan dulu. 😄\n\nUntuk ${shortName}, saya akan tengok gambar, saiz, bahan dan maklumat yang diberikan. ${safeFact}\n\nKalau semua itu memang kena dengan apa yang korang cari untuk Raya atau majlis, barulah saya pertimbangkan untuk beli.`
   ]
  };
- const arr=storySets[ctx.type];
+ const extraSets={
+  songket:[
+   `Bila masuk musim Raya atau ada majlis keluarga, songket memang salah satu pakaian yang terus buat penampilan nampak lebih istimewa.\n\nUntuk ${shortName}, saya akan tengok warna, corak dan ukuran dulu. ${safeFact}\n\nKalau korang tengah cari untuk Raya, kenduri atau open house, boleh tengok detail produk dan fikir sama ada gaya ini memang kena dengan apa yang korang cari.`,
+   `Kalau pergi kenduri, ada masa kita nak pakaian yang nampak lebih kemas daripada pakaian harian. Songket memang masuk dalam kategori tu. 😄\n\nSaya suka tengok ${shortName} dari sudut warna dan gaya dulu, kemudian baru semak maklumat produk. ${safeFact}\n\nTak semestinya kena pilih yang paling menyerlah. Yang penting, pilih yang korang sendiri selesa dan yakin nak pakai.`,
+   `Raya bukan sekadar satu pagi. Lepas solat mungkin ada ziarah, open house dan bergambar dengan keluarga. Jadi pakaian yang dipilih pun kena sesuai dengan suasana sepanjang hari.\n\n${shortName} menarik untuk disemak dari sudut itu. ${safeFact}\n\nTengok detail dan pilih ikut gaya sendiri.`,
+   `Saya rasa pakaian tradisional paling menarik bila corak dan warnanya kena dengan orang yang memakainya. Sebab itu saya tak terus pilih hanya kerana gambar nampak cantik.\n\nUntuk ${shortName}, saya akan semak ukuran dan maklumat yang diberikan. ${safeFact}\n\nKalau sesuai untuk majlis yang korang ada, boleh masukkan dalam shortlist.`,
+   `Kalau beli pakaian majlis secara online, saya memang akan zoom gambar dan semak ukuran. 😄\n\n${shortName} boleh jadi salah satu pilihan kalau korang memang tengah cari songket. ${safeFact}\n\nBandingkan dulu dengan pilihan lain sebelum checkout.`,
+   `Ada orang suka songket yang klasik, ada yang suka gaya lebih moden. Saya rasa dua-dua boleh jadi cantik bergantung pada majlis dan cara kita padankan.\n\n${shortName} boleh tengok sebagai salah satu pilihan. ${safeFact}\n\nSemak warna, ukuran dan detail sebelum pilih.`,
+   `Bila pilih pakaian untuk majlis, saya biasanya fikir juga berapa lama pakaian itu akan dipakai. Kalau dari pagi sampai malam, keselesaan memang penting.\n\nUntuk ${shortName}, saya akan tengok maklumat produk yang diberikan. ${safeFact}\n\nKalau semuanya kena dengan keperluan, barulah saya pertimbangkan.`,
+   `Kalau korang tengah survey songket, tak perlu terus checkout bila nampak satu yang cantik. 😄\n\nSimpan beberapa pilihan dan bandingkan warna, ukuran serta gaya. ${shortName} boleh jadi salah satu daripadanya. ${safeFact}\n\nBila dah jumpa yang paling sesuai, baru lebih yakin.`,
+   `Pakaian Raya atau majlis biasanya kita harap boleh dipakai lebih daripada sekali. Jadi saya suka tengok sama ada gaya itu mudah dipadankan dengan acara lain.\n\n${shortName} menarik untuk disemak dari sudut itu. ${safeFact}\n\nKalau kena dengan citarasa, tengok detail dulu.`,
+   `Kalau saya nak cari songket, saya tak tengok harga sahaja. Saya nak tahu ukuran, gaya dan majlis yang sesuai untuk pakaian itu.\n\n${shortName} boleh dimasukkan dalam senarai semakan. ${safeFact}\n\nKalau korang tengah cari untuk Raya atau majlis, bandingkan dulu sebelum beli.`
+  ],
+  tudung:[
+   `Kalau pagi kerja dan petang ada urusan lain, tudung yang mudah dipakai memang memudahkan rutin.\n\nUntuk ${shortName}, saya akan tengok bahan, saiz dan cara pemakaian. ${safeFact}\n\nKalau korang cari untuk rutin yang sama, boleh tengok detail dulu.`,
+   `Bila beli tudung online, saya biasanya zoom kain dan tengok ukuran dulu. Gambar cantik memang menarik, tapi kita nak tahu sama ada ia sesuai dengan rutin sendiri.\n\n${shortName} boleh masuk shortlist kalau maklumatnya kena. ${safeFact}\n\nBandingkan dulu sebelum checkout.`,
+   `Ada tudung yang kita suka untuk kerja, ada yang kita simpan untuk majlis. Sebab itu saya tak rasa satu gaya sesuai untuk semua keadaan.\n\nUntuk ${shortName}, tengok warna, bahan dan saiz. ${safeFact}\n\nKalau kena dengan gaya korang, boleh pertimbangkan.`,
+   `Kalau nak tudung yang selalu dipakai, saya lebih pentingkan keselesaan dan kemudahan daripada ikut trend semata-mata.\n\n${shortName} menarik untuk disemak dari sudut itu. ${safeFact}\n\nTengok detail dulu dan pilih ikut rutin sendiri.`,
+   `Nak keluar sekejap atau pergi majlis, pilihan tudung boleh ubah keseluruhan gaya. 😄\n\nSaya akan tengok ${shortName} sekali dengan pakaian yang nak dipadankan. ${safeFact}\n\nKalau tengah survey, semak detail dan warna yang ada.`,
+   `Kalau korang jenis tak suka tudung yang susah diurus, bahan dan cara pemakaian memang patut diberi perhatian.\n\n${shortName} boleh jadi salah satu pilihan untuk dibandingkan. ${safeFact}\n\nSemak detail dulu.`,
+   `Saya rasa tudung paling berguna bila ia masuk dengan rutin sebenar kita. Kerja, keluar dan majlis semua perlukan pilihan yang berbeza.\n\nUntuk ${shortName}, tengok apa yang dinyatakan tentang produk. ${safeFact}\n\nKalau sesuai, simpan dalam shortlist.`,
+   `Bila nampak tudung yang cantik, memang mudah nak terus checkout. 😄 Tapi saya biasanya berhenti sekejap dan tengok ukuran serta bahan.\n\n${shortName} boleh disemak dengan cara yang sama. ${safeFact}\n\nBila maklumat jelas, lebih senang buat keputusan.`,
+   `Kalau nak cari tudung untuk kegunaan harian, saya akan pilih berdasarkan apa yang memang saya akan pakai selalu.\n\n${shortName} menarik kalau warna dan gayanya masuk dengan pakaian korang. ${safeFact}\n\nTengok detail dulu, kemudian baru decide.`,
+   `Satu cara saya survey tudung: bayangkan pakaian yang selalu saya pakai, kemudian tengok sama ada tudung itu mudah dipadankan.\n\n${shortName} boleh jadi salah satu pilihan. ${safeFact}\n\nKalau kena dengan gaya dan rutin, boleh pertimbangkan.`
+  ],
+  telekung:[
+   `Bila pilih telekung, saya lebih fikir tentang pengalaman memakainya berbanding sekadar rupa.\n\n${shortName} menarik untuk disemak dari segi saiz, bahan dan maklumat yang diberikan. ${safeFact}\n\nKalau tengah cari untuk kegunaan sendiri atau hadiah, tengok detail dulu.`,
+   `Telekung digunakan untuk tempoh yang kita nak rasa tenang dan selesa. Jadi saya memang tak pilih semata-mata sebab cantik.\n\nUntuk ${shortName}, semak maklumat produk dan ukuran. ${safeFact}\n\nKalau sesuai dengan keperluan, boleh pertimbangkan.`,
+   `Kalau nak beli telekung online, gambar depan saja belum cukup. Saya akan tengok keseluruhan produk dan maklumat saiz.\n\n${shortName} boleh dimasukkan dalam shortlist kalau detailnya jelas. ${safeFact}\n\nBandingkan dulu sebelum buat keputusan.`,
+   `Untuk telekung, saya suka benda yang praktikal — mudah disimpan, selesa dipakai dan sesuai dengan rutin solat.\n\n${shortName} menarik untuk disemak dari sudut itu. ${safeFact}\n\nKalau korang tengah cari, boleh tengok detail produk.`,
+   `Bila Ramadan atau musim balik kampung, ramai mula fikir tentang telekung yang mudah dibawa.\n\nKalau ${shortName} nampak sesuai, saya akan semak ukuran dan maklumat yang diberikan dulu. ${safeFact}\n\nTak perlu terus beli — tengok sama ada betul-betul sesuai.`,
+   `Telekung untuk rumah mungkin berbeza dengan yang kita bawa travel. Sebab kegunaannya tak semestinya sama.\n\n${shortName} boleh dinilai berdasarkan rutin korang. ${safeFact}\n\nTengok detail sebelum checkout.`,
+   `Saya suka pilih barang ibadah dengan tenang, bukan sebab ikut trend. Untuk telekung, keselesaan dan kesesuaian lebih penting.\n\n${shortName} boleh jadi salah satu pilihan untuk dibandingkan. ${safeFact}\n\nSemak detail dulu.`,
+   `Kalau nak hadiahkan telekung, saya akan fikir juga saiz dan gaya yang sesuai.\n\n${shortName} menarik untuk disemak kalau maklumat produknya jelas. ${safeFact}\n\nBandingkan beberapa pilihan sebelum pilih.`,
+   `Ada telekung yang nampak cantik dalam gambar tetapi kita tetap kena tahu bagaimana ia sesuai dengan penggunaan sendiri.\n\nUntuk ${shortName}, saya akan rujuk detail yang diberikan. ${safeFact}\n\nKalau kena dengan keperluan, barulah pertimbangkan.`,
+   `Kalau korang sedang cari telekung baru, mungkin sekarang masa yang baik untuk tengok beberapa pilihan tanpa tergesa-gesa.\n\n${shortName} boleh dimasukkan dalam senarai semakan. ${safeFact}\n\nTengok ukuran, bahan dan detail sebelum buat keputusan.`
+  ]
+ };
+ const arr=storySets[ctx.type] || extraSets[ctx.type];
  if(arr){ return arr[idx%arr.length].replace(/\n{3,}/g,'\n\n').trim(); }
- // Stable fallback: still product-specific, never generic “produk baru” template.
+ // Stable fallback: category-specific before generic.
  const opener=ctx.openers?.[idx%Math.max(1,ctx.openers.length)]||`Kalau ${ctx.topic}, saya lebih suka fikir tentang situasi sebenar dulu.`;
  const topic=ctx.topic||'kegunaan produk';
  const situation=use.slice(idx%use.length, idx%use.length+2).join(' atau ');
