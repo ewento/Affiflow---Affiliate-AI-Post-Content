@@ -820,104 +820,59 @@ function productNameFacts(n){
  nums.slice(0,4).forEach(x=>facts.push(x));
  return facts;
 }
+function detectStoryContext(n,t,points,intel){
+ const blob=(String(n||'')+' '+String(t||'')+' '+(points||[]).join(' ')+' '+(intel?.ocrText||'')).toLowerCase();
+ if(/baju melayu|baju melayu moden|samping|songkok|kurta|jubah/.test(blob)) return {
+   type:'baju_melayu', topic:'persiapan Hari Raya dan pemilihan Baju Melayu',
+   problem:'nak cari Baju Melayu yang nampak kemas untuk dipakai masa Hari Raya',
+   uses:['persiapan raya','solat sunat Aidilfitri','kunjung-mengunjung','open house','bergambar dengan keluarga'],
+   facts:['Baju Melayu','fesyen lelaki','pemakaian Hari Raya'],
+   opener:['Bila Hari Raya makin dekat, antara benda yang mula kita fikir ialah Baju Melayu.','Setiap kali nak dekat raya, mesti mula fikir nak pakai Baju Melayu yang macam mana.','Untuk lelaki, pilih Baju Melayu untuk raya nampak simple, tapi sebenarnya banyak benda kita kena fikir.']
+ };
+ if(/kurta/.test(blob)) return {type:'kurta',topic:'gaya lelaki untuk Hari Raya dan majlis',problem:'nak cari pakaian yang sesuai untuk raya atau majlis',uses:['Hari Raya','solat','majlis','open house'],facts:['kurta','pakaian lelaki'],opener:['Kalau nak raya dengan gaya yang lebih santai, kurta memang antara pilihan yang selalu orang tengok.']};
+ if(/skincare|ceramide|centella|moistur|serum|sunscreen|skin barrier/.test(blob)) return {type:'skincare',topic:'rutin penjagaan kulit',problem:'kulit terasa kering, kurang selesa atau perlukan rutin yang lebih sesuai',uses:['rutin pagi','rutin malam','selepas cuci muka'],facts:['skincare','rutin penjagaan kulit'],opener:['Kalau kulit mula rasa kering atau rutin sekarang tak cukup selesa, biasanya kita mula tengok semula produk yang digunakan.','Dalam rutin skincare, saya lebih suka tengok fungsi produk dulu daripada ikut trend.']};
+ if(/dehumid|humidifier|kelembapan|moisture control/.test(blob)) return {type:'dehumidifier',topic:'kelembapan dalam ruang rumah',problem:'ruang terasa lembap dan perlukan cara untuk mengurus kelembapan',uses:['bilik tidur','almari','ruang kecil','rumah'],facts:['dehumidifier','kelembapan ruang'],opener:['Kalau bilik atau ruang rumah selalu terasa lembap, benda macam ni memang boleh buat kita mula cari jalan penyelesaian.']};
+ if(/kasut|shoe|sneaker|boot/.test(blob)) return {type:'footwear',topic:'pemilihan kasut untuk kegunaan sebenar',problem:'nak cari kasut yang sesuai dengan aktiviti dan cara pemakaian',uses:['kerja','berjalan','outdoor','sukan','kegunaan harian'],facts:['kasut','pemakaian'],opener:['Bila nak beli kasut, saya tak tengok rupa sahaja. Saya fikir kasut itu nak dipakai untuk apa.']};
+ if(/baju|shirt|dress|seluar|pakaian|fashion/.test(blob)) return {type:'apparel',topic:'pemilihan pakaian dan gaya pemakaian',problem:'nak cari pakaian yang sesuai dengan gaya dan situasi',uses:['kerja','keluar','majlis','kegunaan harian'],facts:['pakaian','fesyen'],opener:['Bila pilih pakaian, saya biasanya fikir dulu nak pakai untuk situasi apa.']};
+ if(/phone|telefon|laptop|tablet|earbud|headphone|charger|powerbank|gadget/.test(blob)) return {type:'tech',topic:'kegunaan gadget dalam rutin harian',problem:'nak cari gadget yang betul-betul menyelesaikan keperluan',uses:['kerja','perjalanan','rumah','hiburan'],facts:['gadget','teknologi'],opener:['Bila nak beli gadget, saya tak tengok rupa atau trend sahaja. Saya nak tahu fungsi yang memang akan saya guna.']};
+ if(/makanan|food|snack|snek|kopi|coffee|teh|tea|coklat|biskut|minuman/.test(blob)) return {type:'food',topic:'pengalaman makan atau minum',problem:'nak cari makanan atau minuman yang sesuai dengan selera dan situasi',uses:['sarapan','minum petang','kerja','bersantai'],facts:['makanan/minuman'],opener:['Bab makanan ni lain sikit — sebelum beli, kita biasanya dah boleh bayangkan bila nak makan atau minum.']};
+ if(/seranggo|serangga|semut|nyamuk|pest|repellent/.test(blob)) return {type:'pest',topic:'masalah serangga di rumah',problem:'semut atau serangga kecil mengganggu kawasan rumah',uses:['dapur','ruang makan','laluan serangga','kawasan rumah'],facts:['kegunaan berkaitan serangga','kawasan rumah'],opener:['Baru kemas rumah, tiba-tiba nampak semut atau serangga datang balik. Memang boleh buat kita cari alternatif.']};
+ return {type:'general',topic:'kegunaan produk dalam situasi sebenar',problem:'nak cari produk yang sesuai dengan keperluan sendiri',uses:['kegunaan harian'],facts:['fungsi produk'],opener:['Bila jumpa produk baru, saya lebih suka terus fikir situasi sebenar: bila saya akan guna dan untuk apa?']};
+}
 function humanStory(n,t,points,angle,idx){
- const originalName=n;
- const I=productInsights(originalName,t,points), ctx=I.ctx, p1=I.p1, p2=I.p2, p3=I.p3;
- const nameParts=String(originalName||'produk ini').trim().split(/\s+/);
- const noisy=/^(official|original|murah|termurah|promo|sale|ready|stok|free|best|viral|new|terbaru|malaysia|malay|skincare|skincareproduct|moisturizer|moisturiser|soothing|day|night|cream|centella|diffuser|shopee|tiktok)$/i;
- const shortName=nameParts.filter((w,i)=>!(i>2 && noisy.test(w))).slice(0,8).join(' ') || originalName;
- n=shortName;
- const facts=productNameFacts(n);
- const audience=(t||ctx.buyer||'pengguna').trim();
- const factText=facts.length?facts.slice(0,4).join(', '):'';
- const factSentence=factText?`Daripada nama dan maklumat produk yang ada, antara perkara yang jelas ialah ${factText}.`:`Saya fokus pada fungsi dan konteks penggunaan yang jelas daripada maklumat produk.`;
- const category=ctx.cat;
- let topic='', evidence='', caution='';
- if(category==='penjagaan diri'){
-   topic=`rutin penjagaan kulit dan apa yang kulit perlukan`;
-   evidence=`Untuk produk ini, saya akan tengok perkara yang memang dinyatakan seperti ${p1}${p2?` dan ${p2}`:''}.`;
-   caution=`Untuk skincare, saya tak suka terus buat claim besar. Saya lebih selesa tengok kandungan, fungsi yang dinyatakan dan kesesuaian dengan rutin sendiri.`;
- }else if(category==='rumah' && /dehumid|humid|kelembapan|moisture/i.test(n+' '+points.join(' '))){
-   topic=`masalah kelembapan dalam ruang rumah`;
-   evidence=`Untuk kategori ini, saya lebih fokus pada fungsi dehumidifier, saiz/perletakan dan ruang yang hendak digunakan — bukan sekadar rupa produk.`;
-   caution=`Keadaan setiap ruang berbeza, jadi saya tak akan janjikan hasil yang sama untuk semua rumah.`;
- }else if(category==='rumah'){
-   topic=`rutin dan masalah rumah yang berkaitan dengan produk ini`;
-   evidence=`Saya akan padankan fungsi yang dinyatakan dengan keadaan sebenar di rumah sebelum buat keputusan.`;
-   caution=`Produk rumah patut dinilai ikut keadaan dan cara penggunaan sebenar, bukan semata-mata kerana nampak menarik.`;
- }else if(category==='teknologi'){
-   topic=`kegunaan sebenar dalam rutin harian`;
-   evidence=`Untuk gadget, saya lebih suka semak fungsi utama, keserasian dan situasi penggunaan sebelum tengok benda lain.`;
-   caution=`Spesifikasi yang penting ialah yang benar-benar diperlukan untuk kegunaan sendiri.`;
- }else if(category==='gaya hidup'){
-   topic=`keselesaan, gaya dan situasi penggunaan`;
-   evidence=`Saya akan tengok material, fungsi atau ciri yang memang dinyatakan sebelum buat keputusan.`;
-   caution=`Apa yang sesuai untuk seorang belum tentu sesuai untuk orang lain, terutama dari segi saiz, gaya dan penggunaan.`;
- }else if(category==='makanan & minuman'){
-   topic=`rasa, cara penggunaan dan kesesuaian dengan rutin`;
-   evidence=`Untuk makanan atau minuman, saya lebih suka tengok jenis produk, cara penyediaan dan apa yang memang dinyatakan pada produk.`;
-   caution=`Bab rasa memang subjektif, jadi saya elakkan claim seolah-olah semua orang mesti suka.`;
- }else if(category==='keluarga'){
-   topic=`keperluan dan rutin keluarga`;
-   evidence=`Saya akan tengok fungsi yang dinyatakan dan padankan dengan umur atau situasi penggunaan yang sebenar.`;
-   caution=`Keperluan setiap keluarga berbeza, jadi semak kesesuaian dahulu.`;
- }else if(category==='automotif'){
-   topic=`keperluan kenderaan dan situasi penggunaan`;
-   evidence=`Untuk barang automotif, saya akan semak keserasian dan fungsi sebenar sebelum beli.`;
-   caution=`Pastikan spesifikasi dan keserasian produk memang sepadan dengan kenderaan sendiri.`;
- }else{
-   topic=`fungsi produk dan situasi penggunaannya`;
-   evidence=`Saya akan fokus pada apa yang produk ini memang nyatakan dan bagaimana ia boleh digunakan dalam rutin yang berkaitan.`;
-   caution=`Saya elakkan claim yang tidak ada dalam maklumat produk.`;
- }
- const openings=[
-  `Pernah tak korang ada satu keadaan yang buat kita mula cari ${ctx.noun}?`,
-  `Saya perasan bila nak pilih ${ctx.noun}, soalan pertama bukan “viral ke tak?” tetapi “aku memang perlukan ke?”`,
-  `Kalau korang tengah tengok ${n}, jangan tengok nama atau gambar sahaja. Tengok konteks penggunaan dia.`,
-  `Ada beza antara nampak menarik dengan betul-betul sesuai dengan rutin sendiri. Itu yang saya cuba tengok pada ${n}.`,
-  `Saya suka tengok produk dari sudut yang lebih simple: masalah apa, fungsi apa, dan sesuai untuk siapa?`,
-  `Sebelum tambah barang baru dalam rumah atau rutin harian, saya biasanya akan fikir satu benda dulu: akan guna atau tidak?`,
-  `Kalau masalah korang berkait dengan ${topic}, produk macam ni memang patut dinilai dari fungsi sebenar.`,
-  `Saya cuba buat perbandingan dalam kepala sebelum beli — bukan terus percaya pada ayat marketing.`,
-  `Benda pertama yang saya cari bila jumpa produk baru ialah maklumat yang boleh kita sahkan.`,
-  `Okay, saya jumpa ${n} dan kali ni saya tengok dari sudut kegunaan, bukan sekadar nampak cantik.`
- ];
- const middles=[
-  `${evidence} ${factSentence}`,
-  `${factSentence} Yang penting, perkara itu memang berkait dengan kategori produk ini dan bukan sekadar ayat umum.`,
-  `Kalau ${p1}, itu yang saya akan jadikan titik mula. ${p2?`Kemudian saya semak ${p2}.`:''}`,
-  `${evidence} Kalau memang itu yang korang cari, barulah produk ini masuk dalam senarai untuk dipertimbangkan.`,
-  `Saya tak nak kata ${n} sesuai untuk semua orang. Saya cuma tengok sama ada ciri yang dinyatakan itu masuk akal untuk keperluan sendiri.`,
-  `Untuk saya, produk yang baik ialah produk yang jelas apa kegunaannya dan mudah kita padankan dengan situasi sebenar.`,
-  `${evidence} Jadi daripada beli secara ikut-ikutan, lebih baik kita tengok detail dahulu.`,
-  `Saya akan bandingkan ${p1}${p2?` dengan ${p2}`:''} dan kemudian tanya diri sendiri sama ada saya benar-benar akan menggunakannya.`,
-  `${factSentence} Dari situ lebih mudah untuk tentukan sama ada ia relevan atau tidak.`,
-  `${evidence} Kalau keperluan korang sama, boleh semak detail penuh sebelum buat keputusan.`
- ];
- const endings=[
-  `Kalau korang ada situasi yang sama, boleh tengok detail ${n} dulu. Tak perlu terus beli — tengok sesuai atau tak dengan keperluan sendiri.`,
-  `Bagi saya, itu cara lebih selamat untuk pilih produk: faham fungsi dulu, baru fikir nak beli atau tidak.`,
-  `Kalau benda yang korang cari memang berkait dengan ${topic}, boleh semak produk ini sebagai salah satu pilihan.`,
-  `Saya letak link untuk korang tengok detail. Dari situ korang boleh buat keputusan sendiri.`,
-  `${caution} Kalau berminat, tengok detail produk dulu.`,
-  `Tak semestinya produk yang sama sesuai untuk semua orang. Yang penting, kita tahu apa yang kita cari.`,
-  `Kalau korang nak tengok spesifikasi atau maklumat penuh, link saya letak di bawah.`,
-  `Saya lebih suka cara macam ni — semak dulu, bandingkan, kemudian baru buat keputusan.`,
-  `Kalau relevan dengan keperluan korang, boleh masukkan dalam shortlist untuk dibandingkan.`,
-  `Nak tengok produk ini dengan lebih dekat? Link saya letak di bawah.`
- ];
+ const intel=currentProductIntel||{};
+ const ctx=detectStoryContext(n,t,points,intel);
+ const rawName=String(n||'produk ini').trim();
+ const shortName=rawName.split(/\s+/).slice(0,9).join(' ');
+ const audience=(t||'pengguna').trim();
+ const verified=(intel.verifiedFacts||[]).filter(Boolean).slice(0,5);
+ const userPoints=(points||[]).filter(Boolean).map(naturalPoint).slice(0,4);
+ const facts=[...new Set([...userPoints,...verified,...ctx.facts])].slice(0,6);
+ const factLine=facts.length?`Antara maklumat yang jelas tentang produk ini ialah ${facts.join(', ')}.`:'';
+ const useLine=ctx.uses.slice(0,3).join(', ');
  let body='';
+ const opener=ctx.opener[idx%ctx.opener.length];
  switch(angle){
-  case 'Relatable problem': body=`${openings[0]}\n\n${middles[0]}\n\n${endings[0]}`; break;
-  case 'Tips / awareness': body=`${openings[4]}\n\n1. Kenal pasti masalah: ${topic}.\n2. Semak fungsi yang memang dinyatakan: ${p1}.\n3. Padankan dengan rutin dan keperluan sendiri.\n\n${endings[1]}`; break;
-  case 'Personal experience': body=`${openings[1]}\n\n${middles[4]}\n\n${endings[4]}`; break;
-  case 'Curiosity / discovery': body=`${openings[8]}\n\n${middles[1]}\n\n${endings[3]}`; break;
-  case 'Problem → solution': body=`${openings[6]}\n\n${middles[3]}\n\n${endings[2]}`; break;
-  case 'Honest experience': body=`${openings[7]}\n\n${middles[4]}\n\n${endings[5]}`; break;
-  case 'Question / conversation': body=`${openings[0]}\n\n${middles[6]}\n\n${endings[6]}`; break;
-  case 'Practical tips': body=`${openings[5]}\n\n${middles[7]}\n\n${endings[7]}`; break;
-  case 'Soft review': body=`${openings[9]}\n\n${middles[8]}\n\n${caution}\n\n${endings[8]}`; break;
-  default: body=`${openings[2]}\n\n${middles[9]}\n\n${endings[9]}`;
+  case 'Relatable problem':
+   body=`${opener}\n\n${ctx.problem.charAt(0).toUpperCase()+ctx.problem.slice(1)}. Bila situasi macam ni berlaku, saya biasanya tengok dulu apa yang saya perlukan sebelum pilih produk.\n\n${shortName} menarik perhatian saya sebab ia memang berada dalam kategori ${ctx.topic}. ${factLine}\n\nKalau korang pun tengah cari untuk ${useLine}, boleh tengok detail produk ini dulu. Tak perlu terus beli — tengok sama ada sesuai dengan keperluan sendiri.`; break;
+  case 'Tips / awareness':
+   body=`Kalau nak pilih ${shortName}, saya akan tengok 3 benda dulu.\n\n1. **Situasi penggunaan** — adakah memang sesuai untuk ${useLine}?\n2. **Ciri yang dinyatakan** — semak maklumat yang memang diberikan tentang produk.\n3. **Kesesuaian sendiri** — saiz, gaya, rutin atau cara penggunaan ikut keperluan masing-masing.\n\n${factLine}\n\nUntuk saya, cara macam ni lebih berguna daripada terus beli sebab nampak menarik.`; break;
+  case 'Personal experience':
+   body=`Saya sebenarnya cari sesuatu untuk ${ctx.problem}.\n\nMasa tengok ${shortName}, saya terus fikir tentang penggunaan sebenar — contohnya ${useLine}. ${factLine}\n\nSaya suka bila produk boleh dinilai berdasarkan situasi yang kita memang lalui, bukan sekadar ayat marketing. Kalau keperluan korang sama, boleh tengok detailnya dulu.`; break;
+  case 'Curiosity / discovery':
+   body=`Saya tak sangka produk dalam kategori ${ctx.topic} boleh buat saya fikir tentang satu benda: kita selalu pilih berdasarkan rupa dulu, padahal cara nak guna lagi penting.\n\nBila saya tengok ${shortName}, antara perkara yang saya perhatikan ialah ${facts.slice(0,3).join(', ')}.\n\nKalau korang pernah cari benda untuk ${ctx.problem}, mungkin produk ini boleh masuk dalam senarai untuk dibandingkan.`; break;
+  case 'Problem → solution':
+   body=`${ctx.problem.charAt(0).toUpperCase()+ctx.problem.slice(1)}. Itu yang buat saya mula cari pilihan lain.\n\nUntuk situasi macam ${useLine}, ${shortName} nampak relevan kerana ia memang produk dalam kategori ${ctx.topic}. ${factLine}\n\nSaya tak nak janji hasil yang sama untuk semua orang. Lebih baik tengok detail dan nilai sama ada ia sesuai dengan keadaan sendiri.`; break;
+  case 'Honest experience':
+   body=`Saya cuba tengok ${shortName} dari sudut yang jujur: bukan “produk ni mesti sesuai”, tapi “produk ni sesuai untuk siapa dan bila?”.\n\nKalau kegunaan korang memang berkait dengan ${ctx.topic}, perkara seperti ${facts.slice(0,3).join(', ')} patut diperiksa dahulu.\n\nSaya rasa itu lebih adil untuk pembeli — faham produk dulu, kemudian baru buat keputusan.`; break;
+  case 'Question / conversation':
+   body=`Kalau korang nak pilih ${shortName}, apa yang paling penting untuk korang?\n\nUntuk saya, jawapannya bergantung pada situasi. Kalau untuk ${useLine}, saya akan semak dulu ciri dan maklumat yang memang dinyatakan. ${factLine}\n\nSebab produk yang sesuai untuk seorang belum tentu sesuai untuk orang lain.`; break;
+  case 'Practical tips':
+   body=`Cara saya tengok produk macam ${shortName} simple saja.\n\nPertama, tentukan nak guna untuk apa: ${useLine}.\nKedua, tengok ciri yang betul-betul dinyatakan.\nKetiga, fikir sama ada ia sesuai dengan rutin sendiri.\n\n${factLine}\n\nKalau tiga benda ni masuk akal, barulah saya pertimbangkan untuk beli.`; break;
+  case 'Soft review':
+   body=`Kalau saya nak review ${shortName} secara ringkas, saya akan mula dengan soalan: “Saya sebenarnya nak guna benda ni bila?”\n\nUntuk ${ctx.topic}, produk ini boleh dipertimbangkan kalau keperluan korang memang sama. ${factLine}\n\nBukan bermaksud semua orang wajib beli. Tengok detail dulu dan bandingkan dengan apa yang korang perlukan.`; break;
+  default:
+   body=`Kalau saya nampak ${shortName}, saya terus teringat tentang ${ctx.topic}.\n\nSebabnya mudah — produk macam ni memang berkait dengan ${ctx.problem}. Ia boleh digunakan untuk situasi seperti ${useLine}. ${factLine}\n\nKalau korang tengah cari sesuatu untuk keperluan yang sama, boleh tengok detail produk ini dulu.`;
  }
  return body.replace(/\n{3,}/g,'\n\n').trim();
 }
@@ -1005,8 +960,8 @@ async function generateKit(){
  const contentParts=[];
  contentParts.push(`<div class="tabIntro">📝 <b>Content Post</b> — Semua content di bawah sudah disusun untuk terus <b>copy → paste → post</b>. Tiada perlu scroll melalui prompt video.</div>`);
  contentParts.push(`<div class="result"><div class="rh">🕐 BEST TIME TO POST — MALAYSIA <span>3 daily windows + best slot</span></div><div class="rb">🌅 <b>Morning · 8:00 AM</b> — Facebook + Threads<br>☀️ <b>Lunch · 1:00 PM</b> — Facebook + X<br>🌙 <b>Evening · 8:00 PM</b> — Facebook + Threads + X<br>⭐ <b>Best-slot test · 9:00 PM</b> — Facebook + Threads + X<br><br><span class="small">Ini starting point, bukan jaminan. Waktu terbaik sebenar bergantung pada audience dan data akaun anda.</span></div></div>`);
- contentParts.push(`<div class="result"><div class="rh">📝 10 READY-TO-POST CONTENTS <span>Story-First · humanized</span></div><div class="rb">10 content ini menggunakan angle yang berbeza dan menyesuaikan bahasa dengan kategori produk, nama produk, sasaran pembeli dan fakta yang benar-benar diberikan. Elakkan claim atau manfaat yang tidak dapat disahkan. Selling point yang anda isi akan digunakan sebagai fakta; jika dikosongkan, AffiliFlow AI menggunakan konteks produk yang selamat tanpa mereka claim atau spesifikasi.</div></div>`);
- cards.forEach(card=>{contentParts.push(`<div class="result"><div class="rh">${card.i.toString().padStart(2,'0')} ${card.w.label} <span>🕐 ${card.w.time} · ${card.w.platforms.join(' + ')} · ${card.angle}</span></div><div class="rb"><div class="small">Recommended posting window · Malaysia (MYT)</div>${card.versions.map(v=>`<div style="margin-top:12px;padding:12px;border:1px solid #e8e1dc;border-radius:12px;background:#fff"><b>📱 ${esc(v.pl)}</b><pre style="white-space:pre-wrap;font-family:inherit;margin:10px 0 0">${esc(v.text)}</pre><button class="copy" style="margin-top:8px" onclick="copyText(this.previousElementSibling.innerText)">📋 Copy ${esc(v.pl)}</button></div>`).join('')}</div></div>`)});
+ contentParts.push(`<div class="result"><div class="rh">📝 10 READY-TO-POST CONTENTS <span>Story-First · humanized</span></div><div class="rb">10 content ini dibina berdasarkan konteks sebenar produk, situasi pengguna dan maklumat yang dapat dikenal pasti. Untuk kategori khusus seperti Baju Melayu, skincare, dehumidifier dan lain-lain, cerita akan terus masuk ke dunia penggunaan produk tersebut — bukan template umum.</div></div>`);
+ cards.forEach(card=>{contentParts.push(`<div class="result"><div class="rh">${card.i.toString().padStart(2,'0')} <span>${card.angle}</span></div><div class="rb">${card.versions.map(v=>`<div style="margin-top:12px;padding:12px;border:1px solid #e8e1dc;border-radius:12px;background:#fff"><b>📱 ${esc(v.pl)}</b><pre style="white-space:pre-wrap;font-family:inherit;margin:10px 0 0">${esc(v.text)}</pre><button class="copy" style="margin-top:8px" onclick="copyText(this.previousElementSibling.innerText)">📋 Copy ${esc(v.pl)}</button></div>`).join('')}</div></div>`)});
  const videoParts=[];
  videoParts.push(`<div class="tabIntro">🎬 <b>Video Prompts</b> — Pilih idea yang anda suka. Setiap idea mempunyai <b>Clip A + Clip B</b> yang bersambung untuk satu video sekitar 16 saat. Prompt sudah diterjemahkan kepada natural-language instructions untuk Google Flow / Veo.</div>`);
  videoParts.push(`<div class="result"><div class="rh">🎬 6 VIDEO IDEAS · 2 CLIPS EACH <span>8s + 8s recommended</span></div><div class="rb">Anda tidak perlu generate semua 6 idea. Pilih hanya idea yang paling sesuai dengan produk dan content anda.</div></div>`);
