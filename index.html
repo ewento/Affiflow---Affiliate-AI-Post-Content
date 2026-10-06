@@ -44,7 +44,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)} textarea{min
 .tipTitle{font-weight:800;font-size:15px}.tipText{color:#b9aaa0;font-size:12px;margin:6px 0 12px}
 .tipQr{width:190px;height:190px;object-fit:contain;background:white;border-radius:8px;padding:5px}
 
-/* ===== AffiliFlow AI V6.4 — Commercial Light Theme ===== */
+/* ===== AffiliFlow AI V7.0 — Commercial Light Theme ===== */
 :root{
   --bg:#f5f7fb;
   --panel:#ffffff;
@@ -115,7 +115,7 @@ input:focus,textarea:focus,select:focus{
 }
 .preview img,.gallery img{border-color:#e4e7ec !important}
 
-/* AffiliFlow AI V6.4 polished commercial header */
+/* AffiliFlow AI V7.0 polished commercial header */
 .heroBrand{
   max-width:1100px;
   margin:18px auto 10px;
@@ -159,7 +159,7 @@ input:focus,textarea:focus,select:focus{
 .modalOverlay{position:fixed;inset:0;background:rgba(16,24,40,.42);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}.modalOverlay.show{display:flex}
 .supportModal{position:relative;width:min(420px,100%);background:#fff;border-radius:24px;padding:26px;box-shadow:0 24px 70px rgba(16,24,40,.22);text-align:center}.modalClose{position:absolute;right:14px;top:10px;border:0;background:transparent;font-size:28px;color:#667085;cursor:pointer}.supportIcon{font-size:30px}.supportModal h2{margin:8px 0 6px;color:#172033}.supportModal p{color:#667085;font-size:13px;line-height:1.55;margin:0 auto 16px}.tipChoices{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}.tipChoices button{padding:10px 6px;border:1px solid #d0d5dd;border-radius:12px;background:#fff;color:#344054;font-weight:800;cursor:pointer}.tipChoices button.selected{background:#fff0eb;border-color:#ff6b4a;color:#d94f32}.supportNote{text-align:left;background:#f8fafc;border:1px solid #e4e7ec;border-radius:14px;padding:11px;font-size:12px;color:#667085;margin-bottom:12px}.supportNote b{display:block;color:#344054;margin-bottom:3px}.payBtn{width:100%;margin-bottom:9px}.payBtn:disabled{opacity:.45;cursor:not-allowed}.paymentConfig summary{cursor:pointer;font-weight:750}.paymentConfig input{margin-top:8px}.paymentConfig .ghost{margin-top:8px}
 
-/* AffiliFlow AI V6.4 — Optional QR Support */
+/* AffiliFlow AI V7.0 — Optional QR Support */
 .qrWrap{
   background:#fff;
   border:1px solid #e4e7ec;
@@ -337,7 +337,7 @@ input:focus,textarea:focus,select:focus{
 
 <div class="app">
 <header>
-  <div class="brand"><div class="bag">🛍️</div><div><div class="title">AffiliFlow AI <span class="badge">V6.4</span></div><div class="titleSupportLine"><button class="supportBtn" onclick="openSupport()">🎁 Sumbangan AffiliFlow AI</button><span>Sumbangan anda serendah RM2 dapat membantu kami teruskan AffiliFlow AI</span></div><div class="sub"></div></div></div>
+  <div class="brand"><div class="bag">🛍️</div><div><div class="title">AffiliFlow AI <span class="badge">V7.0</span></div><div class="titleSupportLine"><button class="supportBtn" onclick="openSupport()">🎁 Sumbangan AffiliFlow AI</button><span>Sumbangan anda serendah RM2 dapat membantu kami teruskan AffiliFlow AI</span></div><div class="sub"></div></div></div>
   <button class="ghost" onclick="clearForm()">Reset</button>
 </header>
 
@@ -361,10 +361,13 @@ input:focus,textarea:focus,select:focus{
 <label>🔗 Affiliate URL</label>
 <input id="affiliateUrl" type="url" placeholder="Contoh: https://s.shopee.com.my/xxxxxx">
 <div class="small">Link ini akan dimasukkan automatik ke caption, CTA dan bahagian Affiliate Link.</div>
-<label>Selling point (satu baris satu)</label><textarea id="points" placeholder="Contoh:
+<label>💡 Selling point <span style="color:#8b5cf6">(optional)</span></label><textarea id="points" placeholder="Tak tahu selling point? Biarkan kosong.
+
+Jika ada maklumat penting, masukkan satu baris satu. Contoh:
 100% organik
 Tiada racun
 Mudah digunakan"></textarea>
+<div class="small">Tak pasti nak isi apa? <b>Tak perlu isi.</b> AffiliFlow AI akan bina content berdasarkan nama produk, sasaran pembeli dan konteks produk yang dapat dikenal pasti. Selling point yang anda masukkan hanya digunakan jika benar-benar diberikan oleh anda — app tidak sepatutnya mereka claim atau spesifikasi sendiri.</div>
 <div class="two">
 <div><label>Gaya</label><select id="style"><option>Santai / kawan</option><option>Review jujur</option><option>Soft sell</option><option>Hard sell</option><option>Problem → Solution</option></select></div>
 <div><label>Platform</label><select id="platform"><option>Facebook + Threads + X</option><option>Facebook</option><option>Threads</option><option>X</option></select></div>
@@ -438,7 +441,7 @@ Mudah digunakan"></textarea>
 <div class="slashBox">
   <div class="slashTitle">⚡ Slash Prompt Shortcuts</div>
   <div class="slashDesc">
-    V6.1 menggunakan format <b>/command</b> sebagai shortcut untuk arah visual, kamera, lighting dan gaya commercial.
+    V7.0 menggunakan format <b>/command</b> sebagai shortcut untuk arah visual, kamera, lighting dan gaya commercial.
     AffiliFlow akan pilih, faham dan kembangkan slash commands ini menjadi arahan visual sebenar dalam prompt penuh. Anda boleh ubah atau tambah sendiri.
   </div>
   <div class="slashQuick">
@@ -466,12 +469,12 @@ Mudah digunakan"></textarea>
 /premiumcommercial"></textarea>
   <div class="small">Tip: kosongkan kotak ini untuk Auto Stack. Jangan risau tentang format — satu command satu baris.</div>
 </div>
-<div class="actions"><button class="primary" onclick="generateKit()">✨ Jana Kit</button></div><div class="actions"><button class="ghost" onclick="copyAllPrompts()">📋 Copy Semua Prompt</button><button class="ghost" onclick="downloadKit()">⬇️ Simpan Kit</button></div>
-<div class="small">Versi ini ialah prototype yang boleh terus digunakan tanpa API key. Output dijana daripada template pintar berdasarkan maklumat produk. AI API boleh disambungkan kemudian untuk hasil yang lebih dinamik.</div>
+<div id="intelStatus" class="small" style="min-height:20px;margin:8px 0"></div><div class="actions"><button class="primary" onclick="generateKit()">✨ Jana Kit</button></div><div class="actions"><button class="ghost" onclick="copyAllPrompts()">📋 Copy Semua Prompt</button><button class="ghost" onclick="downloadKit()">⬇️ Simpan Kit</button></div>
+<div class="small">V7.0 menggunakan Product Intelligence berasaskan maklumat produk + OCR teks yang kelihatan pada reference images. Claim yang tidak dapat disahkan tidak akan dianggap sebagai fakta.</div>
 </section>
 
 <section>
-<div class="result"><div class="rh">⚡ FLOW-FIRST MODE</div><div class="rb">App ini tidak menjadikan skrip UGC sebagai output utama. Fokusnya ialah menghasilkan <b>prompt video yang terus boleh digunakan di Google Flow / Veo</b>. Affiliate URL dan CTA digabungkan terus dalam caption supaya satu kali Copy sudah lengkap untuk posting. Hashtag dijana dinamik mengikut produk, selling point, sasaran dan platform.</div></div>
+<div class="result"><div class="rh">⚡ FLOW-FIRST MODE</div><div class="rb">App ini tidak menjadikan skrip UGC sebagai output utama. Fokusnya ialah menghasilkan <b>prompt video yang terus boleh digunakan di Google Flow / Veo</b>. Affiliate URL dan CTA digabungkan terus dalam caption supaya satu kali Copy sudah lengkap untuk posting. Hashtag dijana dinamik mengikut produk, konteks, sasaran dan platform. Selling point adalah optional.</div></div>
 
 <div id="results" class="results"><div class="empty">Masukkan maklumat produk dan tekan <b>✨ Jana Kit</b>.<br><br>App akan hasilkan 10 content siap post dan 6 idea video × 2 clip Google Flow/Veo. Output boleh dipilih melalui 2 tab: Content Post atau Video Prompts.</div></div>
 </div>
@@ -487,7 +490,15 @@ Mudah digunakan"></textarea>
 const $=id=>document.getElementById(id);
 const cleanLines=s=>s.split(/\n+/).map(x=>x.trim()).filter(Boolean);
 function copyText(text){navigator.clipboard?.writeText(text).then(()=>alert('Disalin ✓'))}
-function clearForm(){['name','price','target','points','affiliateUrl','slashCommands','customBackground'].forEach(id=>{if($(id))$(id).value=''}); productRefs=[]; productImageData=''; characterImageData=''; if($('productImages'))$('productImages').value=''; if($('characterImage'))$('characterImage').value=''; if($('productGallery'))$('productGallery').innerHTML=''; if($('productCount'))$('productCount').textContent=''; if($('characterPreview'))$('characterPreview').innerHTML=''; if($('characterPreview'))$('characterPreview').style.display='none'; localStorage.removeItem('kitAffiliateLast'); $('results').innerHTML='<div class="empty">Borang dikosongkan. Masukkan produk baharu untuk jana kit.</div>'}
+const AFFILIFLOW_DB='AffiliFlowAI_DB_V1';
+const AFFILIFLOW_STORE='session';
+function openAffiliFlowDB(){return new Promise((resolve,reject)=>{try{const r=indexedDB.open(AFFILIFLOW_DB,1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains(AFFILIFLOW_STORE))r.result.createObjectStore(AFFILIFLOW_STORE)};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)}catch(e){reject(e)}})}
+async function saveMediaSession(){try{const db=await openAffiliFlowDB();await new Promise((res,rej)=>{const tx=db.transaction(AFFILIFLOW_STORE,'readwrite');tx.objectStore(AFFILIFLOW_STORE).put({productRefs,characterImageData,updatedAt:Date.now()},'current');tx.oncomplete=res;tx.onerror=()=>rej(tx.error)});db.close()}catch(e){console.warn('AffiliFlow media persistence unavailable',e)}}
+async function loadMediaSession(){try{const db=await openAffiliFlowDB();const data=await new Promise((res,rej)=>{const tx=db.transaction(AFFILIFLOW_STORE,'readonly');const r=tx.objectStore(AFFILIFLOW_STORE).get('current');r.onsuccess=()=>res(r.result||null);r.onerror=()=>rej(r.error)});db.close();return data||null}catch(e){return null}}
+async function clearMediaSession(){try{const db=await openAffiliFlowDB();await new Promise((res,rej)=>{const tx=db.transaction(AFFILIFLOW_STORE,'readwrite');tx.objectStore(AFFILIFLOW_STORE).delete('current');tx.oncomplete=res;tx.onerror=()=>rej(tx.error)});db.close()}catch(e){}}
+function persistFormState(extra={}){try{const prev=JSON.parse(localStorage.getItem('kitAffiliateLast')||'{}');localStorage.setItem('kitAffiliateLast',JSON.stringify({...prev,...extra,savedAt:Date.now()}))}catch(e){}}
+function clearForm(){currentProductIntel={category:'',buyer:'',verifiedFacts:[],ocrText:'',source:'',confidence:'Low'};['name','price','target','points','affiliateUrl','slashCommands','customBackground'].forEach(id=>{if($(id))$(id).value=''});productRefs=[];productImageData='';characterImageData='';if($('productImages'))$('productImages').value='';if($('characterImage'))$('characterImage').value='';if($('productGallery'))$('productGallery').innerHTML='';if($('productCount'))$('productCount').textContent='';if($('characterPreview'))$('characterPreview').innerHTML='';if($('characterPreview'))$('characterPreview').style.display='none';localStorage.removeItem('kitAffiliateLast');clearMediaSession();$('results').innerHTML='<div class="empty">Borang dikosongkan. Masukkan produk baharu untuk jana kit.</div>'}
+
 function esc(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function box(title,content,copy=true){return `<div class="result"><div class="rh">${title}${copy?`<button class="copy" onclick="copyText(this.parentElement.nextElementSibling.innerText)">Copy</button>`:''}</div><div class="rb">${content}</div></div>`}
 
@@ -504,6 +515,7 @@ if(productInput){
       const reader=new FileReader();
       reader.onload=e=>{
         productRefs.push(e.target.result);
+        scheduleAffiliFlowPersistence();
         const img=document.createElement('img'); img.src=e.target.result; img.alt='Product reference';
         gallery.appendChild(img); document.getElementById('productCount').textContent=`${productRefs.length}/5 gambar dipilih`;
       };
@@ -514,6 +526,9 @@ if(productInput){
 
 let productImageData = "";
 let characterImageData = "";
+let _affiliPersistTimer;
+function scheduleAffiliFlowPersistence(){clearTimeout(_affiliPersistTimer);_affiliPersistTimer=setTimeout(()=>{persistFormState({n:$('name')?.value||'',p:$('price')?.value||'',t:$('target')?.value||'',points:cleanLines($('points')?.value||''),style:$('style')?.value||'',platform:$('platform')?.value||'',videoStyle:$('videoStyle')?.value||'',duration:$('duration')?.value||'10',sceneType:$('sceneType')?.value||'Product Demo',affiliateUrl:$('affiliateUrl')?.value||'',linkPlacement:$('linkPlacement')?.value||'caption_cta',slashCommands:$('slashCommands')?.value||''});saveMediaSession()},350)}
+
 
 function readImage(inputId, previewId, setter){
   const input=document.getElementById(inputId);
@@ -654,31 +669,270 @@ function platformWindows(slot){
   if(slot==='evening') return {label:'🌙 EVENING',time:'8:00 PM',platforms:['Facebook','Threads','X']};
   return {label:'⭐ BEST SLOT',time:'9:00 PM',platforms:['Facebook','Threads','X']};
 }
-function humanStory(n,t,a,b,c,angle,idx){
- const openers=[
-  `Pernah tak jadi macam ni dengan ${n.toLowerCase()}?`,
-  `Saya baru perasan satu benda pasal ${n.toLowerCase()}.`,
-  `Mula-mula saya pun tak fikir ${n.toLowerCase()} ni akan banyak membantu.`,
-  `Kadang-kadang masalah kecil dekat rumah ni yang paling mengganggu.`,
-  `Satu benda yang saya belajar bila cari ${n.toLowerCase()} ialah jangan tengok harga sahaja.`,
-  `Kalau korang pernah hadap masalah macam ni, mesti faham.`,
-  `Saya suka bila jumpa sesuatu yang simple tapi praktikal.`,
-  `Tak semua benda perlu penyelesaian yang complicated.`,
-  `Ini salah satu benda yang saya jumpa secara tak sengaja.`,
-  `Okay, saya nak share satu benda yang mungkin berguna untuk korang.`
+function inferProductContext(n,t,pts){
+ const blob=(n+' '+t+' '+pts.join(' ')+' '+(currentProductIntel.ocrText||'')).toLowerCase();
+ if(/skincare|skin|serum|moistur|ceramide|sunscreen|cleanser|toner|beauty|kosmetik|makeup|lipstick|foundation|mask/.test(blob))
+   return {cat:'penjagaan diri',problem:'isu penjagaan kulit yang dinyatakan dalam selling point',use:'rutin penjagaan kulit',buyer:t||'pengguna yang mencari produk penjagaan kulit',noun:'produk penjagaan kulit'};
+ if(/dehumid|humid|kelembapan|moisture meter|air purifier|purifier|humidifier/.test(blob))
+   return {cat:'rumah',problem:'ruang yang terasa lembap atau perlukan kawalan kelembapan',use:'ruang dalam rumah',buyer:t||'keluarga',noun:'peralatan rumah'};
+ if(/vacuum|cleaner|pembersih|serangga|semut|nyamuk|pest|rumah|dapur|kitchen/.test(blob))
+   return {cat:'rumah',problem:'masalah rumah yang berkaitan dengan produk ini',use:'kegunaan harian di rumah',buyer:t||'keluarga',noun:'produk rumah'};
+ if(/shoe|kasut|sneaker|boot|baju|shirt|seluar|pakaian|fashion|beg|bag|wallet|jam|watch|jewelry|barang kemas/.test(blob))
+   return {cat:'gaya hidup',problem:'keperluan pakaian atau gaya hidup',use:'kegunaan harian',buyer:t||'pengguna yang mencari pilihan praktikal',noun:'produk gaya hidup'};
+ if(/food|makanan|snack|snek|minuman|kopi|coffee|teh|tea|sauce|sos|biskut|coklat/.test(blob))
+   return {cat:'makanan & minuman',problem:'keperluan makan atau minum harian',use:'masa makan atau minum',buyer:t||'penggemar makanan',noun:'produk makanan/minuman'};
+ if(/phone|telefon|gadget|earbud|headphone|charger|powerbank|keyboard|mouse|laptop|tablet|tech|elektronik/.test(blob))
+   return {cat:'teknologi',problem:'keperluan teknologi harian',use:'kegunaan harian',buyer:t||'pengguna teknologi',noun:'produk teknologi'};
+ if(/baby|bayi|kanak|kids|anak|school|sekolah|mainan|toy/.test(blob))
+   return {cat:'keluarga',problem:'keperluan keluarga',use:'rutin keluarga',buyer:t||'ibu bapa',noun:'produk keluarga'};
+ if(/car|kereta|motor|motosikal|automotive|dashboard|tayar|engine/.test(blob))
+   return {cat:'automotif',problem:'keperluan kenderaan',use:'kegunaan kenderaan',buyer:t||'pemilik kenderaan',noun:'produk automotif'};
+ return {cat:'kegunaan harian',problem:'keperluan yang berkaitan dengan fungsi produk ini',use:'kegunaan harian',buyer:t||'pengguna yang memerlukan produk ini',noun:'produk ini'};
+}
+function naturalPoint(raw){
+ let x=String(raw||'').trim().replace(/^[•\-–—]+\s*/,'');
+ if(!x) return '';
+ const low=x.toLowerCase();
+ const map=[
+  [/repair\s*skin\s*barrier/,'fokus pada skin barrier'],[/barrier\s*repair/,'fokus pada skin barrier'],[/calm.*soothe.*redness|soothe.*redness/,'membantu menenangkan penampilan kemerahan yang menjadi concern'],[/deep\s*hydration|hydrating|moistur/i,'memberi fokus pada hydration dan kelembapan kulit'],
+  [/dehumid|humidity|humid|kelembapan/,'membantu mengurus kelembapan ruang'],[/portable|mudah.*bawa|mudah.*pindah/,'mudah dipindahkan'],[/quiet|senyap/,'operasi yang lebih senyap'],[/compact|small|mini|kecil/,'saiz yang lebih kompak'],[/easy.*use|mudah.*guna|senang.*guna/,'mudah digunakan'],[/organic|organik/,'menggunakan konsep organik'],[/no poison|tiada racun/,'tanpa racun seperti yang dinyatakan'],[/waterproof|kalis air/,'reka bentuk kalis air'],[/fast charging|quick charge|cas pantas/,'pengecasan lebih pantas'],[/wireless|tanpa wayar/,'penggunaan tanpa wayar'],[/lightweight|ringan/,'reka bentuk yang ringan']
  ];
- const problem=`Biasanya bila benda ni berlaku, kita cuba cara yang paling cepat. Tapi kadang-kadang ${t.toLowerCase()} perlukan sesuatu yang lebih mudah dan praktikal.`;
- const curiosity=`Saya pun mula cari alternatif yang lebih sesuai untuk kegunaan harian. Yang penting, senang digunakan dan tak menyusahkan rutin.`;
- const discovery=`Dari situ saya jumpa ${n}.`;
- const solution=`Yang menarik bagi saya, ${n} ni ${a.toLowerCase()}. ${b ? `Selain itu, ${b.toLowerCase()}.` : ''}`;
- const benefit=`Setakat yang saya suka tentangnya, ia nampak praktikal untuk ${t.toLowerCase()}. ${c ? `Dan ${c.toLowerCase()}.` : ''}`;
- const cta=`Kalau korang tengah cari sesuatu untuk masalah yang sama, boleh tengok dulu detail ${n}. Tak semestinya terus beli — tengok dulu sesuai atau tak dengan keperluan masing-masing.`;
- return `${openers[idx%openers.length]}\n\n${problem}\n\n${curiosity}\n\n${discovery} ${solution}\n\n${benefit}\n\n${cta}`;
+ for(const [re,txt] of map) if(re.test(low)) return txt;
+ return x.charAt(0).toLowerCase()+x.slice(1);
+}
+
+let currentProductIntel={category:'',buyer:'',verifiedFacts:[],ocrText:'',source:'',confidence:'Low'};
+let _tesseractLoader=null;
+function loadTesseract(){
+ if(window.Tesseract) return Promise.resolve(window.Tesseract);
+ if(_tesseractLoader) return _tesseractLoader;
+ _tesseractLoader=new Promise((resolve,reject)=>{
+  const sc=document.createElement('script');
+  sc.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
+  sc.onload=()=>resolve(window.Tesseract); sc.onerror=()=>reject(new Error('OCR library failed to load'));
+  document.head.appendChild(sc);
+ });
+ return _tesseractLoader;
+}
+function uniqueClean(arr){return [...new Set(arr.map(x=>String(x||'').replace(/\s+/g,' ').trim()).filter(x=>x.length>=3))]}
+function extractVisibleProductSignals(text){
+ const raw=String(text||'').replace(/\r/g,'\n');
+ const lines=uniqueClean(raw.split(/\n+/).map(x=>x.replace(/[^\p{L}\p{N}%°×+\-./ ]/gu,' ')));
+ const joined=lines.join(' ');
+ const patterns=[
+  /\b\d+(?:\.\d+)?\s?(?:g|kg|ml|l|w|v|mah|mm|cm|inch|in|x|spf)\b/gi,
+  /\b\d+\s?(?:degree|degrees|°)\b/gi,
+  /\b\d+x\s*[A-Za-z][A-Za-z ]{0,35}/gi,
+  /\b(?:ceramide|centella|hyaluronic acid|niacinamide|retinol|salicylic acid|vitamin c|barrier repair|moisture|hydration|dehumidif\w*|humidif\w*|air purifier|360\s*degree|360°|portable|compact|wireless|fast charging|waterproof|usb-c|bluetooth)\b[^\n]{0,55}/gi
+ ];
+ let out=[]; patterns.forEach(re=>{out=out.concat(joined.match(re)||[])});
+ // Prefer short, readable OCR lines that look like labels/headings.
+ out=out.concat(lines.filter(x=>x.length<=70 && /[A-Za-z]/.test(x) && (/[A-Z]{3,}/.test(x)||/\d/.test(x))).slice(0,12));
+ return uniqueClean(out).slice(0,18);
+}
+function inferIntelCategory(n,t,ocr){
+ const blob=(n+' '+t+' '+ocr).toLowerCase();
+ if(/ceramide|centella|moistur|serum|sunscreen|skin|barrier|cosmetic|skincare/.test(blob)) return 'Penjagaan diri / skincare';
+ if(/dehumid|humid|moisture control|360 degree|air purifier|diffuser/.test(blob)) return 'Rumah / kawalan udara & kelembapan';
+ if(/shoe|sneaker|shirt|dress|pakaian|baju|seluar|bag|wallet/.test(blob)) return 'Gaya hidup / fesyen';
+ if(/phone|tablet|laptop|charger|powerbank|earbud|bluetooth|usb-c|wireless/.test(blob)) return 'Teknologi / elektronik';
+ if(/baby|kids|toy|school|kanak|bayi/.test(blob)) return 'Keluarga / kanak-kanak';
+ if(/food|snack|coffee|tea|kopi|teh|biskut|coklat|minuman|makanan/.test(blob)) return 'Makanan & minuman';
+ if(/car|kereta|motor|motosikal|automotive|tayar/.test(blob)) return 'Automotif';
+ return 'Produk pengguna umum';
+}
+async function buildProductIntelligence(n,t,pts){
+ const status=$('intelStatus');
+ if(status) status.textContent='🧠 Product Intelligence sedang menganalisis reference images…';
+ let ocrText=''; let ocrOk=false;
+ try{
+  const T=await loadTesseract();
+  const files=productRefs.slice(0,5);
+  const chunks=[];
+  for(let i=0;i<files.length;i++){
+   try{ const r=await T.recognize(files[i],'eng',{logger:m=>{if(status&&m.status==='recognizing text') status.textContent=`🧠 Product Intelligence membaca gambar ${i+1}/${files.length}… ${Math.round((m.progress||0)*100)}%`;}}); chunks.push(r.data.text||''); }catch(e){}
+  }
+  ocrText=chunks.join('\n'); ocrOk=!!ocrText.trim();
+ }catch(e){ if(status) status.textContent='🧠 Product Intelligence menggunakan maklumat produk tanpa OCR.'; }
+ const signals=extractVisibleProductSignals(ocrText);
+ const category=inferIntelCategory(n,t,signals.join(' '));
+ const base=uniqueClean(pts);
+ const verifiedFacts=uniqueClean([...base,...signals]).slice(0,16);
+ const confidence=ocrOk&&signals.length?'High':'Medium';
+ const buyer=t||'belum dinyatakan';
+ const angles=[];
+ if(/skincare/i.test(category)) angles.push('rutin penjagaan kulit','fungsi bahan yang benar-benar kelihatan/dinyatakan','kesesuaian penggunaan');
+ else if(/kelembapan/i.test(category)) angles.push('masalah kelembapan ruang','situasi penggunaan dalam rumah','fungsi/saiz yang dapat disahkan');
+ else if(/teknologi/i.test(category)) angles.push('fungsi utama','situasi penggunaan','keserasian/spesifikasi yang disahkan');
+ else if(/fesyen/i.test(category)) angles.push('gaya & penggunaan','material/ciri yang dinyatakan','situasi pemakaian');
+ else angles.push('masalah pengguna','fungsi yang dapat disahkan','situasi penggunaan sebenar');
+ currentProductIntel={category,buyer,verifiedFacts,ocrText,source:ocrOk?'Nama + sasaran + teks yang kelihatan pada reference images (OCR)':'Nama + sasaran + maklumat yang dimasukkan pengguna',confidence};
+ if(status) status.textContent=`🧠 Product Intelligence siap · ${confidence} confidence`;
+ return {...currentProductIntel,angles};
+}
+function productIntelCard(intel){
+ const facts=intel.verifiedFacts||[];
+ const shown=facts.slice(0,10);
+ return `<div class="result intelCard"><div class="rh">🧠 PRODUCT INTELLIGENCE <span>${esc(intel.confidence||'Medium')} confidence</span></div><div class="rb"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"><div><b>Kategori</b><br>${esc(intel.category||'Produk pengguna umum')}</div><div><b>Sasaran</b><br>${esc(intel.buyer||'Belum dinyatakan')}</div></div><div style="margin-top:12px"><b>Maklumat yang dikesan / diberikan</b><div class="small" style="margin-top:6px">${shown.length?shown.map(x=>`<span style="display:inline-block;background:#f4efff;border-radius:999px;padding:5px 9px;margin:3px">${esc(x)}</span>`).join(''):'Tiada signal tambahan yang cukup jelas.'}</div></div><div class="small" style="margin-top:10px">Sumber: ${esc(intel.source||'Maklumat produk')} · AffiliFlow tidak menganggap teks yang tidak jelas sebagai claim yang disahkan.</div></div></div>`;
+}
+function productInsights(n,t,points){
+ const ctx=inferProductContext(n,t,points); const ps=points.filter(Boolean).map(naturalPoint);
+ const hasVerifiedPoints=ps.length>0;
+ const blob=(n+' '+t).toLowerCase();
+ let p1=ps[0]||'';
+ let p2=ps[1]||'';
+ let p3=ps[2]||'';
+ // When the user leaves Selling Points empty, use only safe context inferred from the product name/category.
+ // These are framing statements, not invented product claims.
+ if(!hasVerifiedPoints){
+   if(ctx.cat==='penjagaan diri'){ p1='penjagaan dan rutin kulit'; p2='keperluan penjagaan kulit yang sesuai dengan pengguna'; }
+   else if(ctx.cat==='rumah' && /dehumid|humid|kelembapan|moisture/i.test(blob)){ p1='mengurus kelembapan ruang'; p2='kegunaan dalam ruang rumah'; }
+   else if(ctx.cat==='rumah'){ p1='kegunaan rumah yang berkaitan dengan masalah tersebut'; p2='cara produk digunakan dalam rutin harian'; }
+   else if(ctx.cat==='makanan & minuman'){ p1='penggunaan sebagai makanan atau minuman'; p2='kesesuaian dengan citarasa dan rutin sendiri'; }
+   else if(ctx.cat==='teknologi'){ p1='fungsi utama produk teknologi ini'; p2='kegunaan sebenar dalam rutin harian'; }
+   else if(ctx.cat==='gaya hidup'){ p1='kegunaan dan kesesuaian dengan rutin harian'; p2='gaya atau keperluan pengguna'; }
+   else if(ctx.cat==='keluarga'){ p1='kegunaan yang berkaitan dengan rutin keluarga'; p2='kesesuaian dengan keperluan pengguna'; }
+   else if(ctx.cat==='automotif'){ p1='kegunaan berkaitan kenderaan'; p2='kesesuaian dengan keperluan kenderaan'; }
+   else { p1='fungsi utama produk seperti yang dinyatakan pada maklumat produk'; p2='kesesuaian dengan kegunaan harian'; }
+ }
+ let situation='keperluan harian';
+ if(ctx.cat==='penjagaan diri') situation='rutin penjagaan kulit';
+ if(ctx.cat==='rumah' && /dehumid|humid|kelembapan|moisture/i.test(n+' '+points.join(' '))) situation='ruang yang terasa lembap';
+ if(ctx.cat==='rumah' && /semut|nyamuk|serangga|pest/i.test(n+' '+points.join(' '))) situation='masalah serangga di rumah';
+ if(ctx.cat==='makanan & minuman') situation='masa makan atau minum';
+ if(ctx.cat==='gaya hidup') situation='pilihan untuk kegunaan dan gaya harian';
+ if(ctx.cat==='teknologi') situation='kegunaan teknologi harian';
+ return {ctx,ps,situation,p1,p2,p3};
+}
+function productNameFacts(n){
+ const low=(String(n||'')+' '+(currentProductIntel.verifiedFacts||[]).join(' ')).toLowerCase();
+ const facts=[];
+ const rules=[
+  [/ceramide/,'ceramide'],[/centella/,'centella'],[/barrier\s*repair|skin\s*barrier/,'skin barrier'],[/moistur|hydration|hydrat/,'moisture/hydration'],[/serum/,'serum'],[/sunscreen|sunblock|spf/,'sun protection'],
+  [/dehumid|dehumidifier/,'dehumidifier'],[/humidifier/,'humidifier'],[/diffuser/,'diffuser'],[/air\s*purifier|purifier/,'air purifier'],[/mini|compact|small/,'compact/mini'],
+  [/vacuum/,'vacuum'],[/cleaner|pembersih/,'cleaning'],[/pest|serangga|semut|nyamuk/,'pest control'],[/organic|organik/,'organic'],
+  [/shoe|kasut|sneaker|boot/,'footwear'],[/shirt|baju|dress|seluar|pakaian/,'apparel'],[/bag|beg|wallet|dompet/,'accessory'],
+  [/earbud|headphone|speaker/,'audio'],[/charger|powerbank/,'charging'],[/phone|telefon|tablet|laptop/,'device'],
+  [/baby|bayi|kids|kanak|mainan|toy/,'family/kids'],[/coffee|kopi|tea|teh|snack|snek|biskut|coklat|makanan|minuman/,'food/drink']
+ ];
+ rules.forEach(([re,f])=>{if(re.test(low)&&!facts.includes(f)) facts.push(f)});
+ const nums=String(n||'').match(/\b\d+(?:\.\d+)?\s?(?:g|kg|ml|l|w|v|x|spf)?\b/gi)||[];
+ nums.slice(0,4).forEach(x=>facts.push(x));
+ return facts;
+}
+function humanStory(n,t,points,angle,idx){
+ const originalName=n;
+ const I=productInsights(originalName,t,points), ctx=I.ctx, p1=I.p1, p2=I.p2, p3=I.p3;
+ const nameParts=String(originalName||'produk ini').trim().split(/\s+/);
+ const noisy=/^(official|original|murah|termurah|promo|sale|ready|stok|free|best|viral|new|terbaru|malaysia|malay|skincare|skincareproduct|moisturizer|moisturiser|soothing|day|night|cream|centella|diffuser|shopee|tiktok)$/i;
+ const shortName=nameParts.filter((w,i)=>!(i>2 && noisy.test(w))).slice(0,8).join(' ') || originalName;
+ n=shortName;
+ const facts=productNameFacts(n);
+ const audience=(t||ctx.buyer||'pengguna').trim();
+ const factText=facts.length?facts.slice(0,4).join(', '):'';
+ const factSentence=factText?`Daripada nama dan maklumat produk yang ada, antara perkara yang jelas ialah ${factText}.`:`Saya fokus pada fungsi dan konteks penggunaan yang jelas daripada maklumat produk.`;
+ const category=ctx.cat;
+ let topic='', evidence='', caution='';
+ if(category==='penjagaan diri'){
+   topic=`rutin penjagaan kulit dan apa yang kulit perlukan`;
+   evidence=`Untuk produk ini, saya akan tengok perkara yang memang dinyatakan seperti ${p1}${p2?` dan ${p2}`:''}.`;
+   caution=`Untuk skincare, saya tak suka terus buat claim besar. Saya lebih selesa tengok kandungan, fungsi yang dinyatakan dan kesesuaian dengan rutin sendiri.`;
+ }else if(category==='rumah' && /dehumid|humid|kelembapan|moisture/i.test(n+' '+points.join(' '))){
+   topic=`masalah kelembapan dalam ruang rumah`;
+   evidence=`Untuk kategori ini, saya lebih fokus pada fungsi dehumidifier, saiz/perletakan dan ruang yang hendak digunakan — bukan sekadar rupa produk.`;
+   caution=`Keadaan setiap ruang berbeza, jadi saya tak akan janjikan hasil yang sama untuk semua rumah.`;
+ }else if(category==='rumah'){
+   topic=`rutin dan masalah rumah yang berkaitan dengan produk ini`;
+   evidence=`Saya akan padankan fungsi yang dinyatakan dengan keadaan sebenar di rumah sebelum buat keputusan.`;
+   caution=`Produk rumah patut dinilai ikut keadaan dan cara penggunaan sebenar, bukan semata-mata kerana nampak menarik.`;
+ }else if(category==='teknologi'){
+   topic=`kegunaan sebenar dalam rutin harian`;
+   evidence=`Untuk gadget, saya lebih suka semak fungsi utama, keserasian dan situasi penggunaan sebelum tengok benda lain.`;
+   caution=`Spesifikasi yang penting ialah yang benar-benar diperlukan untuk kegunaan sendiri.`;
+ }else if(category==='gaya hidup'){
+   topic=`keselesaan, gaya dan situasi penggunaan`;
+   evidence=`Saya akan tengok material, fungsi atau ciri yang memang dinyatakan sebelum buat keputusan.`;
+   caution=`Apa yang sesuai untuk seorang belum tentu sesuai untuk orang lain, terutama dari segi saiz, gaya dan penggunaan.`;
+ }else if(category==='makanan & minuman'){
+   topic=`rasa, cara penggunaan dan kesesuaian dengan rutin`;
+   evidence=`Untuk makanan atau minuman, saya lebih suka tengok jenis produk, cara penyediaan dan apa yang memang dinyatakan pada produk.`;
+   caution=`Bab rasa memang subjektif, jadi saya elakkan claim seolah-olah semua orang mesti suka.`;
+ }else if(category==='keluarga'){
+   topic=`keperluan dan rutin keluarga`;
+   evidence=`Saya akan tengok fungsi yang dinyatakan dan padankan dengan umur atau situasi penggunaan yang sebenar.`;
+   caution=`Keperluan setiap keluarga berbeza, jadi semak kesesuaian dahulu.`;
+ }else if(category==='automotif'){
+   topic=`keperluan kenderaan dan situasi penggunaan`;
+   evidence=`Untuk barang automotif, saya akan semak keserasian dan fungsi sebenar sebelum beli.`;
+   caution=`Pastikan spesifikasi dan keserasian produk memang sepadan dengan kenderaan sendiri.`;
+ }else{
+   topic=`fungsi produk dan situasi penggunaannya`;
+   evidence=`Saya akan fokus pada apa yang produk ini memang nyatakan dan bagaimana ia boleh digunakan dalam rutin yang berkaitan.`;
+   caution=`Saya elakkan claim yang tidak ada dalam maklumat produk.`;
+ }
+ const openings=[
+  `Pernah tak korang ada satu keadaan yang buat kita mula cari ${ctx.noun}?`,
+  `Saya perasan bila nak pilih ${ctx.noun}, soalan pertama bukan “viral ke tak?” tetapi “aku memang perlukan ke?”`,
+  `Kalau korang tengah tengok ${n}, jangan tengok nama atau gambar sahaja. Tengok konteks penggunaan dia.`,
+  `Ada beza antara nampak menarik dengan betul-betul sesuai dengan rutin sendiri. Itu yang saya cuba tengok pada ${n}.`,
+  `Saya suka tengok produk dari sudut yang lebih simple: masalah apa, fungsi apa, dan sesuai untuk siapa?`,
+  `Sebelum tambah barang baru dalam rumah atau rutin harian, saya biasanya akan fikir satu benda dulu: akan guna atau tidak?`,
+  `Kalau masalah korang berkait dengan ${topic}, produk macam ni memang patut dinilai dari fungsi sebenar.`,
+  `Saya cuba buat perbandingan dalam kepala sebelum beli — bukan terus percaya pada ayat marketing.`,
+  `Benda pertama yang saya cari bila jumpa produk baru ialah maklumat yang boleh kita sahkan.`,
+  `Okay, saya jumpa ${n} dan kali ni saya tengok dari sudut kegunaan, bukan sekadar nampak cantik.`
+ ];
+ const middles=[
+  `${evidence} ${factSentence}`,
+  `${factSentence} Yang penting, perkara itu memang berkait dengan kategori produk ini dan bukan sekadar ayat umum.`,
+  `Kalau ${p1}, itu yang saya akan jadikan titik mula. ${p2?`Kemudian saya semak ${p2}.`:''}`,
+  `${evidence} Kalau memang itu yang korang cari, barulah produk ini masuk dalam senarai untuk dipertimbangkan.`,
+  `Saya tak nak kata ${n} sesuai untuk semua orang. Saya cuma tengok sama ada ciri yang dinyatakan itu masuk akal untuk keperluan sendiri.`,
+  `Untuk saya, produk yang baik ialah produk yang jelas apa kegunaannya dan mudah kita padankan dengan situasi sebenar.`,
+  `${evidence} Jadi daripada beli secara ikut-ikutan, lebih baik kita tengok detail dahulu.`,
+  `Saya akan bandingkan ${p1}${p2?` dengan ${p2}`:''} dan kemudian tanya diri sendiri sama ada saya benar-benar akan menggunakannya.`,
+  `${factSentence} Dari situ lebih mudah untuk tentukan sama ada ia relevan atau tidak.`,
+  `${evidence} Kalau keperluan korang sama, boleh semak detail penuh sebelum buat keputusan.`
+ ];
+ const endings=[
+  `Kalau korang ada situasi yang sama, boleh tengok detail ${n} dulu. Tak perlu terus beli — tengok sesuai atau tak dengan keperluan sendiri.`,
+  `Bagi saya, itu cara lebih selamat untuk pilih produk: faham fungsi dulu, baru fikir nak beli atau tidak.`,
+  `Kalau benda yang korang cari memang berkait dengan ${topic}, boleh semak produk ini sebagai salah satu pilihan.`,
+  `Saya letak link untuk korang tengok detail. Dari situ korang boleh buat keputusan sendiri.`,
+  `${caution} Kalau berminat, tengok detail produk dulu.`,
+  `Tak semestinya produk yang sama sesuai untuk semua orang. Yang penting, kita tahu apa yang kita cari.`,
+  `Kalau korang nak tengok spesifikasi atau maklumat penuh, link saya letak di bawah.`,
+  `Saya lebih suka cara macam ni — semak dulu, bandingkan, kemudian baru buat keputusan.`,
+  `Kalau relevan dengan keperluan korang, boleh masukkan dalam shortlist untuk dibandingkan.`,
+  `Nak tengok produk ini dengan lebih dekat? Link saya letak di bawah.`
+ ];
+ let body='';
+ switch(angle){
+  case 'Relatable problem': body=`${openings[0]}\n\n${middles[0]}\n\n${endings[0]}`; break;
+  case 'Tips / awareness': body=`${openings[4]}\n\n1. Kenal pasti masalah: ${topic}.\n2. Semak fungsi yang memang dinyatakan: ${p1}.\n3. Padankan dengan rutin dan keperluan sendiri.\n\n${endings[1]}`; break;
+  case 'Personal experience': body=`${openings[1]}\n\n${middles[4]}\n\n${endings[4]}`; break;
+  case 'Curiosity / discovery': body=`${openings[8]}\n\n${middles[1]}\n\n${endings[3]}`; break;
+  case 'Problem → solution': body=`${openings[6]}\n\n${middles[3]}\n\n${endings[2]}`; break;
+  case 'Honest experience': body=`${openings[7]}\n\n${middles[4]}\n\n${endings[5]}`; break;
+  case 'Question / conversation': body=`${openings[0]}\n\n${middles[6]}\n\n${endings[6]}`; break;
+  case 'Practical tips': body=`${openings[5]}\n\n${middles[7]}\n\n${endings[7]}`; break;
+  case 'Soft review': body=`${openings[9]}\n\n${middles[8]}\n\n${caution}\n\n${endings[8]}`; break;
+  default: body=`${openings[2]}\n\n${middles[9]}\n\n${endings[9]}`;
+ }
+ return body.replace(/\n{3,}/g,'\n\n').trim();
 }
 function adaptStory(master, platform, n, affiliateUrl, hashtags){
  let body=master;
- if(platform==='Threads') body=master.split('\n\n').map(x=>x.replace(/^Biasanya /,'Sebenarnya ')).join('\n\n');
- if(platform==='X') body=master.split('\n\n').slice(0,6).join('\n\n');
+ if(platform==='Threads'){
+   const chunks=master.split('\n\n');
+   body=chunks.slice(0,5).join('\n\n');
+   if(body.length>900) body=body.slice(0,897).trimEnd()+'...';
+ }
+ if(platform==='X'){
+   const chunks=master.split('\n\n');
+   body=chunks.slice(0,3).join('\n\n');
+   if(body.length>260) body=body.slice(0,257).trimEnd()+'...';
+ }
  return `${body}\n\n🔗 ${affiliateUrl||'[Affiliate link]'}\n\n${hashtags}`;
 }
 function flowPrompt(parts){
@@ -718,12 +972,14 @@ function switchOutputTab(tab){
   document.querySelectorAll('.outputPane').forEach(p=>p.classList.toggle('active',p.dataset.pane===tab));
 }
 
-function generateKit(){
+async function generateKit(){
  if(!productRefs.length){alert('Sila upload sekurang-kurangnya 1 gambar produk.'); return;}
  productImageData=productRefs[0];
  const n=$('name').value.trim()||'produk ini', p=$('price').value.trim()||'—', t=$('target').value.trim()||'pengguna yang memerlukan produk ini';
  const affiliateUrl=normalizeAffiliateUrl($('affiliateUrl').value); const pts=cleanLines($('points').value); const s=$('style').value, selectedPlatform=$('platform').value, vs=$('videoStyle').value;
- const a=pts[0]||'mudah digunakan', b=pts[1]||'praktikal', c=pts[2]||'berbaloi';
+ const intel=await buildProductIntelligence(n,t,pts);
+ const insightPreview=productInsights(n,t,pts);
+ const a=pts[0]||insightPreview.p1, b=pts[1]||insightPreview.p2, c=pts[2]||insightPreview.p3;
  const accuracy=$('accuracy')?.value||'Maximum Accuracy';
  const bg=$('newBackground')?.value||'Modern Malaysian home';
  const customBg=$('customBackground')?.value?.trim()||''; const background=bg==='Custom background'?customBg:bg;
@@ -733,7 +989,7 @@ function generateKit(){
  const tags=[...new Set(['#'+n.replace(/\s+/g,''),...hashtagBase.slice(0,5).map(w=>'#'+w),'#BarangBerguna','#WajibCuba','#JumpaDekatShopee'])].slice(0,10).join(' ');
  const slots=[['morning',0],['lunch',1],['evening',2],['morning',3],['lunch',4],['evening',5],['morning',6],['lunch',7],['evening',8],['best',9]];
  const angles=['Relatable problem','Tips / awareness','Personal experience','Curiosity / discovery','Problem → solution','Honest experience','Question / conversation','Practical tips','Soft review','Strongest story / soft CTA'];
- const cards=slots.map((x,i)=>{const w=platformWindows(x[0]); const master=humanStory(n,t,a,b,c,angles[i],i); const plats=selectedPlatform==='Facebook + Threads + X'?w.platforms:[selectedPlatform]; const versions=plats.map(pl=>({pl,text:adaptStory(master,pl,n,affiliateUrl,tags)})); return {i:i+1,w,angle:angles[i],master,versions};});
+ const cards=slots.map((x,i)=>{const w=platformWindows(x[0]); const master=humanStory(n,t,pts,angles[i],i); const plats=selectedPlatform==='Facebook + Threads + X'?w.platforms:[selectedPlatform]; const versions=plats.map(pl=>({pl,text:adaptStory(master,pl,n,affiliateUrl,tags)})); return {i:i+1,w,angle:angles[i],master,versions};});
  const stack=getSlashStack(vs,$('sceneType')?.value||'Product Demo',n,pts,t);
  const slashNatural=slashInstructionText(stack);
  const charRef=characterImageData?'Use the uploaded character reference image as the exact human identity reference. Preserve the same face, hairstyle, body proportions, clothing and visual identity.':'If a person is shown, use one consistent realistic Malaysian adult creator across both clips.';
@@ -745,11 +1001,11 @@ function generateKit(){
   {title:'UGC Review',desc:'Review gaya creator biasa, conversational dan jujur'},
   {title:'Soft Commercial / Product Hero',desc:'Visual premium tetapi masih natural untuk affiliate content'}
  ];
- let html=`<div class="result"><div class="rh">🧠 PRODUCT IDENTITY LOCK <span>${productRefs.length} reference image(s)</span></div><div class="rb">${esc(productLock)}\n\n${esc(bgRules)}</div></div>`;
+ let html=productIntelCard(intel)+`<div class="result"><div class="rh">🧠 PRODUCT IDENTITY LOCK <span>${productRefs.length} reference image(s)</span></div><div class="rb">${esc(productLock)}\n\n${esc(bgRules)}</div></div>`;
  const contentParts=[];
  contentParts.push(`<div class="tabIntro">📝 <b>Content Post</b> — Semua content di bawah sudah disusun untuk terus <b>copy → paste → post</b>. Tiada perlu scroll melalui prompt video.</div>`);
  contentParts.push(`<div class="result"><div class="rh">🕐 BEST TIME TO POST — MALAYSIA <span>3 daily windows + best slot</span></div><div class="rb">🌅 <b>Morning · 8:00 AM</b> — Facebook + Threads<br>☀️ <b>Lunch · 1:00 PM</b> — Facebook + X<br>🌙 <b>Evening · 8:00 PM</b> — Facebook + Threads + X<br>⭐ <b>Best-slot test · 9:00 PM</b> — Facebook + Threads + X<br><br><span class="small">Ini starting point, bukan jaminan. Waktu terbaik sebenar bergantung pada audience dan data akaun anda.</span></div></div>`);
- contentParts.push(`<div class="result"><div class="rh">📝 10 READY-TO-POST CONTENTS <span>Story-First · humanized</span></div><div class="rb">10 content ini disusun ikut waktu posting. Setiap content sudah lengkap: hook → problem → story → curiosity → product → benefit → soft CTA → affiliate link → hashtags.</div></div>`);
+ contentParts.push(`<div class="result"><div class="rh">📝 10 READY-TO-POST CONTENTS <span>Story-First · humanized</span></div><div class="rb">10 content ini menggunakan angle yang berbeza dan menyesuaikan bahasa dengan kategori produk, nama produk, sasaran pembeli dan fakta yang benar-benar diberikan. Elakkan claim atau manfaat yang tidak dapat disahkan. Selling point yang anda isi akan digunakan sebagai fakta; jika dikosongkan, AffiliFlow AI menggunakan konteks produk yang selamat tanpa mereka claim atau spesifikasi.</div></div>`);
  cards.forEach(card=>{contentParts.push(`<div class="result"><div class="rh">${card.i.toString().padStart(2,'0')} ${card.w.label} <span>🕐 ${card.w.time} · ${card.w.platforms.join(' + ')} · ${card.angle}</span></div><div class="rb"><div class="small">Recommended posting window · Malaysia (MYT)</div>${card.versions.map(v=>`<div style="margin-top:12px;padding:12px;border:1px solid #e8e1dc;border-radius:12px;background:#fff"><b>📱 ${esc(v.pl)}</b><pre style="white-space:pre-wrap;font-family:inherit;margin:10px 0 0">${esc(v.text)}</pre><button class="copy" style="margin-top:8px" onclick="copyText(this.previousElementSibling.innerText)">📋 Copy ${esc(v.pl)}</button></div>`).join('')}</div></div>`)});
  const videoParts=[];
  videoParts.push(`<div class="tabIntro">🎬 <b>Video Prompts</b> — Pilih idea yang anda suka. Setiap idea mempunyai <b>Clip A + Clip B</b> yang bersambung untuk satu video sekitar 16 saat. Prompt sudah diterjemahkan kepada natural-language instructions untuk Google Flow / Veo.</div>`);
@@ -757,9 +1013,16 @@ function generateKit(){
  videoIdeas.forEach((idea,ii)=>{const pa=videoPromptPair(idea.title,'A',n,t,a,b,c,vs,background,bgRules,productLock,slashNatural,charRef); const pb=videoPromptPair(idea.title,'B',n,t,a,b,c,vs,background,bgRules,productLock,slashNatural,charRef); videoParts.push(`<div class="result"><div class="rh">${ii+1}. ${esc(idea.title)} <span>8s Clip A + 8s Clip B</span></div><div class="rb"><div class="small">${esc(idea.desc)}</div><div style="margin-top:12px"><b>🎞️ Clip A — setup / first 8s</b><pre style="white-space:pre-wrap;font-family:inherit;margin:8px 0">${esc(pa)}</pre><div class="small">${pa.length}/2500 characters</div><button class="copy" onclick="copyText(this.parentElement.querySelector('pre').innerText)">📋 Copy Clip A</button></div><div style="margin-top:14px"><b>🎞️ Clip B — continuation / next 8s</b><pre style="white-space:pre-wrap;font-family:inherit;margin:8px 0">${esc(pb)}</pre><div class="small">${pb.length}/2500 characters</div><button class="copy" onclick="copyText(this.parentElement.querySelector('pre').innerText)">📋 Copy Clip B</button></div></div></div>`)});
  html+=`<div class="outputTabs" role="tablist" aria-label="AffiliFlow output"><button type="button" class="outputTab active" data-tab="content" onclick="switchOutputTab('content')">📝 CONTENT POST</button><button type="button" class="outputTab" data-tab="video" onclick="switchOutputTab('video')">🎬 VIDEO PROMPTS</button></div><div class="outputPane active" data-pane="content">${contentParts.join('')}</div><div class="outputPane" data-pane="video">${videoParts.join('')}</div>`;
  $('results').innerHTML=html;
- localStorage.setItem('kitAffiliateLast',JSON.stringify({n,p,t,points:pts,style:s,platform:selectedPlatform,videoStyle:vs,duration:$('duration').value,sceneType:$('sceneType').value,affiliateUrl:$('affiliateUrl').value,linkPlacement:$('linkPlacement').value,slashCommands:$('slashCommands').value}));
+ persistFormState({n,p,t,points:pts,style:s,platform:selectedPlatform,videoStyle:vs,duration:$('duration').value,sceneType:$('sceneType').value,affiliateUrl:$('affiliateUrl').value,linkPlacement:$('linkPlacement').value,slashCommands:$('slashCommands').value,resultsHtml:html,generatedAt:Date.now(),productIntel:currentProductIntel});
+ saveMediaSession();
 }
-window.addEventListener('load',()=>{try{const x=JSON.parse(localStorage.getItem('kitAffiliateLast'));if(x){$('name').value=x.n||'';$('price').value=x.p||'';$('target').value=x.t||'';$('points').value=(x.points||[]).join('\\n');$('style').value=x.style||$('style').value;$('platform').value=x.platform||$('platform').value;$('videoStyle').value=x.videoStyle||$('videoStyle').value;$('duration').value=x.duration||'10';$('sceneType').value=x.sceneType||'Product Demo';$('affiliateUrl').value=x.affiliateUrl||'';$('linkPlacement').value=x.linkPlacement||'caption_cta';$('slashCommands').value=x.slashCommands||'';}}catch(e){}});
+function renderProductGallery(){const gallery=$('productGallery');if(!gallery)return;gallery.innerHTML='';productRefs.forEach(src=>{const img=document.createElement('img');img.src=src;img.alt='Product reference';gallery.appendChild(img)});if($('productCount'))$('productCount').textContent=productRefs.length?`${productRefs.length}/5 gambar dipilih`:'';}
+async function restoreAffiliFlowSession(){try{const x=JSON.parse(localStorage.getItem('kitAffiliateLast')||'null');if(x){$('name').value=x.n||'';$('price').value=x.p||'';$('target').value=x.t||'';$('points').value=(x.points||[]).join('\n');$('style').value=x.style||$('style').value;$('platform').value=x.platform||$('platform').value;$('videoStyle').value=x.videoStyle||$('videoStyle').value;$('duration').value=x.duration||'10';$('sceneType').value=x.sceneType||'Product Demo';$('affiliateUrl').value=x.affiliateUrl||'';$('linkPlacement').value=x.linkPlacement||'caption_cta';$('slashCommands').value=x.slashCommands||'';if(x.productIntel)currentProductIntel=x.productIntel;if(x.resultsHtml)$('results').innerHTML=x.resultsHtml}const media=await loadMediaSession();if(media){productRefs=Array.isArray(media.productRefs)?media.productRefs:[];characterImageData=media.characterImageData||'';productImageData=productRefs[0]||'';renderProductGallery();if(characterImageData&&$('characterPreview')){$('characterPreview').innerHTML=`<img src="${characterImageData}" alt="Character reference">`;$('characterPreview').style.display='block'}}}catch(e){console.warn('AffiliFlow session restore failed',e)}}
+window.addEventListener('load',restoreAffiliFlowSession);
+window.addEventListener('pageshow',e=>{if(e.persisted)restoreAffiliFlowSession()});
+document.addEventListener('input',scheduleAffiliFlowPersistence);
+document.addEventListener('change',scheduleAffiliFlowPersistence);
+
 
 function openSupport(){document.getElementById('supportModal').classList.add('show');}
 function closeSupport(e){if(e && e.target!==document.getElementById('supportModal'))return;document.getElementById('supportModal').classList.remove('show');}
