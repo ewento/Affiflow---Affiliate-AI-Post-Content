@@ -44,7 +44,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)} textarea{min
 .tipTitle{font-weight:800;font-size:15px}.tipText{color:#b9aaa0;font-size:12px;margin:6px 0 12px}
 .tipQr{width:190px;height:190px;object-fit:contain;background:white;border-radius:8px;padding:5px}
 
-/* ===== AffiliFlow AI V7.0 — Commercial Light Theme ===== */
+/* ===== AffiliFlow AI V7.2 — Commercial Light Theme ===== */
 :root{
   --bg:#f5f7fb;
   --panel:#ffffff;
@@ -115,7 +115,7 @@ input:focus,textarea:focus,select:focus{
 }
 .preview img,.gallery img{border-color:#e4e7ec !important}
 
-/* AffiliFlow AI V7.0 polished commercial header */
+/* AffiliFlow AI V7.2 polished commercial header */
 .heroBrand{
   max-width:1100px;
   margin:18px auto 10px;
@@ -159,7 +159,7 @@ input:focus,textarea:focus,select:focus{
 .modalOverlay{position:fixed;inset:0;background:rgba(16,24,40,.42);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}.modalOverlay.show{display:flex}
 .supportModal{position:relative;width:min(420px,100%);background:#fff;border-radius:24px;padding:26px;box-shadow:0 24px 70px rgba(16,24,40,.22);text-align:center}.modalClose{position:absolute;right:14px;top:10px;border:0;background:transparent;font-size:28px;color:#667085;cursor:pointer}.supportIcon{font-size:30px}.supportModal h2{margin:8px 0 6px;color:#172033}.supportModal p{color:#667085;font-size:13px;line-height:1.55;margin:0 auto 16px}.tipChoices{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}.tipChoices button{padding:10px 6px;border:1px solid #d0d5dd;border-radius:12px;background:#fff;color:#344054;font-weight:800;cursor:pointer}.tipChoices button.selected{background:#fff0eb;border-color:#ff6b4a;color:#d94f32}.supportNote{text-align:left;background:#f8fafc;border:1px solid #e4e7ec;border-radius:14px;padding:11px;font-size:12px;color:#667085;margin-bottom:12px}.supportNote b{display:block;color:#344054;margin-bottom:3px}.payBtn{width:100%;margin-bottom:9px}.payBtn:disabled{opacity:.45;cursor:not-allowed}.paymentConfig summary{cursor:pointer;font-weight:750}.paymentConfig input{margin-top:8px}.paymentConfig .ghost{margin-top:8px}
 
-/* AffiliFlow AI V7.0 — Optional QR Support */
+/* AffiliFlow AI V7.2 — Optional QR Support */
 .qrWrap{
   background:#fff;
   border:1px solid #e4e7ec;
@@ -337,7 +337,7 @@ input:focus,textarea:focus,select:focus{
 
 <div class="app">
 <header>
-  <div class="brand"><div class="bag">🛍️</div><div><div class="title">AffiliFlow AI <span class="badge">V7.0</span></div><div class="titleSupportLine"><button class="supportBtn" onclick="openSupport()">🎁 Sumbangan AffiliFlow AI</button><span>Sumbangan anda serendah RM2 dapat membantu kami teruskan AffiliFlow AI</span></div><div class="sub"></div></div></div>
+  <div class="brand"><div class="bag">🛍️</div><div><div class="title">AffiliFlow AI <span class="badge">V7.2</span></div><div class="titleSupportLine"><button class="supportBtn" onclick="openSupport()">🎁 Sumbangan AffiliFlow AI</button><span>Sumbangan anda serendah RM2 dapat membantu kami teruskan AffiliFlow AI</span></div><div class="sub"></div></div></div>
   <button class="ghost" onclick="clearForm()">Reset</button>
 </header>
 
@@ -441,7 +441,7 @@ Mudah digunakan"></textarea>
 <div class="slashBox">
   <div class="slashTitle">⚡ Slash Prompt Shortcuts</div>
   <div class="slashDesc">
-    V7.0 menggunakan format <b>/command</b> sebagai shortcut untuk arah visual, kamera, lighting dan gaya commercial.
+    V7.2 menggunakan format <b>/command</b> sebagai shortcut untuk arah visual, kamera, lighting dan gaya commercial.
     AffiliFlow akan pilih, faham dan kembangkan slash commands ini menjadi arahan visual sebenar dalam prompt penuh. Anda boleh ubah atau tambah sendiri.
   </div>
   <div class="slashQuick">
@@ -470,7 +470,7 @@ Mudah digunakan"></textarea>
   <div class="small">Tip: kosongkan kotak ini untuk Auto Stack. Jangan risau tentang format — satu command satu baris.</div>
 </div>
 <div id="intelStatus" class="small" style="min-height:20px;margin:8px 0"></div><div class="actions"><button class="primary" onclick="generateKit()">✨ Jana Kit</button></div><div class="actions"><button class="ghost" onclick="copyAllPrompts()">📋 Copy Semua Prompt</button><button class="ghost" onclick="downloadKit()">⬇️ Simpan Kit</button></div>
-<div class="small">V7.0 menggunakan Product Intelligence berasaskan maklumat produk + OCR teks yang kelihatan pada reference images. Claim yang tidak dapat disahkan tidak akan dianggap sebagai fakta.</div>
+<div class="small">V7.2 menggunakan Product Intelligence berasaskan maklumat produk + OCR teks yang kelihatan pada reference images. Claim yang tidak dapat disahkan tidak akan dianggap sebagai fakta.</div>
 </section>
 
 <section>
@@ -717,24 +717,24 @@ function loadTesseract(){
 function uniqueClean(arr){return [...new Set(arr.map(x=>String(x||'').replace(/\s+/g,' ').trim()).filter(x=>x.length>=3))]}
 function extractVisibleProductSignals(text){
  const raw=String(text||'').replace(/\r/g,'\n');
- const lines=uniqueClean(raw.split(/\n+/).map(x=>x.replace(/[^\p{L}\p{N}%°×+\-./ ]/gu,' ')));
- const joined=lines.join(' ');
+ const joined=raw.replace(/\s+/g,' ').trim();
+ const out=[];
+ const add=(x)=>{x=String(x||'').replace(/\s+/g,' ').trim(); if(x.length>=3 && x.length<=80 && !out.some(v=>v.toLowerCase()===x.toLowerCase())) out.push(x);};
  const patterns=[
-  /\b\d+(?:\.\d+)?\s?(?:g|kg|ml|l|w|v|mah|mm|cm|inch|in|x|spf)\b/gi,
+  /\b\d+(?:\.\d+)?\s?(?:g|kg|ml|l|w|v|mah|mm|cm|inch|in|spf)\b/gi,
   /\b\d+\s?(?:degree|degrees|°)\b/gi,
   /\b\d+x\s*[A-Za-z][A-Za-z ]{0,35}/gi,
-  /\b(?:ceramide|centella|hyaluronic acid|niacinamide|retinol|salicylic acid|vitamin c|barrier repair|moisture|hydration|dehumidif\w*|humidif\w*|air purifier|360\s*degree|360°|portable|compact|wireless|fast charging|waterproof|usb-c|bluetooth)\b[^\n]{0,55}/gi
+  /\b(?:5x\s*ceramide|ceramide|centella|hyaluronic acid|niacinamide|retinol|salicylic acid|vitamin c|barrier repair|skin barrier|moisture|hydration|dehumidif\w*|humidif\w*|air purifier|360\s*(?:degree|°)|portable|compact|wireless|fast charging|waterproof|usb-c|bluetooth|baju kurung|baju melayu|kurung wanita|kain sejuk|mudah gosok|raya|hari raya|aidilfitri|open house)\b[^.\n]{0,55}/gi
  ];
- let out=[]; patterns.forEach(re=>{out=out.concat(joined.match(re)||[])});
- // Prefer short, readable OCR lines that look like labels/headings.
- out=out.concat(lines.filter(x=>x.length<=70 && /[A-Za-z]/.test(x) && (/[A-Z]{3,}/.test(x)||/\d/.test(x))).slice(0,12));
- return uniqueClean(out).slice(0,18);
+ for(const re of patterns){ (joined.match(re)||[]).forEach(add); }
+ return out.slice(0,18);
 }
 function inferIntelCategory(n,t,ocr){
  const blob=(n+' '+t+' '+ocr).toLowerCase();
+ if(/baju\s*kurung|kurung\s*wanita|baju\s*melayu|kurta|samping/.test(blob)) return 'Gaya hidup / pakaian';
  if(/ceramide|centella|moistur|serum|sunscreen|skin|barrier|cosmetic|skincare/.test(blob)) return 'Penjagaan diri / skincare';
  if(/dehumid|humid|moisture control|360 degree|air purifier|diffuser/.test(blob)) return 'Rumah / kawalan udara & kelembapan';
- if(/shoe|sneaker|shirt|dress|pakaian|baju|seluar|bag|wallet/.test(blob)) return 'Gaya hidup / fesyen';
+ if(/shoe|sneaker|shirt|dress|pakaian|baju|seluar|fashion|bag|wallet/.test(blob)) return 'Gaya hidup / fesyen';
  if(/phone|tablet|laptop|charger|powerbank|earbud|bluetooth|usb-c|wireless/.test(blob)) return 'Teknologi / elektronik';
  if(/baby|kids|toy|school|kanak|bayi/.test(blob)) return 'Keluarga / kanak-kanak';
  if(/food|snack|coffee|tea|kopi|teh|biskut|coklat|minuman|makanan/.test(blob)) return 'Makanan & minuman';
@@ -821,58 +821,88 @@ function productNameFacts(n){
  return facts;
 }
 function detectStoryContext(n,t,points,intel){
- const blob=(String(n||'')+' '+String(t||'')+' '+(points||[]).join(' ')+' '+(intel?.ocrText||'')).toLowerCase();
- if(/baju melayu|baju melayu moden|samping|songkok|kurta|jubah/.test(blob)) return {
+ const blob=(String(n||'')+' '+String(t||'')+' '+(points||[]).join(' ')+' '+(intel?.ocrText||'')+' '+(intel?.verifiedFacts||[]).join(' ')).toLowerCase();
+ if(/baju\s*melayu|baju\s*melayu\s*moden|samping|songkok/.test(blob)) return {
    type:'baju_melayu', topic:'persiapan Hari Raya dan pemilihan Baju Melayu',
-   problem:'nak cari Baju Melayu yang nampak kemas untuk dipakai masa Hari Raya',
-   uses:['persiapan raya','solat sunat Aidilfitri','kunjung-mengunjung','open house','bergambar dengan keluarga'],
-   facts:['Baju Melayu','fesyen lelaki','pemakaian Hari Raya'],
-   opener:['Bila Hari Raya makin dekat, antara benda yang mula kita fikir ialah Baju Melayu.','Setiap kali nak dekat raya, mesti mula fikir nak pakai Baju Melayu yang macam mana.','Untuk lelaki, pilih Baju Melayu untuk raya nampak simple, tapi sebenarnya banyak benda kita kena fikir.']
+   problem:'nak cari Baju Melayu yang nampak kemas dan selesa untuk dipakai masa Hari Raya',
+   uses:['Hari Raya','solat sunat Aidilfitri','kunjung-mengunjung','open house','bergambar dengan keluarga'],
+   facts:['Baju Melayu','pemakaian lelaki','Hari Raya'],
+   openers:['Bila Hari Raya makin dekat, antara benda yang mula kita fikir ialah Baju Melayu.','Setiap kali nak dekat raya, mesti mula fikir nak pakai Baju Melayu yang macam mana.','Untuk lelaki, pilih Baju Melayu untuk raya nampak simple, tapi sebenarnya banyak benda kita kena fikir.']
  };
- if(/kurta/.test(blob)) return {type:'kurta',topic:'gaya lelaki untuk Hari Raya dan majlis',problem:'nak cari pakaian yang sesuai untuk raya atau majlis',uses:['Hari Raya','solat','majlis','open house'],facts:['kurta','pakaian lelaki'],opener:['Kalau nak raya dengan gaya yang lebih santai, kurta memang antara pilihan yang selalu orang tengok.']};
- if(/skincare|ceramide|centella|moistur|serum|sunscreen|skin barrier/.test(blob)) return {type:'skincare',topic:'rutin penjagaan kulit',problem:'kulit terasa kering, kurang selesa atau perlukan rutin yang lebih sesuai',uses:['rutin pagi','rutin malam','selepas cuci muka'],facts:['skincare','rutin penjagaan kulit'],opener:['Kalau kulit mula rasa kering atau rutin sekarang tak cukup selesa, biasanya kita mula tengok semula produk yang digunakan.','Dalam rutin skincare, saya lebih suka tengok fungsi produk dulu daripada ikut trend.']};
- if(/dehumid|humidifier|kelembapan|moisture control/.test(blob)) return {type:'dehumidifier',topic:'kelembapan dalam ruang rumah',problem:'ruang terasa lembap dan perlukan cara untuk mengurus kelembapan',uses:['bilik tidur','almari','ruang kecil','rumah'],facts:['dehumidifier','kelembapan ruang'],opener:['Kalau bilik atau ruang rumah selalu terasa lembap, benda macam ni memang boleh buat kita mula cari jalan penyelesaian.']};
- if(/kasut|shoe|sneaker|boot/.test(blob)) return {type:'footwear',topic:'pemilihan kasut untuk kegunaan sebenar',problem:'nak cari kasut yang sesuai dengan aktiviti dan cara pemakaian',uses:['kerja','berjalan','outdoor','sukan','kegunaan harian'],facts:['kasut','pemakaian'],opener:['Bila nak beli kasut, saya tak tengok rupa sahaja. Saya fikir kasut itu nak dipakai untuk apa.']};
- if(/baju|shirt|dress|seluar|pakaian|fashion/.test(blob)) return {type:'apparel',topic:'pemilihan pakaian dan gaya pemakaian',problem:'nak cari pakaian yang sesuai dengan gaya dan situasi',uses:['kerja','keluar','majlis','kegunaan harian'],facts:['pakaian','fesyen'],opener:['Bila pilih pakaian, saya biasanya fikir dulu nak pakai untuk situasi apa.']};
- if(/phone|telefon|laptop|tablet|earbud|headphone|charger|powerbank|gadget/.test(blob)) return {type:'tech',topic:'kegunaan gadget dalam rutin harian',problem:'nak cari gadget yang betul-betul menyelesaikan keperluan',uses:['kerja','perjalanan','rumah','hiburan'],facts:['gadget','teknologi'],opener:['Bila nak beli gadget, saya tak tengok rupa atau trend sahaja. Saya nak tahu fungsi yang memang akan saya guna.']};
- if(/makanan|food|snack|snek|kopi|coffee|teh|tea|coklat|biskut|minuman/.test(blob)) return {type:'food',topic:'pengalaman makan atau minum',problem:'nak cari makanan atau minuman yang sesuai dengan selera dan situasi',uses:['sarapan','minum petang','kerja','bersantai'],facts:['makanan/minuman'],opener:['Bab makanan ni lain sikit — sebelum beli, kita biasanya dah boleh bayangkan bila nak makan atau minum.']};
- if(/seranggo|serangga|semut|nyamuk|pest|repellent/.test(blob)) return {type:'pest',topic:'masalah serangga di rumah',problem:'semut atau serangga kecil mengganggu kawasan rumah',uses:['dapur','ruang makan','laluan serangga','kawasan rumah'],facts:['kegunaan berkaitan serangga','kawasan rumah'],opener:['Baru kemas rumah, tiba-tiba nampak semut atau serangga datang balik. Memang boleh buat kita cari alternatif.']};
- return {type:'general',topic:'kegunaan produk dalam situasi sebenar',problem:'nak cari produk yang sesuai dengan keperluan sendiri',uses:['kegunaan harian'],facts:['fungsi produk'],opener:['Bila jumpa produk baru, saya lebih suka terus fikir situasi sebenar: bila saya akan guna dan untuk apa?']};
+ if(/baju\s*kurung|kurung\s*wanita/.test(blob)) return {
+   type:'baju_kurung', topic:'persiapan Raya dan pemilihan Baju Kurung wanita',
+   problem:'nak cari Baju Kurung yang sesuai untuk dipakai masa Raya, majlis atau kunjung-mengunjung',
+   uses:['Hari Raya','kunjung-mengunjung','open house','majlis','bergambar dengan keluarga'],
+   facts:['Baju Kurung wanita','pakaian wanita'],
+   openers:['Bila Raya makin dekat, antara benda yang mula difikirkan ialah nak pakai baju apa.','Kalau dah mula fikir pasal Raya, Baju Kurung memang antara benda yang kita akan cari.','Untuk perempuan, pilih Baju Kurung untuk Raya bukan sekadar tengok cantik atau tidak. Kena fikir juga kain dan keselesaan.']
+ };
+ if(/kurta/.test(blob)) return {type:'kurta',topic:'gaya lelaki untuk Hari Raya dan majlis',problem:'nak cari pakaian yang sesuai untuk raya atau majlis',uses:['Hari Raya','solat','majlis','open house'],facts:['kurta','pakaian lelaki'],openers:['Kalau nak raya dengan gaya yang lebih santai, kurta memang antara pilihan yang selalu orang tengok.']};
+ if(/skincare|ceramide|centella|moistur|serum|sunscreen|skin barrier/.test(blob)) return {type:'skincare',topic:'rutin penjagaan kulit',problem:'kulit terasa kering atau rutin sekarang perlukan pilihan yang lebih sesuai',uses:['rutin pagi','rutin malam','selepas cuci muka'],facts:['skincare','rutin penjagaan kulit'],openers:['Kalau kulit mula rasa kering atau rutin sekarang tak cukup selesa, biasanya kita mula tengok semula produk yang digunakan.','Dalam rutin skincare, saya lebih suka tengok fungsi produk dulu daripada ikut trend.']};
+ if(/dehumid|humidifier|kelembapan|moisture control/.test(blob)) return {type:'dehumidifier',topic:'kelembapan dalam ruang rumah',problem:'ruang terasa lembap dan perlukan cara untuk mengurus kelembapan',uses:['bilik tidur','almari','ruang kecil','rumah'],facts:['dehumidifier','kelembapan ruang'],openers:['Kalau bilik atau ruang rumah selalu terasa lembap, benda macam ni memang boleh buat kita mula cari jalan penyelesaian.']};
+ if(/kasut|shoe|sneaker|boot/.test(blob)) return {type:'footwear',topic:'pemilihan kasut untuk kegunaan sebenar',problem:'nak cari kasut yang sesuai dengan aktiviti dan cara pemakaian',uses:['kerja','berjalan','outdoor','sukan','kegunaan harian'],facts:['kasut','pemakaian'],openers:['Bila nak beli kasut, saya tak tengok rupa sahaja. Saya fikir kasut itu nak dipakai untuk apa.']};
+ if(/baju|shirt|dress|seluar|pakaian|fashion/.test(blob)) return {type:'apparel',topic:'pemilihan pakaian dan gaya pemakaian',problem:'nak cari pakaian yang sesuai dengan gaya dan situasi',uses:['kerja','keluar','majlis','kegunaan harian'],facts:['pakaian','fesyen'],openers:['Bila pilih pakaian, saya biasanya fikir dulu nak pakai untuk situasi apa.']};
+ if(/phone|telefon|laptop|tablet|earbud|headphone|charger|powerbank|gadget/.test(blob)) return {type:'tech',topic:'kegunaan gadget dalam rutin harian',problem:'nak cari gadget yang betul-betul menyelesaikan keperluan',uses:['kerja','perjalanan','rumah','hiburan'],facts:['gadget','teknologi'],openers:['Bila nak beli gadget, saya tak tengok rupa atau trend sahaja. Saya nak tahu fungsi yang memang akan saya guna.']};
+ if(/makanan|food|snack|snek|kopi|coffee|teh|tea|coklat|biskut|minuman/.test(blob)) return {type:'food',topic:'pengalaman makan atau minum',problem:'nak cari makanan atau minuman yang sesuai dengan selera dan situasi',uses:['sarapan','minum petang','kerja','bersantai'],facts:['makanan/minuman'],openers:['Bab makanan ni lain sikit — sebelum beli, kita biasanya dah boleh bayangkan bila nak makan atau minum.']};
+ if(/seranggo|serangga|semut|nyamuk|pest|repellent/.test(blob)) return {type:'pest',topic:'masalah serangga di rumah',problem:'semut atau serangga kecil mengganggu kawasan rumah',uses:['dapur','ruang makan','laluan serangga','kawasan rumah'],facts:['kegunaan berkaitan serangga','kawasan rumah'],openers:['Baru kemas rumah, tiba-tiba nampak semut atau serangga datang balik. Memang boleh buat kita cari alternatif.']};
+ return {type:'general',topic:'kegunaan produk dalam situasi sebenar',problem:'nak cari produk yang sesuai dengan keperluan sendiri',uses:['kegunaan harian'],facts:['fungsi produk'],openers:['Bila jumpa produk baru, saya lebih suka fikir terus tentang situasi sebenar: bila saya akan guna dan untuk apa?']};
+}
+function cleanContentFacts(points,intel,ctx){
+ const allowed=(points||[]).filter(Boolean).map(naturalPoint).filter(Boolean);
+ const trusted=(intel?.verifiedFacts||[]).filter(x=>String(x).length<=80).filter(x=>!/[A-Z]{2,}\s+[A-Z]{2,}|\b(?:re|rr|gn|bt|of)\b/i.test(String(x))).slice(0,5);
+ return [...new Set([...allowed,...trusted,...ctx.facts])].slice(0,6);
 }
 function humanStory(n,t,points,angle,idx){
  const intel=currentProductIntel||{};
  const ctx=detectStoryContext(n,t,points,intel);
  const rawName=String(n||'produk ini').trim();
- const shortName=rawName.split(/\s+/).slice(0,9).join(' ');
- const audience=(t||'pengguna').trim();
- const verified=(intel.verifiedFacts||[]).filter(Boolean).slice(0,5);
- const userPoints=(points||[]).filter(Boolean).map(naturalPoint).slice(0,4);
- const facts=[...new Set([...userPoints,...verified,...ctx.facts])].slice(0,6);
- const factLine=facts.length?`Antara maklumat yang jelas tentang produk ini ialah ${facts.join(', ')}.`:'';
- const useLine=ctx.uses.slice(0,3).join(', ');
+ const shortName=rawName.length>42?rawName.split(/\s+/).slice(0,6).join(' '):rawName;
+ const facts=cleanContentFacts(points,intel,ctx);
+ const f=(i=0)=>facts[i]||'';
+ const opener=ctx.openers[idx%ctx.openers.length];
  let body='';
- const opener=ctx.opener[idx%ctx.opener.length];
- switch(angle){
-  case 'Relatable problem':
-   body=`${opener}\n\n${ctx.problem.charAt(0).toUpperCase()+ctx.problem.slice(1)}. Bila situasi macam ni berlaku, saya biasanya tengok dulu apa yang saya perlukan sebelum pilih produk.\n\n${shortName} menarik perhatian saya sebab ia memang berada dalam kategori ${ctx.topic}. ${factLine}\n\nKalau korang pun tengah cari untuk ${useLine}, boleh tengok detail produk ini dulu. Tak perlu terus beli — tengok sama ada sesuai dengan keperluan sendiri.`; break;
-  case 'Tips / awareness':
-   body=`Kalau nak pilih ${shortName}, saya akan tengok 3 benda dulu.\n\n1. **Situasi penggunaan** — adakah memang sesuai untuk ${useLine}?\n2. **Ciri yang dinyatakan** — semak maklumat yang memang diberikan tentang produk.\n3. **Kesesuaian sendiri** — saiz, gaya, rutin atau cara penggunaan ikut keperluan masing-masing.\n\n${factLine}\n\nUntuk saya, cara macam ni lebih berguna daripada terus beli sebab nampak menarik.`; break;
-  case 'Personal experience':
-   body=`Saya sebenarnya cari sesuatu untuk ${ctx.problem}.\n\nMasa tengok ${shortName}, saya terus fikir tentang penggunaan sebenar — contohnya ${useLine}. ${factLine}\n\nSaya suka bila produk boleh dinilai berdasarkan situasi yang kita memang lalui, bukan sekadar ayat marketing. Kalau keperluan korang sama, boleh tengok detailnya dulu.`; break;
-  case 'Curiosity / discovery':
-   body=`Saya tak sangka produk dalam kategori ${ctx.topic} boleh buat saya fikir tentang satu benda: kita selalu pilih berdasarkan rupa dulu, padahal cara nak guna lagi penting.\n\nBila saya tengok ${shortName}, antara perkara yang saya perhatikan ialah ${facts.slice(0,3).join(', ')}.\n\nKalau korang pernah cari benda untuk ${ctx.problem}, mungkin produk ini boleh masuk dalam senarai untuk dibandingkan.`; break;
-  case 'Problem → solution':
-   body=`${ctx.problem.charAt(0).toUpperCase()+ctx.problem.slice(1)}. Itu yang buat saya mula cari pilihan lain.\n\nUntuk situasi macam ${useLine}, ${shortName} nampak relevan kerana ia memang produk dalam kategori ${ctx.topic}. ${factLine}\n\nSaya tak nak janji hasil yang sama untuk semua orang. Lebih baik tengok detail dan nilai sama ada ia sesuai dengan keadaan sendiri.`; break;
-  case 'Honest experience':
-   body=`Saya cuba tengok ${shortName} dari sudut yang jujur: bukan “produk ni mesti sesuai”, tapi “produk ni sesuai untuk siapa dan bila?”.\n\nKalau kegunaan korang memang berkait dengan ${ctx.topic}, perkara seperti ${facts.slice(0,3).join(', ')} patut diperiksa dahulu.\n\nSaya rasa itu lebih adil untuk pembeli — faham produk dulu, kemudian baru buat keputusan.`; break;
-  case 'Question / conversation':
-   body=`Kalau korang nak pilih ${shortName}, apa yang paling penting untuk korang?\n\nUntuk saya, jawapannya bergantung pada situasi. Kalau untuk ${useLine}, saya akan semak dulu ciri dan maklumat yang memang dinyatakan. ${factLine}\n\nSebab produk yang sesuai untuk seorang belum tentu sesuai untuk orang lain.`; break;
-  case 'Practical tips':
-   body=`Cara saya tengok produk macam ${shortName} simple saja.\n\nPertama, tentukan nak guna untuk apa: ${useLine}.\nKedua, tengok ciri yang betul-betul dinyatakan.\nKetiga, fikir sama ada ia sesuai dengan rutin sendiri.\n\n${factLine}\n\nKalau tiga benda ni masuk akal, barulah saya pertimbangkan untuk beli.`; break;
-  case 'Soft review':
-   body=`Kalau saya nak review ${shortName} secara ringkas, saya akan mula dengan soalan: “Saya sebenarnya nak guna benda ni bila?”\n\nUntuk ${ctx.topic}, produk ini boleh dipertimbangkan kalau keperluan korang memang sama. ${factLine}\n\nBukan bermaksud semua orang wajib beli. Tengok detail dulu dan bandingkan dengan apa yang korang perlukan.`; break;
-  default:
-   body=`Kalau saya nampak ${shortName}, saya terus teringat tentang ${ctx.topic}.\n\nSebabnya mudah — produk macam ni memang berkait dengan ${ctx.problem}. Ia boleh digunakan untuk situasi seperti ${useLine}. ${factLine}\n\nKalau korang tengah cari sesuatu untuk keperluan yang sama, boleh tengok detail produk ini dulu.`;
+ if(ctx.type==='baju_melayu'){
+  const stories=[
+   `${opener}\n\nBagi saya, Baju Melayu untuk Raya kena nampak kemas, tapi pada masa sama selesa dipakai dari pagi sampai selesai kunjung-mengunjung. ${facts.length?`Untuk ${shortName}, antara perkara yang saya perhatikan ialah ${facts.slice(0,3).join(', ')}.`:''}\n\nKalau korang tengah cari Baju Melayu untuk Raya tahun ni, boleh tengok dulu detail ${shortName}.`,
+   `Salah satu benda yang saya suka bila pilih Baju Melayu untuk Raya ialah bila kita boleh bayangkan terus nak pakai masa solat, pergi rumah keluarga dan open house.\n\n${shortName} menarik perhatian saya untuk situasi macam tu. ${facts.length?`Maklumat yang diberikan pula termasuk ${facts.slice(0,3).join(', ')}.`:''}\n\nTengok dulu sama ada potongan dan cirinya sesuai dengan apa yang korang cari.`,
+   `Bila musim Raya tiba, gambar keluarga pun mesti banyak. 😄\n\nSebab tu saya rasa Baju Melayu bukan sekadar “baju raya”. Kita nak yang nampak kemas bila bergambar, selesa bila bergerak dan sesuai dipakai ke rumah orang.\n\nKalau ${shortName} masuk dengan gaya yang korang cari, boleh tengok detailnya dulu.`,
+   `Setiap orang ada cara sendiri pilih Baju Melayu. Ada yang utamakan warna, ada yang tengok potongan, ada yang fikir keselesaan sepanjang hari.\n\nUntuk ${shortName}, saya akan tengok maklumat yang memang diberikan sebelum buat keputusan. ${facts.length?`Antaranya ${facts.slice(0,3).join(', ')}.`:''}\n\nKalau sesuai dengan gaya Raya korang, baru pertimbangkan.`,
+   `Kalau tahun ni korang masih belum pilih Baju Melayu, ini antara jenis produk yang boleh masuk dalam senarai untuk tengok.\n\n${shortName} sesuai dinilai dari segi rupa, saiz dan maklumat yang penjual berikan. Jangan tengok gambar sahaja — tengok detail juga.`,
+   `Raya bukan sehari. Lepas solat, ada kunjung-mengunjung, jumpa saudara, open house dan macam-macam lagi.\n\nJadi bila pilih Baju Melayu, saya lebih suka fikir tentang pemakaian sepanjang hari. ${facts.length?`Untuk ${shortName}, maklumat yang jelas ialah ${facts.slice(0,3).join(', ')}.`:''}\n\nBoleh tengok dulu kalau memang sedang mencari untuk Raya.`,
+   `Korang jenis pilih Baju Melayu awal-awal atau tunggu last minute? 😄\n\nSaya rasa awal lagi senang sebab boleh semak warna, saiz dan potongan dengan tenang. ${shortName} boleh jadi salah satu pilihan untuk dibandingkan kalau gaya dia memang kena dengan citarasa korang.`,
+   `Antara benda yang saya selalu fikir bila tengok Baju Melayu: “Aku nak pakai ni ke mana?”\n\nKalau jawapannya Raya, solat, rumah saudara dan open house, saya akan cari yang nampak kemas dan selesa. ${shortName} boleh tengok dulu berdasarkan detail yang diberikan.`,
+   `Baju Melayu yang cantik dalam gambar belum tentu pilihan terbaik untuk semua orang.\n\nSaiz, potongan, warna dan keselesaan tetap kena ikut orang yang nak pakai. Sebab tu untuk ${shortName}, saya lebih suka suruh tengok detail dulu daripada terus kata “wajib beli”.`,
+   `Kalau dah dekat Raya, memang seronok tengok pilihan Baju Melayu satu-satu. 😄\n\nUntuk ${shortName}, saya akan tengok rupa keseluruhan dan maklumat produk dulu. Kalau kena dengan gaya, saiz dan bajet, barulah masuk shortlist.\n\nKalau korang tengah cari, boleh tengok detailnya.`
+  ];
+  body=stories[idx%stories.length];
+ } else if(ctx.type==='baju_kurung'){
+  const stories=[
+   `${opener}\n\nKalau untuk Raya, saya biasanya fikir tiga benda: nampak kemas, selesa dipakai dan senang diurus. ${facts.length?`Untuk ${shortName}, antara maklumat yang diberikan ialah ${facts.slice(0,3).join(', ')}.`:''}\n\nKalau korang tengah cari Baju Kurung untuk Raya atau majlis, boleh tengok detailnya dulu.`,
+   `Baju Kurung Raya ni bagi saya bukan sekadar nampak cantik masa pertama tengok. Kita kena bayangkan pakai dari pagi sampai pergi rumah saudara.\n\n${shortName} menarik perhatian saya sebab ${facts.slice(0,2).join(' dan ')||'ia memang direka sebagai pilihan pakaian wanita'}.\n\nTengok dulu sama ada sesuai dengan gaya dan keperluan korang.`,
+   `Bila musim Raya, mesti ada satu masa kita berdiri depan almari dan fikir, “Nak pakai yang mana satu?” 😄\n\nKalau nak tambah pilihan, ${shortName} boleh tengok sebagai salah satu pilihan. Yang penting semak saiz, warna, material dan detail yang penjual berikan.`,
+   `Kalau jenis tak suka baju yang susah diurus, benda macam kain dan penjagaan memang patut masuk dalam pertimbangan.\n\nUntuk ${shortName}, antara maklumat yang dinyatakan ialah ${facts.slice(0,3).join(', ')||'ciri pakaian wanita'}.\n\nKalau kena dengan keperluan, bolehlah tengok detailnya.`,
+   `Raya biasanya bukan sekadar satu tempat. Pagi beraya, tengah hari rumah saudara, petang mungkin open house.\n\nSebab tu saya suka fikir tentang keselesaan bila pilih Baju Kurung. ${shortName} boleh dibandingkan dari segi saiz, gaya dan maklumat yang diberikan.`,
+   `Ada yang pilih Baju Kurung sebab warna. Ada yang tengok potongan. Ada yang paling pentingkan kain.\n\nKalau ${shortName}, saya akan tengok semua yang memang dinyatakan sebelum buat keputusan. Tak perlu ikut orang — pilih yang sesuai dengan diri sendiri.`,
+   `Korang dah pilih baju Raya ke belum? 😄\n\nKalau belum, ${shortName} boleh masuk dalam senarai untuk tengok. Lagi senang kalau semak saiz dan detail awal-awal, terutama kalau nak pakai masa Raya.`,
+   `Bila nak beli Baju Kurung online, gambar memang menarik perhatian dulu. Tapi selepas tu saya akan terus cari bahagian saiz, kain dan cara penjagaan.\n\nUntuk ${shortName}, maklumat yang diberikan boleh dijadikan asas untuk bandingkan dengan apa yang korang perlukan.`,
+   `Saya suka pilihan pakaian yang boleh dibayangkan terus dalam situasi sebenar — Raya, pergi rumah saudara, majlis atau open house.\n\n${shortName} boleh dipertimbangkan kalau gaya dan cirinya memang masuk dengan kegunaan korang.`,
+   `Kalau saya nak shortlist Baju Kurung, saya tak terus tengok harga sahaja. Saya tengok rupa, saiz, kain dan sama ada saya memang ada tempat untuk pakai.\n\n${shortName} boleh tengok dulu. Kalau semua kena, barulah fikir nak beli.`
+  ];
+  body=stories[idx%stories.length];
+ } else {
+  // Keep non-apparel categories product-specific without exposing OCR noise.
+  const baseFacts=facts.filter(x=>!/^produk|fungsi produk$/i.test(x));
+  const factText=baseFacts.length?`Antara maklumat yang diberikan ialah ${baseFacts.slice(0,3).join(', ')}.`:'';
+  const genericByType={
+   skincare:`Dalam rutin skincare, saya lebih suka fikir bila nak guna dan apa concern kulit yang nak dijaga. ${shortName} menarik perhatian sebab ${factText||'ia memang produk penjagaan kulit yang boleh dibandingkan dengan pilihan lain.'}\n\nKalau rutin korang perlukan produk macam ni, tengok detail dulu dan nilai ikut keperluan sendiri.`,
+   dehumidifier:`Kalau bilik atau ruang rumah selalu terasa lembap, memang kita mula cari cara yang lebih praktikal untuk uruskan keadaan tu.\n\n${shortName} boleh dipertimbangkan untuk situasi seperti ${ctx.uses.slice(0,3).join(', ')}. ${factText}\n\nTengok dulu saiz, fungsi dan detail penggunaan sebelum buat keputusan.`,
+   food:`Bab makanan ni senang — kita biasanya terus fikir bila nak makan dan dengan siapa.\n\n${shortName} boleh dipertimbangkan untuk ${ctx.uses.slice(0,3).join(', ')}. ${factText}\n\nKalau kena dengan selera dan bajet, bolehlah tengok detail.`,
+   tech:`Bila pilih gadget, saya akan fikir situasi penggunaan dulu. ${shortName} patut dinilai berdasarkan fungsi yang memang akan digunakan, bukan semata-mata rupa. ${factText}\n\nKalau kegunaan korang sama, tengok spesifikasi yang diberikan sebelum beli.`,
+   footwear:`Kasut paling senang dinilai bila kita fikir nak pakai untuk apa. ${shortName} boleh dibandingkan untuk ${ctx.uses.slice(0,3).join(', ')}. ${factText}\n\nYang penting, semak saiz dan kesesuaian dengan aktiviti sendiri.`,
+   pest:`Kalau masalah ${ctx.problem}, kita biasanya nak penyelesaian yang mudah dimasukkan dalam rutin rumah.\n\n${shortName} boleh tengok berdasarkan cara penggunaan dan maklumat yang memang diberikan. ${factText}\n\nKalau situasi korang sama, tengok detail dulu.`,
+   apparel:`Bila pilih pakaian, saya terus fikir nak pakai untuk situasi apa. ${shortName} boleh dipertimbangkan untuk ${ctx.uses.slice(0,3).join(', ')}. ${factText}\n\nTengok saiz, gaya dan ciri yang dinyatakan sebelum buat keputusan.`
+  };
+  const custom=genericByType[ctx.type]||`${opener}\n\n${shortName} berkait terus dengan ${ctx.topic}. ${factText}\n\nKalau korang memang perlukan sesuatu untuk ${ctx.uses.slice(0,3).join(', ')}, tengok detail produk dulu.`;
+  body=custom;
  }
  return body.replace(/\n{3,}/g,'\n\n').trim();
 }
