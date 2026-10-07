@@ -585,7 +585,7 @@ OUTPUT: Return ONLY valid JSON. No markdown fences, no commentary. Use the exact
 "videoIdeas":[{"id":1,"title":"","concept":"","clipA":"","clipB":""},{"id":2,"title":"","concept":"","clipA":"","clipB":""},{"id":3,"title":"","concept":"","clipA":"","clipB":""},{"id":4,"title":"","concept":"","clipA":"","clipB":""},{"id":5,"title":"","concept":"","clipA":"","clipB":""},{"id":6,"title":"","concept":"","clipA":"","clipB":""}]
 }`;
   const content=[{type:'text',text:system+'\n\nUSER INPUT:\n'+JSON.stringify(userText)+'\n\nRETURN THIS JSON SHAPE EXACTLY (values filled, arrays complete):\n'+schema} ,...imageParts];
-  const body={model:'google/gemma-4-26b-a4b-it:free',temperature:.75,max_tokens:10000,messages:[{role:'user',content}]};
+  const body={model:'inclusionai/ling-3.0-flash-vl:free',temperature:.75,max_tokens:10000,messages:[{role:'user',content}]};
   const r=await fetch('/.netlify/functions/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
   const data=await r.json().catch(()=>({}));
   if(!r.ok){throw new Error(data?.error?.message||data?.error||`AI server error ${r.status}`);}
