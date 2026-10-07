@@ -18,7 +18,7 @@ export default async (request) => {
     return json({ error: "Method not allowed" }, 405, cors);
   }
 
-  // Read the secret from Netlify Runtime Environment.
+  // Read OpenRouter API key
   let apiKey = "";
 
   try {
@@ -29,16 +29,21 @@ export default async (request) => {
     ) {
       apiKey = Netlify.env.get("OPENROUTER_API_KEY") || "";
     }
-  } catch (e) {
-    // Continue to process.env fallback.
+  } catch (error) {
+    console.error("Netlify.env.get error:", error?.message);
   }
 
-  // Fallback for environments where process.env is available.
+  // Fallback
   if (!apiKey && typeof process !== "undefined" && process.env) {
     apiKey = process.env.OPENROUTER_API_KEY || "";
   }
 
+  console.log("=== AffiliFlow AI Diagnostic ===");
+  console.log("API key present:", Boolean(apiKey));
+
   if (!apiKey) {
+    console.error("OPENROUTER_API_KEY is NOT available.");
+    
     return json(
       {
         error: "OPENROUTER_API_KEY tidak dapat dibaca oleh Netlify Function.",
@@ -53,7 +58,20 @@ export default async (request) => {
 
   try {
     body = await request.json();
-  } catch {
+
+    console.log(
+      "Request received. Body size:",
+      JSON.stringify(body).length,
+      "bytes"
+    );
+
+    console.log(
+      "Model requested:",
+      body?.model || "not specified"
+    );
+  } catch (error) {
+    console.error("JSON parse error:", error?.message);
+
     return json(
       {
         error: "Request JSON tidak sah.",
@@ -65,6 +83,8 @@ export default async (request) => {
   }
 
   try {
+    console.log("Sending request to OpenRouter...");
+
     const response = await fetch(OPENROUTER_URL, {
       method: "POST",
       headers: {
@@ -78,6 +98,9 @@ export default async (request) => {
 
     const resultText = await response.text();
 
+    console.log("OpenRouter HTTP status:", response.status);
+    console.log("OpenRouter response:", resultText);
+
     let result;
 
     try {
@@ -85,12 +108,13 @@ export default async (request) => {
     } catch {
       result = {
         error: {
-          message: resultText || "OpenRouter returned an invalid response.",
+          message:
+            resultText ||
+            "OpenRouter returned an invalid response.",
         },
       };
     }
 
-    // Return OpenRouter response to the frontend.
     return new Response(JSON.stringify(result), {
       status: response.status,
       headers: {
@@ -99,10 +123,18 @@ export default async (request) => {
         "Cache-Control": "no-store",
       },
     });
+
   } catch (error) {
+    console.error(
+      "OpenRouter network/fetch error:",
+      error?.message
+    );
+
     return json(
       {
-        error: error?.message || "OpenRouter request failed.",
+        error:
+          error?.message ||
+          "OpenRouter request failed.",
         diagnostic: "KEY_PRESENT=true",
       },
       502,
