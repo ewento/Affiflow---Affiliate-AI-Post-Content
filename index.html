@@ -44,7 +44,7 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)} textarea{min
 .tipTitle{font-weight:800;font-size:15px}.tipText{color:#b9aaa0;font-size:12px;margin:6px 0 12px}
 .tipQr{width:190px;height:190px;object-fit:contain;background:white;border-radius:8px;padding:5px}
 
-/* ===== AffiliFlow AI V7.4 — Commercial Light Theme ===== */
+/* ===== AffiliFlow AI V7.3 — Commercial Light Theme ===== */
 :root{
   --bg:#f5f7fb;
   --panel:#ffffff;
@@ -115,7 +115,7 @@ input:focus,textarea:focus,select:focus{
 }
 .preview img,.gallery img{border-color:#e4e7ec !important}
 
-/* AffiliFlow AI V7.4 polished commercial header */
+/* AffiliFlow AI V7.3 polished commercial header */
 .heroBrand{
   max-width:1100px;
   margin:18px auto 10px;
@@ -159,7 +159,7 @@ input:focus,textarea:focus,select:focus{
 .modalOverlay{position:fixed;inset:0;background:rgba(16,24,40,.42);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:18px;z-index:9999}.modalOverlay.show{display:flex}
 .supportModal{position:relative;width:min(420px,100%);background:#fff;border-radius:24px;padding:26px;box-shadow:0 24px 70px rgba(16,24,40,.22);text-align:center}.modalClose{position:absolute;right:14px;top:10px;border:0;background:transparent;font-size:28px;color:#667085;cursor:pointer}.supportIcon{font-size:30px}.supportModal h2{margin:8px 0 6px;color:#172033}.supportModal p{color:#667085;font-size:13px;line-height:1.55;margin:0 auto 16px}.tipChoices{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}.tipChoices button{padding:10px 6px;border:1px solid #d0d5dd;border-radius:12px;background:#fff;color:#344054;font-weight:800;cursor:pointer}.tipChoices button.selected{background:#fff0eb;border-color:#ff6b4a;color:#d94f32}.supportNote{text-align:left;background:#f8fafc;border:1px solid #e4e7ec;border-radius:14px;padding:11px;font-size:12px;color:#667085;margin-bottom:12px}.supportNote b{display:block;color:#344054;margin-bottom:3px}.payBtn{width:100%;margin-bottom:9px}.payBtn:disabled{opacity:.45;cursor:not-allowed}.paymentConfig summary{cursor:pointer;font-weight:750}.paymentConfig input{margin-top:8px}.paymentConfig .ghost{margin-top:8px}
 
-/* AffiliFlow AI V7.4 — Optional QR Support */
+/* AffiliFlow AI V7.3 — Optional QR Support */
 .qrWrap{
   background:#fff;
   border:1px solid #e4e7ec;
@@ -337,7 +337,7 @@ input:focus,textarea:focus,select:focus{
 
 <div class="app">
 <header>
-  <div class="brand"><div class="bag">🛍️</div><div><div class="title">AffiliFlow AI <span class="badge">V7.4</span></div><div class="titleSupportLine"><button class="supportBtn" onclick="openSupport()">🎁 Sumbangan AffiliFlow AI</button><span>Sumbangan anda serendah RM2 dapat membantu kami teruskan AffiliFlow AI</span></div><div class="sub"></div></div></div>
+  <div class="brand"><div class="bag">🛍️</div><div><div class="title">AffiliFlow AI <span class="badge">V8 AI</span></div><div class="titleSupportLine"><button class="supportBtn" onclick="openSupport()">🎁 Sumbangan AffiliFlow AI</button><span>Sumbangan anda serendah RM2 dapat membantu kami teruskan AffiliFlow AI</span></div><div class="sub"></div></div></div>
   <button class="ghost" onclick="clearForm()">Reset</button>
 </header>
 
@@ -381,9 +381,9 @@ Mudah digunakan"></textarea>
 </div>
 
 <div class="two">
-<div><label>⏱️ Durasi video</label>
+<div><label>⏱️ Target setiap clip</label>
 <select id="duration">
-<option value="8" selected>8 saat</option><option value="10">10 saat</option>
+<option value="8" selected>8 saat · recommended</option>
 </select></div>
 <div><label>🎬 Jenis video</label>
 <select id="sceneType">
@@ -420,8 +420,8 @@ Mudah digunakan"></textarea>
 <select id="accuracy">
 <option>Maximum Accuracy</option><option>High Accuracy</option><option>Standard</option>
 </select></div>
-<div><label>🎬 Storyboard</label>
-<select id="sceneCount"><option value="auto" selected>6 video ideas · 2 clips each</option></select></div>
+<div><label>🎬 Video output</label>
+<select id="sceneCount"><option value="auto" selected>6 ideas · 2 clips each</option></select></div>
 </div>
 
 <label>🔗 Kedudukan affiliate link</label>
@@ -441,7 +441,7 @@ Mudah digunakan"></textarea>
 <div class="slashBox">
   <div class="slashTitle">⚡ Slash Prompt Shortcuts</div>
   <div class="slashDesc">
-    V7.4 menggunakan format <b>/command</b> sebagai shortcut untuk arah visual, kamera, lighting dan gaya commercial.
+    V8 menggunakan format <b>/command</b> sebagai shortcut untuk arah visual, kamera, lighting dan gaya commercial.
     AffiliFlow akan pilih, faham dan kembangkan slash commands ini menjadi arahan visual sebenar dalam prompt penuh. Anda boleh ubah atau tambah sendiri.
   </div>
   <div class="slashQuick">
@@ -470,7 +470,7 @@ Mudah digunakan"></textarea>
   <div class="small">Tip: kosongkan kotak ini untuk Auto Stack. Jangan risau tentang format — satu command satu baris.</div>
 </div>
 <div id="intelStatus" class="small" style="min-height:20px;margin:8px 0"></div><div class="actions"><button class="primary" onclick="generateKit()">✨ Jana Kit</button></div><div class="actions"><button class="ghost" onclick="copyAllPrompts()">📋 Copy Semua Prompt</button><button class="ghost" onclick="downloadKit()">⬇️ Simpan Kit</button></div>
-<div class="small">V7.4 menggunakan Product Intelligence berasaskan maklumat produk + OCR teks yang kelihatan pada reference images. Claim yang tidak dapat disahkan tidak akan dianggap sebagai fakta.</div>
+<div class="small">V8 menggunakan AI multimodal sebenar untuk memahami product reference images. Claim yang tidak dapat disahkan tidak akan dianggap sebagai fakta. API key tidak disimpan dalam browser.</div>
 </section>
 
 <section>
@@ -488,586 +488,140 @@ Mudah digunakan"></textarea>
 
 <script>
 const $=id=>document.getElementById(id);
-const cleanLines=s=>s.split(/\n+/).map(x=>x.trim()).filter(Boolean);
-function copyText(text){navigator.clipboard?.writeText(text).then(()=>alert('Disalin ✓'))}
-const AFFILIFLOW_DB='AffiliFlowAI_DB_V1';
-const AFFILIFLOW_STORE='session';
-function openAffiliFlowDB(){return new Promise((resolve,reject)=>{try{const r=indexedDB.open(AFFILIFLOW_DB,1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains(AFFILIFLOW_STORE))r.result.createObjectStore(AFFILIFLOW_STORE)};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error)}catch(e){reject(e)}})}
-async function saveMediaSession(){try{const db=await openAffiliFlowDB();await new Promise((res,rej)=>{const tx=db.transaction(AFFILIFLOW_STORE,'readwrite');tx.objectStore(AFFILIFLOW_STORE).put({productRefs,characterImageData,updatedAt:Date.now()},'current');tx.oncomplete=res;tx.onerror=()=>rej(tx.error)});db.close()}catch(e){console.warn('AffiliFlow media persistence unavailable',e)}}
-async function loadMediaSession(){try{const db=await openAffiliFlowDB();const data=await new Promise((res,rej)=>{const tx=db.transaction(AFFILIFLOW_STORE,'readonly');const r=tx.objectStore(AFFILIFLOW_STORE).get('current');r.onsuccess=()=>res(r.result||null);r.onerror=()=>rej(r.error)});db.close();return data||null}catch(e){return null}}
-async function clearMediaSession(){try{const db=await openAffiliFlowDB();await new Promise((res,rej)=>{const tx=db.transaction(AFFILIFLOW_STORE,'readwrite');tx.objectStore(AFFILIFLOW_STORE).delete('current');tx.oncomplete=res;tx.onerror=()=>rej(tx.error)});db.close()}catch(e){}}
-function persistFormState(extra={}){try{const prev=JSON.parse(localStorage.getItem('kitAffiliateLast')||'{}');localStorage.setItem('kitAffiliateLast',JSON.stringify({...prev,...extra,savedAt:Date.now()}))}catch(e){}}
-function clearForm(){currentProductIntel={category:'',buyer:'',verifiedFacts:[],ocrText:'',source:'',confidence:'Low'};['name','price','target','points','affiliateUrl','slashCommands','customBackground'].forEach(id=>{if($(id))$(id).value=''});productRefs=[];productImageData='';characterImageData='';if($('productImages'))$('productImages').value='';if($('characterImage'))$('characterImage').value='';if($('productGallery'))$('productGallery').innerHTML='';if($('productCount'))$('productCount').textContent='';if($('characterPreview'))$('characterPreview').innerHTML='';if($('characterPreview'))$('characterPreview').style.display='none';localStorage.removeItem('kitAffiliateLast');clearMediaSession();$('results').innerHTML='<div class="empty">Borang dikosongkan. Masukkan produk baharu untuk jana kit.</div>'}
-
-function esc(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function box(title,content,copy=true){return `<div class="result"><div class="rh">${title}${copy?`<button class="copy" onclick="copyText(this.parentElement.nextElementSibling.innerText)">Copy</button>`:''}</div><div class="rb">${content}</div></div>`}
-
+const cleanLines=s=>String(s||'').split(/\n+/).map(x=>x.trim()).filter(Boolean);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function copyText(text){navigator.clipboard?.writeText(text).then(()=>alert('Disalin ✓')).catch(()=>alert('Tidak dapat copy automatik. Sila copy secara manual.'));}
 
 let productRefs=[];
-const productInput=document.getElementById('productImages');
-if(productInput){
-  productInput.addEventListener('change',()=>{
-    productRefs=[];
-    const files=[...productInput.files].slice(0,5);
-    const gallery=document.getElementById('productGallery');
-    gallery.innerHTML='';
-    files.forEach(file=>{
-      const reader=new FileReader();
-      reader.onload=e=>{
-        productRefs.push(e.target.result);
-        scheduleAffiliFlowPersistence();
-        const img=document.createElement('img'); img.src=e.target.result; img.alt='Product reference';
-        gallery.appendChild(img); document.getElementById('productCount').textContent=`${productRefs.length}/5 gambar dipilih`;
-      };
-      reader.readAsDataURL(file);
-    });
-  });
-}
+let characterImageData='';
+let currentAIResult=null;
+let currentProductIntel=null;
+let isGenerating=false;
 
-let productImageData = "";
-let characterImageData = "";
-let _affiliPersistTimer;
-function scheduleAffiliFlowPersistence(){clearTimeout(_affiliPersistTimer);_affiliPersistTimer=setTimeout(()=>{persistFormState({n:$('name')?.value||'',p:$('price')?.value||'',t:$('target')?.value||'',points:cleanLines($('points')?.value||''),style:$('style')?.value||'',platform:$('platform')?.value||'',videoStyle:$('videoStyle')?.value||'',duration:$('duration')?.value||'10',sceneType:$('sceneType')?.value||'Product Demo',affiliateUrl:$('affiliateUrl')?.value||'',linkPlacement:$('linkPlacement')?.value||'caption_cta',slashCommands:$('slashCommands')?.value||''});saveMediaSession()},350)}
+const DB_NAME='AffiliFlowAI_V8';
+const STORE='session';
+function openDB(){return new Promise((resolve,reject)=>{const r=indexedDB.open(DB_NAME,1);r.onupgradeneeded=()=>{if(!r.result.objectStoreNames.contains(STORE))r.result.createObjectStore(STORE);};r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});}
+async function dbSet(k,v){try{const db=await openDB();return new Promise((res,rej)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).put(v,k);tx.oncomplete=res;tx.onerror=()=>rej(tx.error);});}catch(e){console.warn(e);}}
+async function dbGet(k){try{const db=await openDB();return new Promise((res,rej)=>{const tx=db.transaction(STORE,'readonly');const q=tx.objectStore(STORE).get(k);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error);});}catch(e){return null;}}
+async function dbClear(){try{const db=await openDB();return new Promise((res,rej)=>{const tx=db.transaction(STORE,'readwrite');tx.objectStore(STORE).clear();tx.oncomplete=res;tx.onerror=()=>rej(tx.error);});}catch(e){}}
 
-
-function readImage(inputId, previewId, setter){
-  const input=document.getElementById(inputId);
-  input.addEventListener("change",()=>{
-    const file=input.files[0];
-    if(!file) return;
-    const reader=new FileReader();
-    reader.onload=e=>{
-      setter(e.target.result);
-      const box=document.getElementById(previewId);
-      box.innerHTML='<img src="'+e.target.result+'" alt="Reference">';
-      box.style.display="block";
-    };
-    reader.readAsDataURL(file);
-  });
-}
-readImage("characterImage","characterPreview",v=>characterImageData=v);
-
-
-let lastPrompts=[];
-function copyAllPrompts(){
-  if(!lastPrompts.length){alert('Jana Kit dahulu.');return;}
-  navigator.clipboard?.writeText(lastPrompts.join("\n\n")).then(()=>alert('Semua prompt telah disalin ✓'));
-}
-function downloadKit(){
-  if(!$('results').innerText.trim()){alert('Jana Kit dahulu.');return;}
-  const name=($('name').value.trim()||'affiliate-kit').replace(/[^\w\-]+/g,'_');
-  const text=$('results').innerText;
-  const blob=new Blob([text],{type:'text/plain;charset=utf-8'});
-  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name+'_Kit.txt';a.click();
-  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
-}
-
-
-function normalizeAffiliateUrl(raw){
-  const u=(raw||'').trim();
-  if(!u) return '';
-  if(/^https?:\/\//i.test(u)) return u;
-  return 'https://' + u;
-}
-function affiliateBlock(url){
-  if(!url) return '';
-  return `\n\n🔗 AFFILIATE LINK:\n${url}`;
-}
-
-
-const SLASH_LIBRARY = {
-  // Product / composition
-  '/heroProduct':'Create a clean hero composition where the exact product is the visual focal point, clearly visible and premium.',
-  '/productReveal':'Reveal the exact product progressively, starting with a partial view and ending on a clear full-product shot.',
-  '/productShowcase':'Show the product from flattering angles with a clear, unobstructed view of its key physical details.',
-  '/productInHand':'Show the exact product naturally held in realistic human hands, preserving accurate scale and proportions.',
-  '/productInUse':'Show the exact product being used naturally for its intended purpose; demonstrate realistic interaction and function.',
-  '/productOnTable':'Place the exact product neatly on a believable surface with a clean, intentional commercial composition.',
-  '/productFlatlay':'Create a top-down flat-lay composition with the product arranged neatly and the product identity preserved.',
-  '/macroDetail':'Use a realistic macro close-up to highlight texture, material, stitching, finish, label or other genuine product details.',
-  '/detailShot':'Cut to a tight detail shot of the most important physical feature without changing the product design.',
-  '/packagingReveal':'Show the actual packaging clearly before revealing the product, preserving all genuine packaging artwork and text.',
-  '/brandHeroShot':'Finish with a strong brand-style hero shot where the product and its real branding are clearly visible.',
-  // Camera
-  '/slowzoom':'Use a slow, smooth cinematic push-in toward the product with stable, premium camera movement.',
-  '/dollyIn':'Use a controlled dolly-in movement that gradually increases product prominence.',
-  '/dollyOut':'Use a smooth dolly-out that reveals the product in its environment while keeping it readable.',
-  '/orbitProduct':'Use a subtle controlled orbit around the product to reveal depth and shape without distortion.',
-  '/panReveal':'Use a smooth horizontal camera pan that reveals the product naturally.',
-  '/tiltReveal':'Use a controlled tilt movement to reveal the product from top to bottom or bottom to top.',
-  '/pushPull':'Use a subtle push-pull camera effect while keeping the product stable and geometrically accurate.',
-  '/closeUp':'Use a tight close-up that makes the product immediately readable within the first moments.',
-  '/wideToClose':'Begin with a wider contextual shot and transition naturally into a close product shot.',
-  '/topDown':'Use a clean top-down camera angle suitable for product layout, packaging or flat-lay presentation.',
-  // Lighting / commercial
-  '/premiumcommercial':'Use polished premium advertising aesthetics, controlled composition and refined product presentation without looking artificial.',
-  '/cinematiclighting':'Use cinematic key, fill and rim lighting with realistic falloff, soft shadows and believable highlights.',
-  '/studiolighting':'Use clean professional studio lighting with controlled shadows and accurate product colours.',
-  '/softlighting':'Use soft flattering light with gentle shadows and natural highlights.',
-  '/dramaticlighting':'Use stronger directional lighting for depth and contrast while keeping the product readable and accurate.',
-  '/goldenhour':'Use warm natural golden-hour light with realistic outdoor exposure and soft highlights.',
-  '/daylight':'Use clean natural daylight with believable colour temperature and realistic shadows.',
-  '/luxurycommercial':'Use an elegant high-end luxury advertising feel with restrained movement and premium visual hierarchy.',
-  '/cleanbackground':'Use a simple uncluttered background so attention stays on the exact product.',
-  // Social / UGC
-  '/lifestyle':'Place the product naturally in a believable everyday lifestyle setting relevant to the target buyer.',
-  '/handheld':'Use subtle handheld smartphone movement that feels naturally filmed rather than mechanically perfect.',
-  '/phonecamera':'Use a realistic smartphone-camera look with natural exposure, depth and slight imperfections.',
-  '/naturalreaction':'Show a believable human reaction that feels spontaneous and understated, not exaggerated acting.',
-  '/ugcstyle':'Use authentic short-form social-video aesthetics with natural framing, pacing and human presence.',
-  '/tiktokstyle':'Use fast, engaging vertical social-video composition while keeping the product accurate and clearly visible.',
-  '/reelsstyle':'Use polished but natural vertical social-media framing suitable for short-form Reels content.',
-  '/creatorPOV':'Use a first-person creator perspective as if the product is being shown by the person filming.',
-  '/selfiePOV':'Use a believable selfie/creator perspective while keeping the product visible and correctly proportioned.',
-  // Scene / storytelling
-  '/unboxing':'Show a realistic unboxing sequence with packaging first, then the exact product reveal.',
-  '/beforeAfter':'Create a clear before-versus-after visual story based only on realistic, supportable product effects; do not invent results.',
-  '/problemSolution':'Open with a relatable problem for the target audience, then naturally introduce the product as the solution.',
-  '/demoFirst':'Prioritise showing the product in action before explaining it verbally or visually.',
-  '/benefitFocus':'Build the scene around the strongest genuine benefit provided in the product information.',
-  '/socialProof':'Use a natural testimonial-style visual language without inventing reviews, ratings or customer claims.',
-  '/ctaEndFrame':'End with a clean product-focused frame that leaves visual space for a CTA overlay added later in editing.',
-  '/loopEnding':'End with a composition that can transition naturally back to the opening frame for a seamless short-video loop.'
-};
-
-function addSlash(cmd){
-  const el=$('slashCommands'); if(!el) return;
-  const current=cleanLines(el.value);
-  if(!current.includes(cmd)){ current.push(cmd); el.value=current.join('\n'); }
-}
-function autoSlashStack(videoStyle, sceneType, productName, points, target){
-  const vs=(videoStyle||'').toLowerCase(), st=(sceneType||'').toLowerCase();
-  const blob=((productName||'')+' '+(points||[]).join(' ')+' '+(target||'')).toLowerCase();
-  let stack=[];
-  if(/unbox|unboxing|packaging/.test(st+blob)) stack=['/unboxing','/packagingReveal','/productReveal','/handheld','/macroDetail'];
-  else if(/before\s*\/\s*after|before after/.test(st)) stack=['/problemSolution','/beforeAfter','/productReveal','/naturalreaction','/ctaEndFrame'];
-  else if(/demo|usage|use/.test(st)) stack=['/problemSolution','/productInUse','/demoFirst','/macroDetail','/naturalreaction'];
-  else if(vs.includes('product commercial') || vs.includes('cinematic') || vs.includes('product-only')) stack=['/heroProduct','/productReveal','/slowzoom','/premiumcommercial','/cinematiclighting','/brandHeroShot'];
-  else if(vs.includes('ugc') || vs.includes('natural')) stack=['/lifestyle','/handheld','/phonecamera','/naturalreaction','/productReveal'];
-  else stack=['/heroProduct','/productReveal','/lifestyle','/naturalreaction','/ctaEndFrame'];
-  if(/kasut|shoe|sneaker|boot|beg|bag|fashion|baju|shirt|seluar|pakaian/.test(blob)) stack.push('/macroDetail','/productInUse');
-  if(/perfume|jam|watch|jewelry|barang kemas|skincare|kosmetik|makeup|beauty/.test(blob)) stack.push('/macroDetail','/luxurycommercial','/softlighting');
-  if(/makanan|minuman|kopi|teh|snack|food/.test(blob)) stack.push('/productOnTable','/daylight','/demoFirst');
-  if(/rumah|dapur|kitchen|clean|cleaner|pembersih/.test(blob)) stack.push('/productInUse','/lifestyle','/daylight');
-  return [...new Set(stack)].slice(0,8);
-}
-function getSlashStack(videoStyle, sceneType, productName, points, target){
-  const manual=cleanLines($('slashCommands')?.value||'').filter(x=>/^\/[A-Za-z0-9_-]+$/.test(x));
-  return manual.length ? manual : autoSlashStack(videoStyle,sceneType,productName,points,target);
-}
-function slashStackText(stack){ return stack.join('\n'); }
-function slashInstructionText(stack){
-  return stack.map(cmd => `${cmd}: ${SLASH_LIBRARY[cmd] || 'Apply this as a concise visual direction while preserving product identity, realism and scene continuity.'}`).join('\n');
-}
-function slashStackHtml(stack){
-  return `<div class="slashStack">${stack.map(x=>`<span class="slashTag">${esc(x)}</span>`).join('')}</div>`;
-}
-
+function normalizeUrl(u){let x=String(u||'').trim();if(!x)return '';if(!/^https?:\/\//i.test(x))x='https://'+x;return x;}
+function addSlash(cmd){const el=$('slashCommands');if(!el)return;const arr=cleanLines(el.value);if(!arr.includes(cmd))arr.push(cmd);el.value=arr.join('\n');}
+function getManualSlash(){return cleanLines($('slashCommands')?.value||'').filter(x=>/^\/[A-Za-z0-9_-]+$/.test(x));}
 function platformWindows(slot){
-  if(slot==='morning') return {label:'🌅 MORNING',time:'8:00 AM',platforms:['Facebook','Threads']};
-  if(slot==='lunch') return {label:'☀️ LUNCH',time:'1:00 PM',platforms:['Facebook','X']};
-  if(slot==='evening') return {label:'🌙 EVENING',time:'8:00 PM',platforms:['Facebook','Threads','X']};
-  return {label:'⭐ BEST SLOT',time:'9:00 PM',platforms:['Facebook','Threads','X']};
+  if(slot==='morning')return {label:'Morning',time:'8:00 AM',platforms:['Facebook','Threads']};
+  if(slot==='lunch')return {label:'Lunch',time:'1:00 PM',platforms:['Facebook','X']};
+  if(slot==='evening')return {label:'Evening',time:'8:00 PM',platforms:['Facebook','Threads','X']};
+  return {label:'Best-slot test',time:'9:00 PM',platforms:['Facebook','Threads','X']};
 }
-function inferProductContext(n,t,pts){
- const blob=(n+' '+t+' '+pts.join(' ')+' '+(currentProductIntel.ocrText||'')).toLowerCase();
- if(/skincare|skin|serum|moistur|ceramide|sunscreen|cleanser|toner|beauty|kosmetik|makeup|lipstick|foundation|mask/.test(blob))
-   return {cat:'penjagaan diri',problem:'isu penjagaan kulit yang dinyatakan dalam selling point',use:'rutin penjagaan kulit',buyer:t||'pengguna yang mencari produk penjagaan kulit',noun:'produk penjagaan kulit'};
- if(/dehumid|humid|kelembapan|moisture meter|air purifier|purifier|humidifier/.test(blob))
-   return {cat:'rumah',problem:'ruang yang terasa lembap atau perlukan kawalan kelembapan',use:'ruang dalam rumah',buyer:t||'keluarga',noun:'peralatan rumah'};
- if(/vacuum|cleaner|pembersih|serangga|semut|nyamuk|pest|rumah|dapur|kitchen/.test(blob))
-   return {cat:'rumah',problem:'masalah rumah yang berkaitan dengan produk ini',use:'kegunaan harian di rumah',buyer:t||'keluarga',noun:'produk rumah'};
- if(/shoe|kasut|sneaker|boot|baju|shirt|seluar|pakaian|fashion|beg|bag|wallet|jam|watch|jewelry|barang kemas/.test(blob))
-   return {cat:'gaya hidup',problem:'keperluan pakaian atau gaya hidup',use:'kegunaan harian',buyer:t||'pengguna yang mencari pilihan praktikal',noun:'produk gaya hidup'};
- if(/food|makanan|snack|snek|minuman|kopi|coffee|teh|tea|sauce|sos|biskut|coklat/.test(blob))
-   return {cat:'makanan & minuman',problem:'keperluan makan atau minum harian',use:'masa makan atau minum',buyer:t||'penggemar makanan',noun:'produk makanan/minuman'};
- if(/phone|telefon|gadget|earbud|headphone|charger|powerbank|keyboard|mouse|laptop|tablet|tech|elektronik/.test(blob))
-   return {cat:'teknologi',problem:'keperluan teknologi harian',use:'kegunaan harian',buyer:t||'pengguna teknologi',noun:'produk teknologi'};
- if(/baby|bayi|kanak|kids|anak|school|sekolah|mainan|toy/.test(blob))
-   return {cat:'keluarga',problem:'keperluan keluarga',use:'rutin keluarga',buyer:t||'ibu bapa',noun:'produk keluarga'};
- if(/car|kereta|motor|motosikal|automotive|dashboard|tayar|engine/.test(blob))
-   return {cat:'automotif',problem:'keperluan kenderaan',use:'kegunaan kenderaan',buyer:t||'pemilik kenderaan',noun:'produk automotif'};
- return {cat:'kegunaan harian',problem:'keperluan yang berkaitan dengan fungsi produk ini',use:'kegunaan harian',buyer:t||'pengguna yang memerlukan produk ini',noun:'produk ini'};
+function slugTags(name,category){
+  const words=(String(name)+' '+String(category)).toLowerCase().replace(/[^a-z0-9\u00C0-\u024F\s]/g,' ').split(/\s+/).filter(w=>w.length>2);
+  const base=['#AffiliFlowAI','#AffiliateMalaysia'];
+  for(const w of words){const t='#'+w.replace(/\s/g,'');if(!base.includes(t))base.push(t);if(base.length>=7)break;}
+  return base.join(' ');
 }
-function naturalPoint(raw){
- let x=String(raw||'').trim().replace(/^[•\-–—]+\s*/,'');
- if(!x) return '';
- const low=x.toLowerCase();
- const map=[
-  [/repair\s*skin\s*barrier/,'fokus pada skin barrier'],[/barrier\s*repair/,'fokus pada skin barrier'],[/calm.*soothe.*redness|soothe.*redness/,'membantu menenangkan penampilan kemerahan yang menjadi concern'],[/deep\s*hydration|hydrating|moistur/i,'memberi fokus pada hydration dan kelembapan kulit'],
-  [/dehumid|humidity|humid|kelembapan/,'membantu mengurus kelembapan ruang'],[/portable|mudah.*bawa|mudah.*pindah/,'mudah dipindahkan'],[/quiet|senyap/,'operasi yang lebih senyap'],[/compact|small|mini|kecil/,'saiz yang lebih kompak'],[/easy.*use|mudah.*guna|senang.*guna/,'mudah digunakan'],[/organic|organik/,'menggunakan konsep organik'],[/no poison|tiada racun/,'tanpa racun seperti yang dinyatakan'],[/waterproof|kalis air/,'reka bentuk kalis air'],[/fast charging|quick charge|cas pantas/,'pengecasan lebih pantas'],[/wireless|tanpa wayar/,'penggunaan tanpa wayar'],[/lightweight|ringan/,'reka bentuk yang ringan']
- ];
- for(const [re,txt] of map) if(re.test(low)) return txt;
- return x.charAt(0).toLowerCase()+x.slice(1);
-}
+function getFieldSummary(){return {
+  name:$('name').value.trim(),price:$('price').value.trim(),target:$('target').value.trim(),
+  points:cleanLines($('points').value),style:$('style').value,platform:$('platform').value,
+  videoStyle:$('videoStyle').value,sceneType:$('sceneType').value,affiliateUrl:normalizeUrl($('affiliateUrl').value),
+  linkPlacement:$('linkPlacement').value,accuracy:$('accuracy').value,background:(($('newBackground').value==='Custom background')?$('customBackground').value.trim():$('newBackground').value),
+  removeBgText:$('removeBgText').checked,removeBgGraphics:$('removeBgGraphics').checked,protectProductText:$('protectProductText').checked,
+  manualSlash:getManualSlash()
+};}
 
-let currentProductIntel={category:'',buyer:'',verifiedFacts:[],ocrText:'',source:'',confidence:'Low'};
-let _tesseractLoader=null;
-function loadTesseract(){
- if(window.Tesseract) return Promise.resolve(window.Tesseract);
- if(_tesseractLoader) return _tesseractLoader;
- _tesseractLoader=new Promise((resolve,reject)=>{
-  const sc=document.createElement('script');
-  sc.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
-  sc.onload=()=>resolve(window.Tesseract); sc.onerror=()=>reject(new Error('OCR library failed to load'));
-  document.head.appendChild(sc);
- });
- return _tesseractLoader;
-}
-function uniqueClean(arr){return [...new Set(arr.map(x=>String(x||'').replace(/\s+/g,' ').trim()).filter(x=>x.length>=3))]}
-function extractVisibleProductSignals(text){
- const raw=String(text||'').replace(/\r/g,'\n');
- const joined=raw.replace(/\s+/g,' ').trim();
- const out=[];
- const add=(x)=>{x=String(x||'').replace(/\s+/g,' ').trim(); if(x.length>=3 && x.length<=80 && !out.some(v=>v.toLowerCase()===x.toLowerCase())) out.push(x);};
- const patterns=[
-  /\b\d+(?:\.\d+)?\s?(?:g|kg|ml|l|w|v|mah|mm|cm|inch|in|spf)\b/gi,
-  /\b\d+\s?(?:degree|degrees|°)\b/gi,
-  /\b\d+x\s*[A-Za-z][A-Za-z ]{0,35}/gi,
-  /\b(?:5x\s*ceramide|ceramide|centella|hyaluronic acid|niacinamide|retinol|salicylic acid|vitamin c|barrier repair|skin barrier|moisture|hydration|dehumidif\w*|humidif\w*|air purifier|360\s*(?:degree|°)|portable|compact|wireless|fast charging|waterproof|usb-c|bluetooth|baju kurung|baju melayu|kurung wanita|kain sejuk|mudah gosok|raya|hari raya|aidilfitri|open house)\b[^.\n]{0,55}/gi
- ];
- for(const re of patterns){ (joined.match(re)||[]).forEach(add); }
- return out.slice(0,18);
-}
-function inferIntelCategory(n,t,ocr){
- const blob=(n+' '+t+' '+ocr).toLowerCase();
- if(/baju\s*kurung|kurung\s*wanita|baju\s*melayu|kurta|samping/.test(blob)) return 'Gaya hidup / pakaian';
- if(/ceramide|centella|moistur|serum|sunscreen|skin|barrier|cosmetic|skincare/.test(blob)) return 'Penjagaan diri / skincare';
- if(/dehumid|humid|moisture control|360 degree|air purifier|diffuser/.test(blob)) return 'Rumah / kawalan udara & kelembapan';
- if(/shoe|sneaker|shirt|dress|pakaian|baju|seluar|fashion|bag|wallet/.test(blob)) return 'Gaya hidup / fesyen';
- if(/phone|tablet|laptop|charger|powerbank|earbud|bluetooth|usb-c|wireless/.test(blob)) return 'Teknologi / elektronik';
- if(/baby|kids|toy|school|kanak|bayi/.test(blob)) return 'Keluarga / kanak-kanak';
- if(/food|snack|coffee|tea|kopi|teh|biskut|coklat|minuman|makanan/.test(blob)) return 'Makanan & minuman';
- if(/car|kereta|motor|motosikal|automotive|tayar/.test(blob)) return 'Automotif';
- return 'Produk pengguna umum';
-}
-async function buildProductIntelligence(n,t,pts){
- const status=$('intelStatus');
- if(status) status.textContent='🧠 Product Intelligence sedang menganalisis reference images…';
- let ocrText=''; let ocrOk=false;
- try{
-  const T=await loadTesseract();
-  const files=productRefs.slice(0,5);
-  const chunks=[];
-  for(let i=0;i<files.length;i++){
-   try{ const r=await T.recognize(files[i],'eng',{logger:m=>{if(status&&m.status==='recognizing text') status.textContent=`🧠 Product Intelligence membaca gambar ${i+1}/${files.length}… ${Math.round((m.progress||0)*100)}%`;}}); chunks.push(r.data.text||''); }catch(e){}
-  }
-  ocrText=chunks.join('\n'); ocrOk=!!ocrText.trim();
- }catch(e){ if(status) status.textContent='🧠 Product Intelligence menggunakan maklumat produk tanpa OCR.'; }
- const signals=extractVisibleProductSignals(ocrText);
- const category=inferIntelCategory(n,t,signals.join(' '));
- const base=uniqueClean(pts);
- const verifiedFacts=uniqueClean([...base,...signals]).slice(0,16);
- const confidence=ocrOk&&signals.length?'High':'Medium';
- const buyer=t||'belum dinyatakan';
- const angles=[];
- if(/skincare/i.test(category)) angles.push('rutin penjagaan kulit','fungsi bahan yang benar-benar kelihatan/dinyatakan','kesesuaian penggunaan');
- else if(/kelembapan/i.test(category)) angles.push('masalah kelembapan ruang','situasi penggunaan dalam rumah','fungsi/saiz yang dapat disahkan');
- else if(/teknologi/i.test(category)) angles.push('fungsi utama','situasi penggunaan','keserasian/spesifikasi yang disahkan');
- else if(/fesyen/i.test(category)) angles.push('gaya & penggunaan','material/ciri yang dinyatakan','situasi pemakaian');
- else angles.push('masalah pengguna','fungsi yang dapat disahkan','situasi penggunaan sebenar');
- currentProductIntel={category,buyer,verifiedFacts,ocrText,source:ocrOk?'Nama + sasaran + teks yang kelihatan pada reference images (OCR)':'Nama + sasaran + maklumat yang dimasukkan pengguna',confidence};
- if(status) status.textContent=`🧠 Product Intelligence siap · ${confidence} confidence`;
- return {...currentProductIntel,angles};
-}
-function productIntelCard(intel){
- const facts=intel.verifiedFacts||[];
- const shown=facts.slice(0,10);
- return `<div class="result intelCard"><div class="rh">🧠 PRODUCT INTELLIGENCE <span>${esc(intel.confidence||'Medium')} confidence</span></div><div class="rb"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"><div><b>Kategori</b><br>${esc(intel.category||'Produk pengguna umum')}</div><div><b>Sasaran</b><br>${esc(intel.buyer||'Belum dinyatakan')}</div></div><div style="margin-top:12px"><b>Maklumat yang dikesan / diberikan</b><div class="small" style="margin-top:6px">${shown.length?shown.map(x=>`<span style="display:inline-block;background:#f4efff;border-radius:999px;padding:5px 9px;margin:3px">${esc(x)}</span>`).join(''):'Tiada signal tambahan yang cukup jelas.'}</div></div><div class="small" style="margin-top:10px">Sumber: ${esc(intel.source||'Maklumat produk')} · AffiliFlow tidak menganggap teks yang tidak jelas sebagai claim yang disahkan.</div></div></div>`;
-}
-function productInsights(n,t,points){
- const ctx=inferProductContext(n,t,points); const ps=points.filter(Boolean).map(naturalPoint);
- const hasVerifiedPoints=ps.length>0;
- const blob=(n+' '+t).toLowerCase();
- let p1=ps[0]||'';
- let p2=ps[1]||'';
- let p3=ps[2]||'';
- // When the user leaves Selling Points empty, use only safe context inferred from the product name/category.
- // These are framing statements, not invented product claims.
- if(!hasVerifiedPoints){
-   if(ctx.cat==='penjagaan diri'){ p1='penjagaan dan rutin kulit'; p2='keperluan penjagaan kulit yang sesuai dengan pengguna'; }
-   else if(ctx.cat==='rumah' && /dehumid|humid|kelembapan|moisture/i.test(blob)){ p1='mengurus kelembapan ruang'; p2='kegunaan dalam ruang rumah'; }
-   else if(ctx.cat==='rumah'){ p1='kegunaan rumah yang berkaitan dengan masalah tersebut'; p2='cara produk digunakan dalam rutin harian'; }
-   else if(ctx.cat==='makanan & minuman'){ p1='penggunaan sebagai makanan atau minuman'; p2='kesesuaian dengan citarasa dan rutin sendiri'; }
-   else if(ctx.cat==='teknologi'){ p1='fungsi utama produk teknologi ini'; p2='kegunaan sebenar dalam rutin harian'; }
-   else if(ctx.cat==='gaya hidup'){ p1='kegunaan dan kesesuaian dengan rutin harian'; p2='gaya atau keperluan pengguna'; }
-   else if(ctx.cat==='keluarga'){ p1='kegunaan yang berkaitan dengan rutin keluarga'; p2='kesesuaian dengan keperluan pengguna'; }
-   else if(ctx.cat==='automotif'){ p1='kegunaan berkaitan kenderaan'; p2='kesesuaian dengan keperluan kenderaan'; }
-   else { p1='fungsi utama produk seperti yang dinyatakan pada maklumat produk'; p2='kesesuaian dengan kegunaan harian'; }
- }
- let situation='keperluan harian';
- if(ctx.cat==='penjagaan diri') situation='rutin penjagaan kulit';
- if(ctx.cat==='rumah' && /dehumid|humid|kelembapan|moisture/i.test(n+' '+points.join(' '))) situation='ruang yang terasa lembap';
- if(ctx.cat==='rumah' && /semut|nyamuk|serangga|pest/i.test(n+' '+points.join(' '))) situation='masalah serangga di rumah';
- if(ctx.cat==='makanan & minuman') situation='masa makan atau minum';
- if(ctx.cat==='gaya hidup') situation='pilihan untuk kegunaan dan gaya harian';
- if(ctx.cat==='teknologi') situation='kegunaan teknologi harian';
- return {ctx,ps,situation,p1,p2,p3};
-}
-function productNameFacts(n){
- const low=(String(n||'')+' '+(currentProductIntel.verifiedFacts||[]).join(' ')).toLowerCase();
- const facts=[];
- const rules=[
-  [/ceramide/,'ceramide'],[/centella/,'centella'],[/barrier\s*repair|skin\s*barrier/,'skin barrier'],[/moistur|hydration|hydrat/,'moisture/hydration'],[/serum/,'serum'],[/sunscreen|sunblock|spf/,'sun protection'],
-  [/dehumid|dehumidifier/,'dehumidifier'],[/humidifier/,'humidifier'],[/diffuser/,'diffuser'],[/air\s*purifier|purifier/,'air purifier'],[/mini|compact|small/,'compact/mini'],
-  [/vacuum/,'vacuum'],[/cleaner|pembersih/,'cleaning'],[/pest|serangga|semut|nyamuk/,'pest control'],[/organic|organik/,'organic'],
-  [/shoe|kasut|sneaker|boot/,'footwear'],[/shirt|baju|dress|seluar|pakaian/,'apparel'],[/bag|beg|wallet|dompet/,'accessory'],
-  [/earbud|headphone|speaker/,'audio'],[/charger|powerbank/,'charging'],[/phone|telefon|tablet|laptop/,'device'],
-  [/baby|bayi|kids|kanak|mainan|toy/,'family/kids'],[/coffee|kopi|tea|teh|snack|snek|biskut|coklat|makanan|minuman/,'food/drink']
- ];
- rules.forEach(([re,f])=>{if(re.test(low)&&!facts.includes(f)) facts.push(f)});
- const nums=String(n||'').match(/\b\d+(?:\.\d+)?\s?(?:g|kg|ml|l|w|v|x|spf)?\b/gi)||[];
- nums.slice(0,4).forEach(x=>facts.push(x));
- return facts;
-}
-function detectStoryContext(n,t,points,intel){
- const blob=(String(n||'')+' '+String(t||'')+' '+(points||[]).join(' ')+' '+(intel?.ocrText||'')+' '+(intel?.verifiedFacts||[]).join(' ')).toLowerCase();
- if(/safety\s*helmet|helmet\s*keselamatan|hard\s*hat|construction|tapak\s*bina|site/.test(blob)) return {type:'safety_helmet',topic:'keselamatan kepala ketika bekerja',problem:'perlukan perlindungan kepala yang sesuai untuk situasi kerja',uses:['tapak bina','construction','bengkel','kerja lapangan'],facts:['safety helmet','perlindungan kepala'],openers:['Kalau kerja di tapak bina, keselamatan kepala memang bukan benda yang boleh ambil ringan.','Dekat site, safety helmet bukan sekadar aksesori — ia sebahagian daripada kelengkapan keselamatan kerja.','Bila pilih kelengkapan kerja, saya akan fikir dulu tentang risiko dan situasi kerja sebenar.']};
- if(/songket|kain songket|tenun songket/.test(blob)) return {type:'songket',topic:'pemilihan songket untuk Raya dan majlis',problem:'nak cari songket yang sesuai untuk Raya atau majlis',uses:['Hari Raya','kenduri','majlis kahwin','open house','bergambar'],facts:['songket','pakaian tradisional','majlis'],openers:['Bila ada majlis atau Raya, songket memang antara pakaian yang mula kita fikir.','Songket ada suasana dia sendiri — bila dipakai untuk majlis, terus nampak lain.','Kalau nak cari songket, saya biasanya fikir dulu nak pakai untuk majlis apa.']};
- if(/tudung|shawl|hijab/.test(blob)) return {type:'tudung',topic:'pemilihan tudung untuk rutin dan majlis',problem:'nak cari tudung yang sesuai dengan rutin dan pakaian',uses:['kerja','keluar','majlis','Raya','harian'],facts:['tudung','pemakaian wanita'],openers:['Kalau beli tudung, saya biasanya fikir dulu nak pakai untuk ke mana.','Tudung nampak simple, tapi bahan dan cara pakai memang buat beza.']};
- if(/telekung|mukena/.test(blob)) return {type:'telekung',topic:'pemilihan telekung untuk solat',problem:'nak cari telekung yang selesa dan praktikal',uses:['solat di rumah','surau','masjid','musafir','Ramadan'],facts:['telekung','kegunaan solat'],openers:['Kalau telekung, saya lebih pentingkan keselesaan sebab ia digunakan untuk ibadah.','Telekung bukan sekadar tengok cantik — kita nak rasa selesa bila memakainya.']};
- if(/beg tangan|handbag|tote bag|shoulder bag|crossbody/.test(blob)) return {type:'bag',topic:'pemilihan beg untuk kegunaan harian',problem:'nak cari beg yang sesuai dengan barang yang selalu dibawa',uses:['kerja','keluar','travel','shopping','harian'],facts:['beg','kegunaan harian'],openers:['Beg paling senang dinilai bila kita fikir apa yang selalu kita bawa setiap hari.','Beg cantik memang menarik, tapi akhirnya kita nak tahu barang kita muat atau tidak.']};
- if(/baju\s*melayu|baju\s*melayu\s*moden|samping|songkok/.test(blob)) return {
-   type:'baju_melayu', topic:'persiapan Hari Raya dan pemilihan Baju Melayu',
-   problem:'nak cari Baju Melayu yang nampak kemas dan selesa untuk dipakai masa Hari Raya',
-   uses:['Hari Raya','solat sunat Aidilfitri','kunjung-mengunjung','open house','bergambar dengan keluarga'],
-   facts:['Baju Melayu','pemakaian lelaki','Hari Raya'],
-   openers:['Bila Hari Raya makin dekat, antara benda yang mula kita fikir ialah Baju Melayu.','Setiap kali nak dekat raya, mesti mula fikir nak pakai Baju Melayu yang macam mana.','Untuk lelaki, pilih Baju Melayu untuk raya nampak simple, tapi sebenarnya banyak benda kita kena fikir.']
- };
- if(/baju\s*kurung|kurung\s*wanita/.test(blob)) return {
-   type:'baju_kurung', topic:'persiapan Raya dan pemilihan Baju Kurung wanita',
-   problem:'nak cari Baju Kurung yang sesuai untuk dipakai masa Raya, majlis atau kunjung-mengunjung',
-   uses:['Hari Raya','kunjung-mengunjung','open house','majlis','bergambar dengan keluarga'],
-   facts:['Baju Kurung wanita','pakaian wanita'],
-   openers:['Bila Raya makin dekat, antara benda yang mula difikirkan ialah nak pakai baju apa.','Kalau dah mula fikir pasal Raya, Baju Kurung memang antara benda yang kita akan cari.','Untuk perempuan, pilih Baju Kurung untuk Raya bukan sekadar tengok cantik atau tidak. Kena fikir juga kain dan keselesaan.']
- };
- if(/kurta/.test(blob)) return {type:'kurta',topic:'gaya lelaki untuk Hari Raya dan majlis',problem:'nak cari pakaian yang sesuai untuk raya atau majlis',uses:['Hari Raya','solat','majlis','open house'],facts:['kurta','pakaian lelaki'],openers:['Kalau nak raya dengan gaya yang lebih santai, kurta memang antara pilihan yang selalu orang tengok.']};
- if(/skincare|ceramide|centella|moistur|serum|sunscreen|skin barrier/.test(blob)) return {type:'skincare',topic:'rutin penjagaan kulit',problem:'kulit terasa kering atau rutin sekarang perlukan pilihan yang lebih sesuai',uses:['rutin pagi','rutin malam','selepas cuci muka'],facts:['skincare','rutin penjagaan kulit'],openers:['Kalau kulit mula rasa kering atau rutin sekarang tak cukup selesa, biasanya kita mula tengok semula produk yang digunakan.','Dalam rutin skincare, saya lebih suka tengok fungsi produk dulu daripada ikut trend.']};
- if(/dehumid|humidifier|kelembapan|moisture control/.test(blob)) return {type:'dehumidifier',topic:'kelembapan dalam ruang rumah',problem:'ruang terasa lembap dan perlukan cara untuk mengurus kelembapan',uses:['bilik tidur','almari','ruang kecil','rumah'],facts:['dehumidifier','kelembapan ruang'],openers:['Kalau bilik atau ruang rumah selalu terasa lembap, benda macam ni memang boleh buat kita mula cari jalan penyelesaian.']};
- if(/kasut|shoe|sneaker|boot/.test(blob)) return {type:'footwear',topic:'pemilihan kasut untuk kegunaan sebenar',problem:'nak cari kasut yang sesuai dengan aktiviti dan cara pemakaian',uses:['kerja','berjalan','outdoor','sukan','kegunaan harian'],facts:['kasut','pemakaian'],openers:['Bila nak beli kasut, saya tak tengok rupa sahaja. Saya fikir kasut itu nak dipakai untuk apa.']};
- if(/baju|shirt|dress|seluar|pakaian|fashion/.test(blob)) return {type:'apparel',topic:'pemilihan pakaian dan gaya pemakaian',problem:'nak cari pakaian yang sesuai dengan gaya dan situasi',uses:['kerja','keluar','majlis','kegunaan harian'],facts:['pakaian','fesyen'],openers:['Bila pilih pakaian, saya biasanya fikir dulu nak pakai untuk situasi apa.']};
- if(/phone|telefon|laptop|tablet|earbud|headphone|charger|powerbank|gadget/.test(blob)) return {type:'tech',topic:'kegunaan gadget dalam rutin harian',problem:'nak cari gadget yang betul-betul menyelesaikan keperluan',uses:['kerja','perjalanan','rumah','hiburan'],facts:['gadget','teknologi'],openers:['Bila nak beli gadget, saya tak tengok rupa atau trend sahaja. Saya nak tahu fungsi yang memang akan saya guna.']};
- if(/makanan|food|snack|snek|kopi|coffee|teh|tea|coklat|biskut|minuman/.test(blob)) return {type:'food',topic:'pengalaman makan atau minum',problem:'nak cari makanan atau minuman yang sesuai dengan selera dan situasi',uses:['sarapan','minum petang','kerja','bersantai'],facts:['makanan/minuman'],openers:['Bab makanan ni lain sikit — sebelum beli, kita biasanya dah boleh bayangkan bila nak makan atau minum.']};
- if(/seranggo|serangga|semut|nyamuk|pest|repellent/.test(blob)) return {type:'pest',topic:'masalah serangga di rumah',problem:'semut atau serangga kecil mengganggu kawasan rumah',uses:['dapur','ruang makan','laluan serangga','kawasan rumah'],facts:['kegunaan berkaitan serangga','kawasan rumah'],openers:['Baru kemas rumah, tiba-tiba nampak semut atau serangga datang balik. Memang boleh buat kita cari alternatif.']};
- return {type:'general',topic:'kegunaan produk dalam situasi sebenar',problem:'nak cari produk yang sesuai dengan keperluan sendiri',uses:['kegunaan harian'],facts:['fungsi produk'],openers:['Bila jumpa produk baru, saya lebih suka fikir terus tentang situasi sebenar: bila saya akan guna dan untuk apa?']};
-}
-function cleanContentFacts(points,intel,ctx){
- const raw=[...(points||[]),...(intel?.verifiedFacts||[])].map(naturalPoint).filter(Boolean);
- const bad=/^[A-Za-z]{1,3}\s+\d|\b(?:rr|gn|bt|of|re|ae|an|xq|3s|7x)\b/i;
- const usable=raw.filter(x=>String(x).length<=90 && !bad.test(String(x)) && /[A-Za-zÀ-ÿ]{3,}/.test(String(x)));
- return [...new Set([...usable,...(ctx.facts||[])])].slice(0,5);
-}
-function humanStory(n,t,points,angle,idx){
- const intel=currentProductIntel||{};
- const ctx=detectStoryContext(n,t,points,intel);
- const rawName=String(n||'produk ini').trim();
- const shortName=rawName.length>52?rawName.split(/\s+/).slice(0,8).join(' '):rawName;
- const facts=cleanContentFacts(points,intel,ctx).filter(x=>!/^fungsi produk|kegunaan harian|pakaian|fesyen|gadget|teknologi$/i.test(x));
- const factText=facts.slice(0,3).join(', ');
- const use=(ctx.uses||['kegunaan harian']);
- const safeFact = factText ? `Antara maklumat yang saya perasan tentang produk ini ialah ${factText}.` : '';
- const storySets={
-  safety_helmet:[
-   `Kalau kerja di tapak bina, safety helmet memang bukan benda yang kita pakai sebab nak nampak macam orang site. Ia berkait terus dengan keselamatan kepala ketika bekerja.\n\nKalau saya sedang cari untuk kegunaan kerja, saya akan fikir dulu jenis kerja yang saya buat, kawasan kerja dan keperluan perlindungan yang diperlukan. ${safeFact}\n\n${shortName} menarik untuk dimasukkan dalam senarai semakan sebab ia memang produk yang berkait dengan situasi kerja macam ni. Tapi saya tetap akan semak spesifikasi dan kesesuaian sebelum beli.\n\nKalau korang memang bekerja di construction, site atau kerja lapangan, tengok detail produk dulu dan bandingkan dengan keperluan kerja sendiri.`,
-   `Dekat site, benda macam helmet kadang-kadang nampak simple. Tapi bila kita fikir semula, kepala kita memang antara bahagian yang tak patut kita ambil mudah.\n\nSebab itu saya lebih suka pilih safety helmet berdasarkan kegunaan sebenar, bukan sekadar rupa atau harga. ${safeFact}\n\nUntuk ${shortName}, saya akan tengok maklumat keselamatan yang diberikan dan pastikan ia sesuai dengan jenis kerja yang saya lakukan.\n\nKalau korang tengah cari helmet untuk kerja, boleh tengok produk ni sebagai salah satu pilihan untuk dibandingkan dulu.`,
-   `Pernah masuk kawasan construction? Perkara pertama yang biasanya kita nampak ialah pekerja dengan kelengkapan keselamatan. Safety helmet memang antara yang paling jelas.\n\nBagi saya, pemilihan helmet patut bermula dengan satu soalan: helmet ni sesuai untuk kerja yang saya buat atau tidak? ${safeFact}\n\n${shortName} boleh disemak dari situ. Bukan terus kata sesuai untuk semua orang, tetapi tengok dulu maklumat yang memang diberikan.\n\nKalau kegunaan korang sama, saya letak detail produk di bawah untuk korang semak sendiri.`,
-   `Bila pilih barang keselamatan, saya tak suka guna ayat “nampak okay, beli je”. Risiko setiap tempat kerja tak sama.\n\nUntuk safety helmet, saya akan tengok jenis pekerjaan, keadaan tempat kerja dan spesifikasi yang dinyatakan untuk produk tersebut. ${safeFact}\n\n${shortName} boleh jadi salah satu produk yang korang bandingkan sebelum membuat keputusan. Yang penting, pilih berdasarkan keperluan kerja sebenar.\n\nKalau memang sedang mencari safety helmet untuk kerja, tengok detailnya dulu.`,
-   `Kalau kerja di site, helmet bukan aksesori tambahan yang kita pakai bila rasa perlu. Ia sebahagian daripada kelengkapan keselamatan kerja.\n\nSebab itu bila tengok ${shortName}, saya lebih berminat nak tahu maklumat produk dan kesesuaian penggunaannya daripada sekadar tengok design. ${safeFact}\n\nKalau korang bekerja dalam bidang construction atau kerja lapangan, boleh semak produk ni dan bandingkan dengan keperluan tempat kerja korang.`,
-   `Ada barang yang kita beli sebab cantik. Ada barang yang kita pilih sebab memang diperlukan. Safety helmet masuk kategori kedua.\n\nBila bekerja di kawasan yang memerlukan perlindungan kepala, saya akan semak dahulu jenis helmet dan maklumat keselamatan yang dinyatakan. ${safeFact}\n\n${shortName} boleh tengok sebagai salah satu pilihan. Jangan terus beli hanya sebab nampak sesuai pada gambar — semak detail dan pastikan kegunaan memang sepadan.`,
-   `Kalau korang kerja construction, bengkel atau kawasan yang perlukan perlindungan kepala, mungkin sekarang tengah cari safety helmet yang sesuai.\n\nSaya akan mula dengan benda paling asas: untuk kerja apa, siapa yang akan pakai dan spesifikasi apa yang diperlukan. ${safeFact}\n\nDaripada situ barulah ${shortName} boleh dinilai dengan lebih masuk akal.\n\nKalau memang tengah mencari, boleh tengok detail produk dulu. Sekurang-kurangnya kita tahu apa yang kita sedang pilih.`,
-   `Bagi saya, barang keselamatan tak perlu dipromosikan dengan ayat yang terlalu hebat. Cukup kita faham kegunaannya dan pilih yang sesuai.\n\nSafety helmet digunakan dalam situasi kerja yang memerlukan perlindungan kepala. ${safeFact}\n\n${shortName} menarik untuk saya semak sebagai salah satu pilihan, tetapi kesesuaian tetap bergantung kepada kerja dan keperluan pengguna.\n\nKalau korang sedang cari untuk kegunaan sendiri, tengok maklumat produk dan bandingkan dahulu.`,
-   `Bila beli kelengkapan kerja, saya biasanya cuba bayangkan rutin sebenar selepas barang itu sampai. Kalau setiap hari turun site, helmet memang akan jadi sebahagian daripada rutin tersebut.\n\nJadi untuk ${shortName}, saya akan tengok keselesaan penggunaan, maklumat keselamatan dan perkara yang memang dinyatakan oleh penjual. ${safeFact}\n\nKalau sesuai dengan kerja korang, boleh masukkan dalam shortlist. Semak detail dulu sebelum buat keputusan.`,
-   `Kalau saya nak pilih safety helmet, saya tak akan mula dengan “yang mana paling cantik?”. Saya mula dengan “yang mana sesuai untuk kerja aku?”.\n\nItu sebab saya tengok ${shortName} dari sudut kegunaan sebenar dan maklumat yang tersedia. ${safeFact}\n\nKalau korang memang perlukan helmet untuk kerja, boleh tengok produk ni dan bandingkan dengan pilihan lain. Pilih berdasarkan keperluan sendiri, bukan semata-mata gambar.`
-  ],
-  baju_melayu:[
-   `Bila masuk musim Raya, Baju Melayu memang antara benda yang mula kita fikir. Nak pakai masa solat Raya, pergi rumah saudara, open house dan bergambar dengan keluarga.\n\nUntuk saya, yang penting bukan sekadar nampak cantik dalam gambar. Saya nak tengok warna, saiz, potongan dan bahan yang dinyatakan. ${safeFact}\n\n${shortName} menarik untuk saya tengok sebagai salah satu pilihan Baju Melayu tahun ni. Kalau gaya dia memang kena dengan citarasa korang, bolehlah semak detail sebelum buat keputusan.\n\nTak perlu terus beli. Tengok dulu saiz dan maklumat yang ada supaya tak menyesal bila sampai nanti.`,
-   `Korang jenis beli Baju Melayu awal atau tunggu dah dekat Raya? 😄\n\nSaya sebenarnya lebih suka tengok awal. Bila dekat Raya, kita bukan fikir satu hari saja — ada solat Raya, ziarah keluarga, open house dan macam-macam lagi.\n\nSebab tu bila tengok ${shortName}, saya akan fikir sama ada gaya dan maklumatnya sesuai untuk rutin Raya sendiri. ${safeFact}\n\nKalau korang belum pilih lagi, boleh tengok detail produk ni dulu. Mana tahu memang jumpa gaya yang korang cari.`,
-   `Baju Melayu untuk Raya nampak macam benda mudah. Tapi bila dah dekat nak beli, mula fikir warna apa, saiz mana dan potongan macam mana. 😄\n\nSaya rasa itu yang patut kita tengok dulu sebelum checkout ${shortName}. ${safeFact}\n\nKalau nak pakai untuk solat Raya, kunjung-mengunjung atau open house, pilih yang betul-betul sesuai dengan cara korang berpakaian.\n\nKalau berminat, tengok detail produk dulu dan bandingkan dengan pilihan lain.`,
-   `Antara benda yang saya suka tentang suasana Raya ialah bila satu keluarga semua dah siap berpakaian untuk bergambar. 😄\n\nSebab tu Baju Melayu bukan sekadar pakaian untuk satu pagi. Lepas solat, kita mungkin pergi rumah saudara, jumpa kawan, masuk open house dan ambil banyak gambar.\n\n${shortName} boleh dipertimbangkan kalau gaya dan maklumat produknya kena dengan apa yang korang cari. ${safeFact}\n\nTengok detail dulu sebelum pilih.`,
-   `Kalau tahun ni belum ada Baju Melayu, sekarang memang masa yang sesuai untuk mula tengok pilihan. Bukan sebab kena cepat-cepat beli, tapi sekurang-kurangnya kita boleh pilih dengan tenang.\n\nUntuk ${shortName}, saya akan semak saiz, warna, potongan dan bahan yang dinyatakan. ${safeFact}\n\nKalau sesuai dengan gaya korang untuk Raya, boleh masukkan dalam shortlist. Kalau tak kena, cari pilihan lain.`,
-   `Baju Melayu yang nampak kemas memang sedap mata memandang. Tapi saya rasa lagi penting kalau kita tahu kita nak pakai untuk apa.\n\nKalau untuk solat Raya dan kunjung-mengunjung seharian, keselesaan dan saiz memang antara benda yang saya akan fikir. ${safeFact}\n\n${shortName} boleh tengok sebagai salah satu pilihan. Semak detail dan pilih ikut keperluan sendiri.`,
-   `Setiap orang ada gaya Raya masing-masing. Ada yang suka warna lembut, ada yang suka warna terang, ada yang suka potongan moden.\n\nJadi saya tak nak kata ${shortName} sesuai untuk semua lelaki. Saya cuma rasa produk macam ni menarik untuk dimasukkan dalam senarai kalau gaya, saiz dan maklumatnya memang kena dengan citarasa sendiri. ${safeFact}\n\nKalau tengah mencari, boleh tengok detail dulu.`,
-   `Bila nak beli baju Raya online, saya memang akan zoom gambar dulu. 😄 Lepas itu baru tengok saiz, bahan dan detail yang diberikan.\n\nUntuk ${shortName}, perkara macam tu lebih penting daripada sekadar nampak cantik dalam gambar. ${safeFact}\n\nKalau korang tengah survey Baju Melayu untuk Raya, boleh buka detail produk ni dan bandingkan dengan pilihan lain sebelum checkout.`,
-   `Raya tahun ni nak pakai Baju Melayu yang sama macam tahun lepas atau nak cuba gaya lain? 😄\n\nKalau nak cari yang baru, saya akan mula dengan gaya yang memang saya selesa pakai. Lepas tu baru tengok saiz, warna dan bahan.\n\n${shortName} boleh jadi salah satu pilihan untuk disemak. ${safeFact}\n\nKalau kena dengan citarasa, simpan dulu dalam shortlist dan buat perbandingan sebelum beli.`,
-   `Kalau dah mula nampak orang post koleksi Raya, biasanya kita pun mula terfikir, “Aku nak pakai apa tahun ni?” 😄\n\nBagi lelaki, Baju Melayu memang pilihan yang senang untuk solat Raya, ziarah keluarga dan open house.\n\n${shortName} boleh tengok sebagai salah satu pilihan. ${safeFact}\n\nKalau korang tengah survey, tengok detail, semak saiz dan pilih yang paling sesuai dengan gaya sendiri.`
-  ],
-  baju_kurung:[
-   `Bila Raya makin dekat, antara benda yang mula kita fikir ialah nak pakai Baju Kurung yang macam mana. 😄\n\nNak pakai untuk solat Raya, kunjung-mengunjung, open house atau bergambar dengan keluarga — mestilah nak yang nampak kemas tapi masih selesa.\n\n${shortName} menarik untuk saya tengok sebab ${factText||'ia memang dalam kategori Baju Kurung wanita'}. Kalau korang tengah survey, semak saiz, bahan dan maklumat yang diberikan dulu.\n\nTak perlu terus checkout. Tengok dulu sama ada betul-betul kena dengan gaya dan keperluan sendiri.`,
-   `Kalau nak beli Baju Kurung online, saya rasa gambar cantik saja belum cukup. 😄\n\nSaya biasanya tengok bahan, saiz dan bagaimana potongan itu nampak pada badan. Kalau nak pakai sepanjang Raya, keselesaan memang penting.\n\n${shortName} boleh dimasukkan dalam shortlist kalau maklumat produknya kena dengan apa yang korang cari. ${safeFact}\n\nBoleh tengok detail dulu sebelum buat keputusan.`,
-   `Raya bukan sehari. Lepas solat, ada ziarah keluarga, open house dan mungkin sampai malam masih keluar masuk rumah orang.\n\nSebab tu bila pilih Baju Kurung, saya tak fikir pasal gambar saja. Saya fikir juga kain, saiz dan keselesaan untuk dipakai lama.\n\n${shortName} boleh tengok sebagai salah satu pilihan. ${safeFact}\n\nKalau sesuai dengan gaya korang, bolehlah semak detailnya.`,
-   `Ada beza antara “cantik dalam gambar” dengan “sedap dipakai”. 😄\n\nBila tengok ${shortName}, saya akan cari dulu maklumat yang boleh membantu buat keputusan seperti saiz, bahan dan ciri yang memang dinyatakan. ${safeFact}\n\nKalau tengah cari Baju Kurung untuk Raya atau majlis, tengok detail produk dulu. Pilih ikut keselesaan dan gaya sendiri.`,
-   `Kalau dah mula fikir pasal baju Raya, jangan lupa satu benda — baju tu akan dipakai bukan sekadar untuk bergambar.\n\nMungkin pagi solat Raya, tengah hari rumah saudara, petang open house. Jadi saya suka tengok pakaian yang masuk dengan rutin sebenar.\n\n${shortName} boleh dipertimbangkan kalau maklumatnya sesuai dengan apa yang korang perlukan. ${safeFact}\n\nSemak detail dulu sebelum beli.`,
-   `Saya suka tengok Baju Kurung dari sudut praktikal. Cantik memang penting, tapi saiz, bahan dan cara penjagaan pun boleh buat beza.\n\nUntuk ${shortName}, tengok maklumat yang diberikan dan fikir sama ada ia sesuai dengan cara korang berpakaian. ${safeFact}\n\nKalau kena dengan gaya, boleh masukkan dalam shortlist untuk Raya.`,
-   `Korang dah pilih baju Raya ke belum? 😄 Kalau belum, saya rasa tak salah tengok beberapa pilihan dulu sebelum buat keputusan.\n\n${shortName} menarik untuk disemak dari segi gaya dan maklumat produk yang ada. ${safeFact}\n\nTak semestinya terus beli. Bandingkan dulu dengan keperluan sendiri, terutama saiz dan bahan.`,
-   `Bila satu keluarga nak bergambar masa Raya, pakaian memang jadi sebahagian daripada suasana.\n\nSebab itu saya suka pilih Baju Kurung yang bukan saja nampak elok, tapi saya sendiri rasa yakin dan selesa nak pakai.\n\n${shortName} boleh tengok sebagai salah satu pilihan. ${safeFact}\n\nKalau berminat, semak detail dulu.`,
-   `Kalau nak cari Baju Kurung untuk majlis atau Raya, saya biasanya fikir tempat dan tempoh pemakaian dulu. Kalau akan pakai lama, bahan dan keselesaan memang saya ambil kira.\n\n${shortName} boleh dinilai dari situ. ${safeFact}\n\nKalau gaya dia kena dengan citarasa korang, tengok detail dan saiz sebelum checkout.`,
-   `Satu perkara yang saya suka bila survey baju online ialah kita boleh bandingkan beberapa pilihan dulu. 😄\n\nUntuk ${shortName}, saya akan tengok gambar, saiz, bahan dan maklumat yang diberikan. ${safeFact}\n\nKalau semua itu memang kena dengan apa yang korang cari untuk Raya atau majlis, barulah saya pertimbangkan untuk beli.`
-  ]
- };
- const extraSets={
-  songket:[
-   `Bila masuk musim Raya atau ada majlis keluarga, songket memang salah satu pakaian yang terus buat penampilan nampak lebih istimewa.\n\nUntuk ${shortName}, saya akan tengok warna, corak dan ukuran dulu. ${safeFact}\n\nKalau korang tengah cari untuk Raya, kenduri atau open house, boleh tengok detail produk dan fikir sama ada gaya ini memang kena dengan apa yang korang cari.`,
-   `Kalau pergi kenduri, ada masa kita nak pakaian yang nampak lebih kemas daripada pakaian harian. Songket memang masuk dalam kategori tu. 😄\n\nSaya suka tengok ${shortName} dari sudut warna dan gaya dulu, kemudian baru semak maklumat produk. ${safeFact}\n\nTak semestinya kena pilih yang paling menyerlah. Yang penting, pilih yang korang sendiri selesa dan yakin nak pakai.`,
-   `Raya bukan sekadar satu pagi. Lepas solat mungkin ada ziarah, open house dan bergambar dengan keluarga. Jadi pakaian yang dipilih pun kena sesuai dengan suasana sepanjang hari.\n\n${shortName} menarik untuk disemak dari sudut itu. ${safeFact}\n\nTengok detail dan pilih ikut gaya sendiri.`,
-   `Saya rasa pakaian tradisional paling menarik bila corak dan warnanya kena dengan orang yang memakainya. Sebab itu saya tak terus pilih hanya kerana gambar nampak cantik.\n\nUntuk ${shortName}, saya akan semak ukuran dan maklumat yang diberikan. ${safeFact}\n\nKalau sesuai untuk majlis yang korang ada, boleh masukkan dalam shortlist.`,
-   `Kalau beli pakaian majlis secara online, saya memang akan zoom gambar dan semak ukuran. 😄\n\n${shortName} boleh jadi salah satu pilihan kalau korang memang tengah cari songket. ${safeFact}\n\nBandingkan dulu dengan pilihan lain sebelum checkout.`,
-   `Ada orang suka songket yang klasik, ada yang suka gaya lebih moden. Saya rasa dua-dua boleh jadi cantik bergantung pada majlis dan cara kita padankan.\n\n${shortName} boleh tengok sebagai salah satu pilihan. ${safeFact}\n\nSemak warna, ukuran dan detail sebelum pilih.`,
-   `Bila pilih pakaian untuk majlis, saya biasanya fikir juga berapa lama pakaian itu akan dipakai. Kalau dari pagi sampai malam, keselesaan memang penting.\n\nUntuk ${shortName}, saya akan tengok maklumat produk yang diberikan. ${safeFact}\n\nKalau semuanya kena dengan keperluan, barulah saya pertimbangkan.`,
-   `Kalau korang tengah survey songket, tak perlu terus checkout bila nampak satu yang cantik. 😄\n\nSimpan beberapa pilihan dan bandingkan warna, ukuran serta gaya. ${shortName} boleh jadi salah satu daripadanya. ${safeFact}\n\nBila dah jumpa yang paling sesuai, baru lebih yakin.`,
-   `Pakaian Raya atau majlis biasanya kita harap boleh dipakai lebih daripada sekali. Jadi saya suka tengok sama ada gaya itu mudah dipadankan dengan acara lain.\n\n${shortName} menarik untuk disemak dari sudut itu. ${safeFact}\n\nKalau kena dengan citarasa, tengok detail dulu.`,
-   `Kalau saya nak cari songket, saya tak tengok harga sahaja. Saya nak tahu ukuran, gaya dan majlis yang sesuai untuk pakaian itu.\n\n${shortName} boleh dimasukkan dalam senarai semakan. ${safeFact}\n\nKalau korang tengah cari untuk Raya atau majlis, bandingkan dulu sebelum beli.`
-  ],
-  tudung:[
-   `Kalau pagi kerja dan petang ada urusan lain, tudung yang mudah dipakai memang memudahkan rutin.\n\nUntuk ${shortName}, saya akan tengok bahan, saiz dan cara pemakaian. ${safeFact}\n\nKalau korang cari untuk rutin yang sama, boleh tengok detail dulu.`,
-   `Bila beli tudung online, saya biasanya zoom kain dan tengok ukuran dulu. Gambar cantik memang menarik, tapi kita nak tahu sama ada ia sesuai dengan rutin sendiri.\n\n${shortName} boleh masuk shortlist kalau maklumatnya kena. ${safeFact}\n\nBandingkan dulu sebelum checkout.`,
-   `Ada tudung yang kita suka untuk kerja, ada yang kita simpan untuk majlis. Sebab itu saya tak rasa satu gaya sesuai untuk semua keadaan.\n\nUntuk ${shortName}, tengok warna, bahan dan saiz. ${safeFact}\n\nKalau kena dengan gaya korang, boleh pertimbangkan.`,
-   `Kalau nak tudung yang selalu dipakai, saya lebih pentingkan keselesaan dan kemudahan daripada ikut trend semata-mata.\n\n${shortName} menarik untuk disemak dari sudut itu. ${safeFact}\n\nTengok detail dulu dan pilih ikut rutin sendiri.`,
-   `Nak keluar sekejap atau pergi majlis, pilihan tudung boleh ubah keseluruhan gaya. 😄\n\nSaya akan tengok ${shortName} sekali dengan pakaian yang nak dipadankan. ${safeFact}\n\nKalau tengah survey, semak detail dan warna yang ada.`,
-   `Kalau korang jenis tak suka tudung yang susah diurus, bahan dan cara pemakaian memang patut diberi perhatian.\n\n${shortName} boleh jadi salah satu pilihan untuk dibandingkan. ${safeFact}\n\nSemak detail dulu.`,
-   `Saya rasa tudung paling berguna bila ia masuk dengan rutin sebenar kita. Kerja, keluar dan majlis semua perlukan pilihan yang berbeza.\n\nUntuk ${shortName}, tengok apa yang dinyatakan tentang produk. ${safeFact}\n\nKalau sesuai, simpan dalam shortlist.`,
-   `Bila nampak tudung yang cantik, memang mudah nak terus checkout. 😄 Tapi saya biasanya berhenti sekejap dan tengok ukuran serta bahan.\n\n${shortName} boleh disemak dengan cara yang sama. ${safeFact}\n\nBila maklumat jelas, lebih senang buat keputusan.`,
-   `Kalau nak cari tudung untuk kegunaan harian, saya akan pilih berdasarkan apa yang memang saya akan pakai selalu.\n\n${shortName} menarik kalau warna dan gayanya masuk dengan pakaian korang. ${safeFact}\n\nTengok detail dulu, kemudian baru decide.`,
-   `Satu cara saya survey tudung: bayangkan pakaian yang selalu saya pakai, kemudian tengok sama ada tudung itu mudah dipadankan.\n\n${shortName} boleh jadi salah satu pilihan. ${safeFact}\n\nKalau kena dengan gaya dan rutin, boleh pertimbangkan.`
-  ],
-  telekung:[
-   `Bila pilih telekung, saya lebih fikir tentang pengalaman memakainya berbanding sekadar rupa.\n\n${shortName} menarik untuk disemak dari segi saiz, bahan dan maklumat yang diberikan. ${safeFact}\n\nKalau tengah cari untuk kegunaan sendiri atau hadiah, tengok detail dulu.`,
-   `Telekung digunakan untuk tempoh yang kita nak rasa tenang dan selesa. Jadi saya memang tak pilih semata-mata sebab cantik.\n\nUntuk ${shortName}, semak maklumat produk dan ukuran. ${safeFact}\n\nKalau sesuai dengan keperluan, boleh pertimbangkan.`,
-   `Kalau nak beli telekung online, gambar depan saja belum cukup. Saya akan tengok keseluruhan produk dan maklumat saiz.\n\n${shortName} boleh dimasukkan dalam shortlist kalau detailnya jelas. ${safeFact}\n\nBandingkan dulu sebelum buat keputusan.`,
-   `Untuk telekung, saya suka benda yang praktikal — mudah disimpan, selesa dipakai dan sesuai dengan rutin solat.\n\n${shortName} menarik untuk disemak dari sudut itu. ${safeFact}\n\nKalau korang tengah cari, boleh tengok detail produk.`,
-   `Bila Ramadan atau musim balik kampung, ramai mula fikir tentang telekung yang mudah dibawa.\n\nKalau ${shortName} nampak sesuai, saya akan semak ukuran dan maklumat yang diberikan dulu. ${safeFact}\n\nTak perlu terus beli — tengok sama ada betul-betul sesuai.`,
-   `Telekung untuk rumah mungkin berbeza dengan yang kita bawa travel. Sebab kegunaannya tak semestinya sama.\n\n${shortName} boleh dinilai berdasarkan rutin korang. ${safeFact}\n\nTengok detail sebelum checkout.`,
-   `Saya suka pilih barang ibadah dengan tenang, bukan sebab ikut trend. Untuk telekung, keselesaan dan kesesuaian lebih penting.\n\n${shortName} boleh jadi salah satu pilihan untuk dibandingkan. ${safeFact}\n\nSemak detail dulu.`,
-   `Kalau nak hadiahkan telekung, saya akan fikir juga saiz dan gaya yang sesuai.\n\n${shortName} menarik untuk disemak kalau maklumat produknya jelas. ${safeFact}\n\nBandingkan beberapa pilihan sebelum pilih.`,
-   `Ada telekung yang nampak cantik dalam gambar tetapi kita tetap kena tahu bagaimana ia sesuai dengan penggunaan sendiri.\n\nUntuk ${shortName}, saya akan rujuk detail yang diberikan. ${safeFact}\n\nKalau kena dengan keperluan, barulah pertimbangkan.`,
-   `Kalau korang sedang cari telekung baru, mungkin sekarang masa yang baik untuk tengok beberapa pilihan tanpa tergesa-gesa.\n\n${shortName} boleh dimasukkan dalam senarai semakan. ${safeFact}\n\nTengok ukuran, bahan dan detail sebelum buat keputusan.`
-  ]
- };
- const arr=storySets[ctx.type] || extraSets[ctx.type];
- if(arr){ return arr[idx%arr.length].replace(/\n{3,}/g,'\n\n').trim(); }
- // Stable fallback: category-specific before generic.
- const opener=ctx.openers?.[idx%Math.max(1,ctx.openers.length)]||`Kalau ${ctx.topic}, saya lebih suka fikir tentang situasi sebenar dulu.`;
- const topic=ctx.topic||'kegunaan produk';
- const situation=use.slice(idx%use.length, idx%use.length+2).join(' atau ');
- const angleMap=[
-  `cerita masalah yang biasanya membuat orang mencari penyelesaian`,
-  `cara saya menilai pilihan sebelum membeli`,
-  `situasi penggunaan sebenar`,
-  `perkara yang saya perhatikan ketika pertama kali jumpa produk`,
-  `perbandingan antara keperluan dan pilihan yang ada`,
-  `pengalaman selepas cuba sesuatu yang lebih praktikal`,
-  `soalan yang patut ditanya sebelum membeli`,
-  `tip memilih berdasarkan rutin sendiri`,
-  `pandangan jujur tanpa mengatakan produk ini sesuai untuk semua orang`,
-  `ringkasan kenapa produk ini mungkin relevan untuk orang tertentu`
- ];
- const mid=facts.length?`Maklumat yang saya semak ialah ${facts.slice(0,3).join(', ')}.`:'Saya akan rujuk maklumat produk yang memang diberikan sebelum buat keputusan.';
- return `${opener}\n\nBila bercakap tentang ${topic}, saya rasa lebih mudah kalau kita tengok ${angleMap[idx%10]}. Dalam situasi macam ${situation}, perkara yang penting ialah faham apa yang kita perlukan terlebih dahulu.\n\n${shortName} menarik perhatian saya untuk disemak dari sudut itu. ${mid}\n\nSaya tak akan kata produk ini sesuai untuk semua orang. Yang penting, tengok detail, bandingkan dengan keperluan sendiri dan fikir sama ada ia memang masuk dalam rutin kita.\n\nKalau korang sedang cari sesuatu untuk situasi yang sama, boleh tengok detail produk ini dulu. Mana tahu memang sesuai dengan apa yang korang perlukan.`.trim();
-}
-function adaptStory(master, platform, n, affiliateUrl, hashtags){
- let body=String(master||'').trim();
- if(platform==='Threads'){
-   const chunks=body.split(/\n\n+/).filter(Boolean);
-   body=chunks.slice(0,6).join('\n\n');
-   if(body.length>1250) body=body.slice(0,1247).trimEnd()+'...';
- }
- if(platform==='X'){
-   const chunks=body.split(/\n\n+/).filter(Boolean);
-   body=chunks.slice(0,4).join('\n\n');
-   if(body.length>650) body=body.slice(0,647).trimEnd()+'...';
- }
- return `${body}\n\n🔗 ${affiliateUrl||'[Affiliate link]'}\n\n${hashtags}`;
-}
-function flowPrompt(parts){
-  let x=parts.filter(Boolean).join('\n\n').replace(/\s+/g,' ').trim();
-  if(x.length<=2500) return x;
-  const must=[parts[0],parts[1],parts[2],parts[3],parts[4],parts[5]].filter(Boolean).join(' ');
-  if(must.length<=2500) return must;
-  return (must.slice(0,2497)+'...').trim();
-}
-function videoPromptPair(kind, clip, n, t, a, b, c, vs, background, bgRules, productLock, slashNatural, charRef){
-  const common=`Use the uploaded product reference image(s) as the exact visual source for ${n}. Preserve the same product identity in every frame: exact shape, colour, material, texture, packaging, logo, printed label, proportions and product-embedded text. ${charRef} ${productLock} ${bgRules} Visual style: ${vs}. ${slashNatural} Keep the scene realistic, natural and suitable for Malaysian social media. No invented product features, no false claims, no watermark and no generated subtitles.`;
-  const sets={
-    'Problem → Solution':{
-      A:`Open with a relatable Malaysian everyday problem involving ${t.toLowerCase()}. Show the creator noticing the problem naturally, reacting with a believable expression and handling the situation without exaggerated acting. End this clip with the creator discovering or reaching for ${n}.`,
-      B:`Continue directly from the previous moment. The same creator now uses or demonstrates ${n} as a practical option for the problem. Show the product clearly and naturally, with a believable result or usage moment. End with a relaxed, non-pushy expression that invites the viewer to learn more.`},
-    'Story / Experience':{
-      A:`Show a personal everyday experience: the creator is dealing with ${t.toLowerCase()} and explains through natural action and expression why the problem was annoying. The product is introduced casually, as something the creator found while looking for a simpler option.`,
-      B:`Continue the same personal story with the same creator, location and product. Show the creator trying ${n} and sharing a calm, honest reaction about what they like about it. Keep the experience believable and avoid exaggerated before-and-after claims.`},
-    'Product Discovery':{
-      A:`Create a discovery moment where the creator comes across ${n} while looking for something useful for ${t.toLowerCase()}. Start with curiosity, then reveal the product clearly from the uploaded reference without changing its design.`,
-      B:`Continue the discovery. The creator examines ${n} more closely, demonstrates its key practical use and reacts naturally as if thinking, 'Oh, this could actually be useful.' Keep the product clearly visible and visually identical to the reference.`},
-    'Before → After / Result':{
-      A:`Show a realistic before situation connected to ${t.toLowerCase()}. The environment should feel lived-in and believable. The creator notices the issue and prepares to try ${n}. Do not create an unrealistic extreme problem.`,
-      B:`Continue in the same location with the same creator and product. Show the practical use of ${n} and a modest, believable improvement in the situation. Focus on the experience and visual result rather than making a guaranteed claim.`},
-    'UGC Review':{
-      A:`Create a casual user-generated-content opening. A Malaysian creator holds or uses ${n} naturally and starts sharing why they decided to try it for ${t.toLowerCase()}. The tone is conversational, like a genuine phone-recorded recommendation to a friend.`,
-      B:`Continue the same UGC review with the same creator, clothing, product and setting. Show a close practical demonstration of ${n}, followed by one or two honest reasons the creator finds it useful. Finish with a soft, non-pushy recommendation to check the product details.`},
-    'Soft Commercial / Product Hero':{
-      A:`Create a polished but natural product-commercial opening for ${n}. Establish a clean Malaysian lifestyle environment, then reveal the product heroically while keeping every physical product detail identical to the reference. Use elegant composition and subtle camera movement.`,
-      B:`Continue the same premium commercial scene. Move closer to ${n} for a detailed hero view, showing material, packaging and product-embedded branding accurately. End with the product in a clean, memorable composition suitable for an affiliate social video, without adding promotional text over the product.`}
+function setStatus(msg,type='info'){$('intelStatus').innerHTML=`<span class="aiStatus ${type}">${esc(msg)}</span>`;}
+function imageToCompressedDataURL(file,maxSide=1100,quality=.76){return new Promise((resolve,reject)=>{const rd=new FileReader();rd.onload=()=>{const img=new Image();img.onload=()=>{const scale=Math.min(1,maxSide/Math.max(img.width,img.height));const c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.width*scale));c.height=Math.max(1,Math.round(img.height*scale));const ctx=c.getContext('2d');ctx.drawImage(img,0,0,c.width,c.height);resolve(c.toDataURL('image/jpeg',quality));};img.onerror=reject;img.src=rd.result;};rd.onerror=reject;rd.readAsDataURL(file);});}
+function renderProductGallery(){const g=$('productGallery');if(!g)return;g.innerHTML='';productRefs.forEach((src,i)=>{const wrap=document.createElement('div');wrap.style.position='relative';const img=document.createElement('img');img.src=src;img.alt='Product reference '+(i+1);wrap.appendChild(img);g.appendChild(wrap);});$('productCount').textContent=productRefs.length?`${productRefs.length}/5 gambar dipilih`:'';}
+
+$('productImages').addEventListener('change',async e=>{const files=[...e.target.files].slice(0,5);if(!files.length)return;setStatus('Memproses gambar produk…');try{productRefs=[];for(const f of files)productRefs.push(await imageToCompressedDataURL(f));renderProductGallery();await persistSession();setStatus(`${productRefs.length} product reference image(s) disimpan.`,'ok');}catch(err){setStatus('Gagal memproses gambar produk.','error');console.error(err);}});
+$('characterImage').addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{characterImageData=await imageToCompressedDataURL(f,1000,.76);$('characterPreview').innerHTML=`<img src="${characterImageData}" alt="Character reference">`;$('characterPreview').style.display='block';await persistSession();}catch(err){setStatus('Gagal memproses character reference.','error');}});
+
+async function callAffiliFlowAI(fields){
+  const imageParts=productRefs.map(x=>({type:'image_url',image_url:{url:x}}));
+  if(characterImageData)imageParts.push({type:'image_url',image_url:{url:characterImageData}});
+  const system=`You are the core intelligence engine for AffiliFlow AI, a Malaysian affiliate-content assistant. Your job is to UNDERSTAND the actual product from the supplied product reference images plus user text, then create useful human social content and Google Flow/Veo prompts.
+
+NON-NEGOTIABLE PRODUCT REASONING:
+- Inspect the product images before writing. Identify what the product visibly is, its visual design, packaging, printed product text/logo, physical context, and plausible real-life use.
+- Treat user-supplied facts as authoritative. If a claim/specification is not visible or supplied, mark it uncertain and DO NOT invent it.
+- OCR can be noisy. Ignore nonsense OCR fragments, random characters, partial letters and unreadable text. Never repeat OCR garbage.
+- Product-embedded text/logo/design is part of product identity and must be preserved in video prompts. Background promotional text/graphics are separate and may be removed if requested.
+- Do not repeatedly say the full product name. Use natural pronouns and short references.
+
+CONTENT QUALITY RULES:
+- Write natural Malaysian Malay, conversational and human, not corporate and not ad-template Malay.
+- NEVER start multiple posts with the same sentence pattern. In particular, never use generic openings such as “Bila jumpa produk baru…”, “Saya akan tengok material, fungsi atau ciri…”, “Saya tak akan kata produk ini sesuai untuk semua orang…”, or “Biasanya bila benda ni berlaku…” unless the actual user explicitly wrote that wording.
+- Do not write generic category essays. A Baju Melayu story should feel like a real Raya/solat Raya/open house/family-photo/clothing situation when supported by the product. A safety helmet should feel like a real site/work context. A dehumidifier should feel like a real room/home humidity context. A skincare product should feel like an actual routine/skin concern context. Infer the most relevant context from the image and product facts rather than using one universal template.
+- Each of 10 posts MUST have a clearly different angle, situation, opening, rhythm and emotional intent. Do not merely rewrite the same post.
+- Each post should normally be 120–220 Malay words for Facebook, 80–150 for Threads, and concise but complete for X. Keep X within roughly 280 characters where practical.
+- Story architecture: Hook → real situation/problem → specific observation/experience → product appears naturally → relevant benefit grounded in known facts → soft CTA → affiliate link at the end → hashtags.
+- Do not make medical, safety, performance, material, durability, certification, “100%”, “best”, “murah”, “selamat”, “organic”, “waterproof”, or other factual claims unless supported by user input or clearly visible product information.
+- Affiliate link MUST be at the end of the post, followed by hashtags. Do not put it in the middle.
+- Adapt each post to the selected platform. Facebook is more conversational and story-rich; Threads is shorter and natural; X is concise/punchy.
+
+VIDEO PROMPT RULES:
+- Generate 6 genuinely different video concepts. Each concept has Clip A and Clip B, designed as two connected clips of about 8 seconds each. The user selects the actual duration in Google Flow, so DO NOT hard-code duration commands inside the copied prompt.
+- Every video prompt must explicitly use the uploaded product reference image(s) to preserve exact product identity: shape, colour, packaging, logo, label, proportions, material and product-embedded text/design.
+- If a character reference is supplied, use it for consistent human identity. If none is supplied, a generic realistic Malaysian adult creator may be used when appropriate.
+- The copied prompt must be natural-language only. NEVER output raw slash commands like /heroProduct or /slowzoom. Slash commands are internal AffiliFlow shortcuts only.
+- If manual slash commands are supplied, interpret them as visual intent and expand them into normal language.
+- Keep each copied prompt <= 2500 characters. Prioritise product identity, action, continuity, camera, lighting, environment and realism. Remove verbosity before removing product identity instructions.
+- Do not invent on-screen product claims or text. Do not alter the product logo/label/design.
+
+BEST-TIME GUIDANCE: use 8:00 AM for Facebook+Threads, 1:00 PM for Facebook+X, 8:00 PM for Facebook+Threads+X, and a 9:00 PM best-slot test. These are starting points, not guarantees.
+
+OUTPUT: Return ONLY valid JSON. No markdown fences, no commentary. Use the exact schema requested by the user message.`;
+  const userText={
+    fields,
+    manualSlash:fields.manualSlash,
+    productReferenceCount:productRefs.length,
+    hasCharacterReference:!!characterImageData,
+    task:'Analyze the product images first. Then return 10 ready-to-post contents and 6 video ideas x 2 clips. Make the content specific to the product and Malaysian real-life context. Do not use a generic template.'
   };
-  const q=sets[kind]||sets['Problem → Solution'];
-  return flowPrompt([common, clip==='A'?q.A:q.B, `Continuity requirement: this is clip ${clip} of a two-clip sequence. ${clip==='B'?'Continue seamlessly from clip A with the same creator, product, clothing, environment, lighting direction and visual style.':'Establish a clear visual setup that can continue naturally into clip B.'}`]);
+  const schema=`{
+"productIntelligence":{"name":"","category":"","audience":"","visibleFacts":[],"useContexts":[],"visualIdentity":[],"uncertain":[]},
+"slashCommandsSelected":[],
+"posts":[{"id":1,"slot":"morning","time":"8:00 AM","platforms":["Facebook","Threads"],"angle":"","facebook":"","threads":"","x":""}],
+"videoIdeas":[{"id":1,"title":"","concept":"","clipA":"","clipB":""},{"id":2,"title":"","concept":"","clipA":"","clipB":""},{"id":3,"title":"","concept":"","clipA":"","clipB":""},{"id":4,"title":"","concept":"","clipA":"","clipB":""},{"id":5,"title":"","concept":"","clipA":"","clipB":""},{"id":6,"title":"","concept":"","clipA":"","clipB":""}]
+}`;
+  const content=[{type:'text',text:system+'\n\nUSER INPUT:\n'+JSON.stringify(userText)+'\n\nRETURN THIS JSON SHAPE EXACTLY (values filled, arrays complete):\n'+schema} ,...imageParts];
+  const body={model:'openrouter/free',temperature:.82,max_tokens:18000,messages:[{role:'user',content}]};
+  const r=await fetch('/.netlify/functions/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const data=await r.json().catch(()=>({}));
+  if(!r.ok){throw new Error(data?.error?.message||data?.error||`AI server error ${r.status}`);}
+  const text=data?.choices?.[0]?.message?.content;
+  if(!text)throw new Error('AI tidak memulangkan kandungan.');
+  return parseAIJson(text);
 }
-function switchOutputTab(tab){
-  document.querySelectorAll('.outputTab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
-  document.querySelectorAll('.outputPane').forEach(p=>p.classList.toggle('active',p.dataset.pane===tab));
+function parseAIJson(text){
+  let t=String(text).trim().replace(/^```json\s*/i,'').replace(/^```\s*/,'').replace(/```$/,'').trim();
+  try{return JSON.parse(t);}catch(e){
+    const a=t.indexOf('{'),b=t.lastIndexOf('}');
+    if(a>=0&&b>a){try{return JSON.parse(t.slice(a,b+1));}catch(_){} }
+    throw new Error('AI memulangkan format JSON yang tidak sah. Cuba Jana Kit sekali lagi.');
+  }
 }
 
-async function generateKit(){
- if(!productRefs.length){alert('Sila upload sekurang-kurangnya 1 gambar produk.'); return;}
- productImageData=productRefs[0];
- const n=$('name').value.trim()||'produk ini', p=$('price').value.trim()||'—', t=$('target').value.trim()||'pengguna yang memerlukan produk ini';
- const affiliateUrl=normalizeAffiliateUrl($('affiliateUrl').value); const pts=cleanLines($('points').value); const s=$('style').value, selectedPlatform=$('platform').value, vs=$('videoStyle').value;
- const intel=await buildProductIntelligence(n,t,pts);
- const insightPreview=productInsights(n,t,pts);
- const a=pts[0]||insightPreview.p1, b=pts[1]||insightPreview.p2, c=pts[2]||insightPreview.p3;
- const accuracy=$('accuracy')?.value||'Maximum Accuracy';
- const bg=$('newBackground')?.value||'Modern Malaysian home';
- const customBg=$('customBackground')?.value?.trim()||''; const background=bg==='Custom background'?customBg:bg;
- const bgRules=`${$('removeBgText')?.checked?'Remove promotional text, captions and marketing wording belonging to the BACKGROUND IMAGE. ':''}${$('removeBgGraphics')?.checked?'Remove unrelated promotional badges, icons and graphic overlays in the background. ':''}${$('protectProductText')?.checked?'Do not remove, rewrite, translate or alter any text, logo, pattern, label, stitching, print or design physically part of the PRODUCT itself. ':''}Replace the cleaned background naturally with: ${background}.`;
- const productLock=`PRODUCT IDENTITY LOCK (${accuracy}): Treat all uploaded product references as the same product. Preserve exact shape, colour, material, texture, packaging, logo, label, proportions and product-embedded design. Do not invent features, specifications, claims or packaging details.`;
- const hashtagBase=(n+' '+t+' '+pts.join(' ')).toLowerCase().replace(/[^a-z0-9\u00C0-\u024F\s]/g,' ').split(/\s+/).filter(w=>w.length>3);
- const tags=[...new Set(['#'+n.replace(/\s+/g,''),...hashtagBase.slice(0,5).map(w=>'#'+w),'#BarangBerguna','#WajibCuba','#JumpaDekatShopee'])].slice(0,10).join(' ');
- const slots=[['morning',0],['lunch',1],['evening',2],['morning',3],['lunch',4],['evening',5],['morning',6],['lunch',7],['evening',8],['best',9]];
- const angles=['Relatable problem','Tips / awareness','Personal experience','Curiosity / discovery','Problem → solution','Honest experience','Question / conversation','Practical tips','Soft review','Strongest story / soft CTA'];
- const cards=slots.map((x,i)=>{const w=platformWindows(x[0]); const master=humanStory(n,t,pts,angles[i],i); const plats=selectedPlatform==='Facebook + Threads + X'?w.platforms:[selectedPlatform]; const versions=plats.map(pl=>({pl,text:adaptStory(master,pl,n,affiliateUrl,tags)})); return {i:i+1,w,angle:angles[i],master,versions};});
- const stack=getSlashStack(vs,$('sceneType')?.value||'Product Demo',n,pts,t);
- const slashNatural=slashInstructionText(stack);
- const charRef=characterImageData?'Use the uploaded character reference image as the exact human identity reference. Preserve the same face, hairstyle, body proportions, clothing and visual identity.':'If a person is shown, use one consistent realistic Malaysian adult creator across both clips.';
- const videoIdeas=[
-  {title:'Problem → Solution',desc:'Masalah harian → jumpa produk → penyelesaian praktikal'},
-  {title:'Story / Experience',desc:'Cerita pengalaman yang natural dan relatable'},
-  {title:'Product Discovery',desc:'Momen jumpa produk dan rasa ingin tahu'},
-  {title:'Before → After / Result',desc:'Situasi sebelum → penggunaan → perubahan yang munasabah'},
-  {title:'UGC Review',desc:'Review gaya creator biasa, conversational dan jujur'},
-  {title:'Soft Commercial / Product Hero',desc:'Visual premium tetapi masih natural untuk affiliate content'}
- ];
- let html=productIntelCard(intel)+`<div class="result"><div class="rh">🧠 PRODUCT IDENTITY LOCK <span>${productRefs.length} reference image(s)</span></div><div class="rb">${esc(productLock)}\n\n${esc(bgRules)}</div></div>`;
- const contentParts=[];
- contentParts.push(`<div class="tabIntro">📝 <b>Content Post</b> — Semua content di bawah sudah disusun untuk terus <b>copy → paste → post</b>. Tiada perlu scroll melalui prompt video.</div>`);
- contentParts.push(`<div class="result"><div class="rh">🕐 BEST TIME TO POST — MALAYSIA <span>3 daily windows + best slot</span></div><div class="rb">🌅 <b>Morning · 8:00 AM</b> — Facebook + Threads<br>☀️ <b>Lunch · 1:00 PM</b> — Facebook + X<br>🌙 <b>Evening · 8:00 PM</b> — Facebook + Threads + X<br>⭐ <b>Best-slot test · 9:00 PM</b> — Facebook + Threads + X<br><br><span class="small">Ini starting point, bukan jaminan. Waktu terbaik sebenar bergantung pada audience dan data akaun anda.</span></div></div>`);
- contentParts.push(`<div class="result"><div class="rh">📝 10 READY-TO-POST CONTENTS <span>Story-First · humanized</span></div><div class="rb">10 content ini dibina sebagai cerita yang lengkap, bukan caption pendek. Setiap content mempunyai hook, situasi sebenar, cerita/pertimbangan, kemunculan produk secara natural, manfaat atau ciri yang boleh disahkan, soft CTA, affiliate link dan hashtag. Angle setiap content sengaja berbeza.</div></div>`);
- cards.forEach(card=>{contentParts.push(`<div class="result"><div class="rh">${card.i.toString().padStart(2,'0')} <span>${card.w.label} · ${card.w.time} · ${card.w.platforms.join(' + ')} · ${card.angle}</span></div><div class="rb">${card.versions.map(v=>`<div style="margin-top:12px;padding:12px;border:1px solid #e8e1dc;border-radius:12px;background:#fff"><b>📱 ${esc(v.pl)}</b><pre style="white-space:pre-wrap;font-family:inherit;margin:10px 0 0">${esc(v.text)}</pre><button class="copy" style="margin-top:8px" onclick="copyText(this.previousElementSibling.innerText)">📋 Copy ${esc(v.pl)}</button></div>`).join('')}</div></div>`)});
- const videoParts=[];
- videoParts.push(`<div class="tabIntro">🎬 <b>Video Prompts</b> — Pilih idea yang anda suka. Setiap idea mempunyai <b>Clip A + Clip B</b> yang bersambung untuk satu video sekitar 16 saat. Prompt sudah diterjemahkan kepada natural-language instructions untuk Google Flow / Veo.</div>`);
- videoParts.push(`<div class="result"><div class="rh">🎬 6 VIDEO IDEAS · 2 CLIPS EACH <span>8s + 8s recommended</span></div><div class="rb">Anda tidak perlu generate semua 6 idea. Pilih hanya idea yang paling sesuai dengan produk dan content anda.</div></div>`);
- videoIdeas.forEach((idea,ii)=>{const pa=videoPromptPair(idea.title,'A',n,t,a,b,c,vs,background,bgRules,productLock,slashNatural,charRef); const pb=videoPromptPair(idea.title,'B',n,t,a,b,c,vs,background,bgRules,productLock,slashNatural,charRef); videoParts.push(`<div class="result"><div class="rh">${ii+1}. ${esc(idea.title)} <span>8s Clip A + 8s Clip B</span></div><div class="rb"><div class="small">${esc(idea.desc)}</div><div style="margin-top:12px"><b>🎞️ Clip A — setup / first 8s</b><pre style="white-space:pre-wrap;font-family:inherit;margin:8px 0">${esc(pa)}</pre><div class="small">${pa.length}/2500 characters</div><button class="copy" onclick="copyText(this.parentElement.querySelector('pre').innerText)">📋 Copy Clip A</button></div><div style="margin-top:14px"><b>🎞️ Clip B — continuation / next 8s</b><pre style="white-space:pre-wrap;font-family:inherit;margin:8px 0">${esc(pb)}</pre><div class="small">${pb.length}/2500 characters</div><button class="copy" onclick="copyText(this.parentElement.querySelector('pre').innerText)">📋 Copy Clip B</button></div></div></div>`)});
- html+=`<div class="outputTabs" role="tablist" aria-label="AffiliFlow output"><button type="button" class="outputTab active" data-tab="content" onclick="switchOutputTab('content')">📝 CONTENT POST</button><button type="button" class="outputTab" data-tab="video" onclick="switchOutputTab('video')">🎬 VIDEO PROMPTS</button></div><div class="outputPane active" data-pane="content">${contentParts.join('')}</div><div class="outputPane" data-pane="video">${videoParts.join('')}</div>`;
- $('results').innerHTML=html;
- persistFormState({n,p,t,points:pts,style:s,platform:selectedPlatform,videoStyle:vs,duration:$('duration').value,sceneType:$('sceneType').value,affiliateUrl:$('affiliateUrl').value,linkPlacement:$('linkPlacement').value,slashCommands:$('slashCommands').value,resultsHtml:html,generatedAt:Date.now(),productIntel:currentProductIntel});
- saveMediaSession();
-}
-function renderProductGallery(){const gallery=$('productGallery');if(!gallery)return;gallery.innerHTML='';productRefs.forEach(src=>{const img=document.createElement('img');img.src=src;img.alt='Product reference';gallery.appendChild(img)});if($('productCount'))$('productCount').textContent=productRefs.length?`${productRefs.length}/5 gambar dipilih`:'';}
-async function restoreAffiliFlowSession(){try{const x=JSON.parse(localStorage.getItem('kitAffiliateLast')||'null');if(x){$('name').value=x.n||'';$('price').value=x.p||'';$('target').value=x.t||'';$('points').value=(x.points||[]).join('\n');$('style').value=x.style||$('style').value;$('platform').value=x.platform||$('platform').value;$('videoStyle').value=x.videoStyle||$('videoStyle').value;$('duration').value=x.duration||'10';$('sceneType').value=x.sceneType||'Product Demo';$('affiliateUrl').value=x.affiliateUrl||'';$('linkPlacement').value=x.linkPlacement||'caption_cta';$('slashCommands').value=x.slashCommands||'';if(x.productIntel)currentProductIntel=x.productIntel;if(x.resultsHtml)$('results').innerHTML=x.resultsHtml}const media=await loadMediaSession();if(media){productRefs=Array.isArray(media.productRefs)?media.productRefs:[];characterImageData=media.characterImageData||'';productImageData=productRefs[0]||'';renderProductGallery();if(characterImageData&&$('characterPreview')){$('characterPreview').innerHTML=`<img src="${characterImageData}" alt="Character reference">`;$('characterPreview').style.display='block'}}}catch(e){console.warn('AffiliFlow session restore failed',e)}}
-window.addEventListener('load',restoreAffiliFlowSession);
-window.addEventListener('pageshow',e=>{if(e.persisted)restoreAffiliFlowSession()});
-document.addEventListener('input',scheduleAffiliFlowPersistence);
-document.addEventListener('change',scheduleAffiliFlowPersistence);
+function postWithLink(text,url){let x=String(text||'').trim();if(!url)return x;return x.replace(/\s+$/,'')+'\n\n'+url;}
+function hashtags(ai){return slugTags(ai?.productIntelligence?.name||$('name').value,ai?.productIntelligence?.category||'produk');}
+function ensurePostText(text,url){let x=String(text||'').trim();if(url&&!x.includes(url))x=postWithLink(x,url);return x;}
+function intelCard(i){return `<div class="result"><div class="rh">🧠 AI PRODUCT INTELLIGENCE <span>Real image understanding</span></div><div class="rb"><b>${esc(i.name||$('name').value||'Produk')}</b> · ${esc(i.category||'Kategori belum pasti')}<br><br><b>👥 Sasaran/context:</b> ${esc(i.audience||'—')}<br><br><b>🔎 Fakta yang dikenal pasti</b><ul>${(i.visibleFacts||[]).slice(0,8).map(x=>`<li>${esc(x)}</li>`).join('')||'<li>Tiada fakta tambahan yang cukup yakin.</li>'}</ul><b>🏠 Situasi penggunaan</b><ul>${(i.useContexts||[]).slice(0,6).map(x=>`<li>${esc(x)}</li>`).join('')||'<li>AI belum dapat mengenal pasti konteks khusus.</li>'}</ul>${(i.uncertain||[]).length?`<b>⚠️ Jangan claim tanpa pengesahan</b><ul>${i.uncertain.slice(0,6).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}</div></div>`;}
+function contentCard(p){const slot=platformWindows(p.slot);const platforms=p.platforms?.length?p.platforms:slot.platforms;const url=normalizeUrl($('affiliateUrl').value);const tags=hashtags(currentAIResult);const render=(label,text)=>`<div style="margin-top:12px;padding:12px;border:1px solid #e8e1dc;border-radius:12px;background:#fff"><b>📱 ${esc(label)}</b><pre style="white-space:pre-wrap;font-family:inherit;margin:10px 0 0">${esc(ensurePostText(text,url)+'\n\n'+tags)}</pre><button class="copy" style="margin-top:8px" onclick="copyText(this.previousElementSibling.innerText)">📋 Copy ${esc(label)}</button></div>`;return `<div class="result"><div class="rh">${String(p.id).padStart(2,'0')} <span>${esc(slot.label)} · ${esc(p.time||slot.time)} · ${esc(platforms.join(' + '))} · ${esc(p.angle||'') }</span></div><div class="rb">${render('Facebook',p.facebook||'')}${render('Threads',p.threads||'')}${render('X',p.x||'')}</div></div>`;}
+function videoCard(v){const promptA=String(v.clipA||'').trim(),promptB=String(v.clipB||'').trim();return `<div class="result"><div class="rh">${v.id}. ${esc(v.title||'Video Idea')} <span>8s Clip A + 8s Clip B · prompt natural-language</span></div><div class="rb"><div class="small">${esc(v.concept||'')}</div><div style="margin-top:12px"><b>🎞️ Clip A</b><pre style="white-space:pre-wrap;font-family:inherit;margin:8px 0">${esc(promptA)}</pre><div class="small">${promptA.length}/2500 characters</div><button class="copy" onclick="copyText(this.parentElement.querySelector('pre').innerText)">📋 Copy Clip A</button></div><div style="margin-top:14px"><b>🎞️ Clip B</b><pre style="white-space:pre-wrap;font-family:inherit;margin:8px 0">${esc(promptB)}</pre><div class="small">${promptB.length}/2500 characters</div><button class="copy" onclick="copyText(this.parentElement.querySelector('pre').innerText)">📋 Copy Clip B</button></div></div></div>`;}
+function renderAIResult(ai){currentAIResult=ai;currentProductIntel=ai.productIntelligence||{};const posts=Array.isArray(ai.posts)?ai.posts:[];const videos=Array.isArray(ai.videoIdeas)?ai.videoIdeas:[];const contentParts=[];contentParts.push(`<div class="tabIntro">📝 <b>Content Post</b> — 10 post siap copy-paste. Setiap post ada angle, cerita dan konteks yang berbeza. Affiliate link diletakkan di hujung.</div>`);contentParts.push(`<div class="result"><div class="rh">🕐 BEST TIME TO POST — MALAYSIA <span>starting point</span></div><div class="rb">🌅 <b>8:00 AM</b> — Facebook + Threads<br>☀️ <b>1:00 PM</b> — Facebook + X<br>🌙 <b>8:00 PM</b> — Facebook + Threads + X<br>⭐ <b>9:00 PM</b> — best-slot test<br><br><span class="small">Ini panduan permulaan, bukan jaminan algoritma.</span></div></div>`);contentParts.push(`<div class="result"><div class="rh">📝 10 READY-TO-POST CONTENTS <span>AI-generated · product-specific</span></div><div class="rb">AI diminta memahami gambar produk dahulu, menapis OCR yang rosak dan menghasilkan 10 angle yang benar-benar berbeza — bukan mengulang template yang sama.</div></div>`);posts.slice(0,10).forEach(p=>contentParts.push(contentCard(p)));const videoParts=[];videoParts.push(`<div class="tabIntro">🎬 <b>Video Prompts</b> — 6 idea berbeza. Setiap idea mempunyai Clip A + Clip B yang bersambung. Gunakan product reference image yang sama dalam Google Flow/Veo.</div>`);videos.slice(0,6).forEach(v=>videoParts.push(videoCard(v)));const html=intelCard(currentProductIntel)+`<div class="result"><div class="rh">⚡ AI MODE <span>${esc((ai.slashCommandsSelected||[]).join(' ')||'Auto visual direction')}</span></div><div class="rb">Slash Prompt ialah arahan dalaman AffiliFlow. Prompt yang anda copy <b>tidak mengandungi raw /commands</b>; AI sudah mengembangkannya menjadi arahan visual biasa untuk Google Flow/Veo.</div></div><div class="outputTabs" role="tablist"><button type="button" class="outputTab active" data-tab="content" onclick="switchOutputTab('content')">📝 CONTENT POST</button><button type="button" class="outputTab" data-tab="video" onclick="switchOutputTab('video')">🎬 VIDEO PROMPTS</button></div><div class="outputPane active" data-pane="content">${contentParts.join('')}</div><div class="outputPane" data-pane="video">${videoParts.join('')}</div>`;$('results').innerHTML=html;persistSession();}
+function switchOutputTab(tab){document.querySelectorAll('.outputTab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));document.querySelectorAll('.outputPane').forEach(p=>p.classList.toggle('active',p.dataset.pane===tab));}
 
+async function generateKit(){if(isGenerating)return;if(!productRefs.length){alert('Sila upload sekurang-kurangnya 1 gambar produk.');return;}isGenerating=true;const btn=document.querySelector('.primary');if(btn){btn.disabled=true;btn.textContent='🧠 AI sedang memahami produk…';}setStatus('AI sedang membaca product reference images dan membina 10 content + 6 video ideas…');try{const fields=getFieldSummary();const ai=await callAffiliFlowAI(fields);if(!ai.posts||ai.posts.length<10)throw new Error('AI tidak menghasilkan 10 content lengkap. Cuba Jana Kit sekali lagi.');if(!ai.videoIdeas||ai.videoIdeas.length<6)throw new Error('AI tidak menghasilkan 6 idea video lengkap. Cuba lagi.');renderAIResult(ai);setStatus('Siap ✓ Product Intelligence + 10 content + 6 video ideas dijana oleh AI.','ok');}catch(e){console.error(e);setStatus(e.message||'AI gagal dijalankan.','error');alert(e.message||'AI gagal dijalankan.');}finally{isGenerating=false;if(btn){btn.disabled=false;btn.textContent='✨ Jana Kit';}}}
 
-function openSupport(){document.getElementById('supportModal').classList.add('show');}
-function closeSupport(e){if(e && e.target!==document.getElementById('supportModal'))return;document.getElementById('supportModal').classList.remove('show');}
+async function persistSession(){try{const data={fields:{name:$('name').value,price:$('price').value,target:$('target').value,points:$('points').value,style:$('style').value,platform:$('platform').value,videoStyle:$('videoStyle').value,sceneType:$('sceneType').value,duration:$('duration').value,affiliateUrl:$('affiliateUrl').value,linkPlacement:$('linkPlacement').value,accuracy:$('accuracy').value,newBackground:$('newBackground').value,customBackground:$('customBackground').value,removeBgText:$('removeBgText').checked,removeBgGraphics:$('removeBgGraphics').checked,protectProductText:$('protectProductText').checked,slashCommands:$('slashCommands').value},productRefs,characterImageData,currentAIResult};await dbSet('latest',data);}catch(e){console.warn('persist',e);}}
+let persistTimer;function schedulePersist(){clearTimeout(persistTimer);persistTimer=setTimeout(persistSession,500);}
+async function restoreSession(){const x=await dbGet('latest');if(!x)return;try{const f=x.fields||{};for(const id of ['name','price','target','points','style','platform','videoStyle','sceneType','duration','affiliateUrl','linkPlacement','accuracy','newBackground','customBackground','slashCommands'])if(f[id]!==undefined&&$(id))$(id).value=f[id];for(const id of ['removeBgText','removeBgGraphics','protectProductText'])if(f[id]!==undefined&&$(id))$(id).checked=f[id];productRefs=x.productRefs||[];characterImageData=x.characterImageData||'';renderProductGallery();if(characterImageData){$('characterPreview').innerHTML=`<img src="${characterImageData}" alt="Character reference">`;$('characterPreview').style.display='block';}if(x.currentAIResult){currentAIResult=x.currentAIResult;currentProductIntel=x.currentAIResult.productIntelligence||{};renderAIResult(x.currentAIResult);}setStatus(productRefs.length?'Session terakhir dipulihkan ✓':'');}catch(e){console.warn('restore',e);}}
+async function clearForm(){if(!confirm('Reset semua maklumat, gambar dan hasil AI?'))return;for(const id of ['name','price','target','points','affiliateUrl','customBackground','slashCommands'])if($(id))$(id).value='';$('productImages').value='';$('characterImage').value='';productRefs=[];characterImageData='';currentAIResult=null;currentProductIntel=null;$('productGallery').innerHTML='';$('productCount').textContent='';$('characterPreview').innerHTML='';$('characterPreview').style.display='none';$('results').innerHTML='<div class="empty">Borang dikosongkan. Upload product reference dan tekan <b>✨ Jana Kit</b>.</div>';await dbClear();setStatus('Borang dikosongkan.');}
+function copyAllPrompts(){if(!currentAIResult?.videoIdeas?.length){alert('Jana kit dahulu.');return;}const all=currentAIResult.videoIdeas.map(v=>`VIDEO IDEA ${v.id} — ${v.title}\n\nCLIP A\n${v.clipA}\n\nCLIP B\n${v.clipB}`).join('\n\n====================\n\n');copyText(all);}
+function downloadKit(){if(!currentAIResult){alert('Jana kit dahulu.');return;}const payload={generatedAt:new Date().toISOString(),productIntelligence:currentAIResult.productIntelligence,posts:currentAIResult.posts,videoIdeas:currentAIResult.videoIdeas};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='AffiliFlow_AI_V8_Kit.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
+
+window.addEventListener('load',restoreSession);window.addEventListener('pageshow',e=>{if(e.persisted)restoreSession()});document.addEventListener('input',schedulePersist);document.addEventListener('change',schedulePersist);
+function openSupport(){document.getElementById('supportModal').classList.add('show');}function closeSupport(e){if(e&&e.target!==document.getElementById('supportModal'))return;document.getElementById('supportModal').classList.remove('show');}
 
 </script>
 
